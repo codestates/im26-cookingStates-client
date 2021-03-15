@@ -13,5 +13,5 @@ assignees: ''
 
 예상 소요 시간 : 
 
-#### Job Discription
+#### Job Description
 > (작업 내용)
