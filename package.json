@@ -43,9 +43,5 @@
     "url": "git+https://github.com/nahsooyeon/im26-cookingStates-client.git"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nahsooyeon/im26-cookingStates-client/issues"
-  },
-  "homepage": "https://github.com/nahsooyeon/im26-cookingStates-client#readme"
+  "license": "ISC"
 }
