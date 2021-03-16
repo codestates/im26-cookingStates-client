@@ -11,11 +11,20 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },
+  "config": {
+    "BUCKETNAME" : "cookingstates.cf"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mkbucket": "aws s3 mb s3://$npm_package_config_BUCKETNAME",
+    "rmbucket": "aws s3 rb s3://$npm_package_config_BUCKETNAME",
+    "lsbucket": "aws s3 ls",
+    "uploadObj": "aws s3 sync ./build s3://$npm_package_config_BUCKETNAME",
+    "lsObj": "aws s3 ls s3://$npm_package_config_BUCKETNAME",
+    "rmObj": "aws s3 rm s3://$npm_package_config_BUCKETNAME"
   },
   "eslintConfig": {
     "extends": [
