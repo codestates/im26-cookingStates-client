@@ -24,7 +24,8 @@
     "lsbucket": "aws s3 ls",
     "uploadObj": "aws s3 sync ./build s3://$npm_package_config_BUCKETNAME",
     "lsObj": "aws s3 ls s3://$npm_package_config_BUCKETNAME",
-    "rmObj": "aws s3 rm s3://$npm_package_config_BUCKETNAME"
+    "rmObj": "aws s3 rm s3://$npm_package_config_BUCKETNAME",
+    "update" : "npm run build && npm run uploadObj"
   },
   "eslintConfig": {
     "extends": [
