@@ -1,0 +1,65 @@
+/* 
+1. 각 코스 이미지가 같은 세로 간격을 가지고 가운데 정렬
+2. 각 코스 이미지 아래에 들어가는 코스 제목과 코스 소개글 디자인
+3. 코스리스트의 배치(flexbox 적용?)
+4. 수강하기 버튼 추가 (display none => 로그인하면 blok처리 */
+
+/* * {
+  background-color: #24997f;
+} */
+.course-list {
+  width: 100%;
+  padding-top: 30px;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  background-color: #24997f;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.course-list-item {
+  width: 280px;
+  height: 400px;
+  background: #ffeedf;
+  border-radius: 8px;
+  justify-content: center;
+
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.course-title {
+  text-align: center;
+  margin: 10px;
+  font-family: "Jua", sans-serif;
+  font-size: larger;
+}
+
+.course-desc {
+  text-align: center;
+  margin: 10px;
+  font-family: "RIDIBatang";
+}
+
+.btn-learn {
+  margin-left: 100px;
+  background: #ffffff;
+  opacity: 70%;
+
+  box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+}
+
+.btn-learn:hover {
+  background: #393a73;
+  color: white;
+  opacity: 100%;
+}
