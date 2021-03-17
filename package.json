@@ -12,7 +12,7 @@
     "web-vitals": "^1.1.1"
   },
   "config": {
-    "BUCKETNAME" : "cookingstates.cf"
+    "BUCKETNAME": "cookingstates.cf"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +25,7 @@
     "uploadObj": "aws s3 sync ./build s3://$npm_package_config_BUCKETNAME",
     "lsObj": "aws s3 ls s3://$npm_package_config_BUCKETNAME",
     "rmObj": "aws s3 rm s3://$npm_package_config_BUCKETNAME",
-    "update" : "npm run build && npm run uploadObj"
+    "update": "npm run build && npm run uploadObj"
   },
   "eslintConfig": {
     "extends": [
