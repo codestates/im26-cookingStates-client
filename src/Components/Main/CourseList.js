@@ -5,9 +5,8 @@ import dessertImg from "../../Images/course-dessert.png";
 import beerImg from "../../Images/course-beer.png";
 import veganImg from "../../Images/course-vegan.png";
 import westernImg from "../../Images/course-western.png";
-// import { courseListData } from "../../../course.json";
 
-import "../../CSS/courseList.css";
+import "../../pages/CSS/courseList.css";
 
 function CourseList(props) {
   return (
