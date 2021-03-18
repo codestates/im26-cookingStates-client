@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 // import CourseListItem from "./CourseListItem";
-import koreanImg from '../../Images/course-korean.png';
-import dessertImg from '../../Images/course-dessert.png';
-import beerImg from '../../Images/course-beer.png';
-import veganImg from '../../Images/course-vegan.png';
-import westernImg from '../../Images/course-western.png';
+import koreanImg from "../../Images/course-korean.png";
+import dessertImg from "../../Images/course-dessert.png";
+import beerImg from "../../Images/course-beer.png";
+import veganImg from "../../Images/course-vegan.png";
+import westernImg from "../../Images/course-western.png";
 
-import '../../pages/CSS/courseList.css';
+import "../../pages/CSS/courseList.css";
 
 function CourseList(props) {
   return (
