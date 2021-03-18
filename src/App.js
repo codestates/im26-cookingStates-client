@@ -1,12 +1,12 @@
-import Nav from './Components/Nav';
+// import Nav from './Components/Nav';
 import './App.css';
-import CourseList from './Components/Main/CourseList';
+// import CourseList from './Components/Main/CourseList';
+import Unregister from './pages/unregister';
 
 function App() {
   return (
     <>
-      <Nav/>
-      <CourseList/>
+      <Unregister />
     </>
   );
 }
