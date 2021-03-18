@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "../Images/logo-1.png";
-import "../CSS/Nav.css";
+import React from 'react';
+import logo from '../Images/logo-1.png';
+import '../pages/CSS/Nav.css';
 
 function Nav(props) {
   return (
