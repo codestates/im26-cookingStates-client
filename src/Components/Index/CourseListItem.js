@@ -1,5 +1,5 @@
 import React from "react";
-import { courseListData } from "../../../course.json";
+// import { courseListData } from "../../../course.json";
 
 function CourseListItem(props) {
   <div className="course-list-item" /* onClick={() => handleClick(course)} */>
