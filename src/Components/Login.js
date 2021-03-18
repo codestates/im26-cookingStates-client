@@ -19,7 +19,7 @@ function Login(props) {
 
       {/* 회원가입 유도 */}
       <div>아직 아이디가 없으신가요?</div>
-      <button className="btn-login" type="submit">
+      <button className="btn-login" type="submit" onClick={props.handleLogin}>
         로그인
       </button>
     </div>
