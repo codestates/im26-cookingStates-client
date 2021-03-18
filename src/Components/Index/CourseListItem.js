@@ -1,8 +1,8 @@
-import React from "react";
-// import { courseListData } from "../../../course.json";
+/* import React from "react";
+import { courseListData } from "../../../course.json";
 
 function CourseListItem(props) {
-  <div className="course-list-item" /* onClick={() => handleClick(course)} */>
+  <div className="course-list-item">
     <div className="course-img">
       <img src="./" alt="코스 대표 이미지" />
     </div>
@@ -14,3 +14,4 @@ function CourseListItem(props) {
 }
 
 export default CourseListItem;
+ */
