@@ -1,0 +1,48 @@
+* {
+  background: #24997f;
+}
+.login {
+  display: flex;
+}
+
+.bgImgLogin {
+  flex: 1 1 0;
+  margin: 0;
+  /* height: 100vh; */
+}
+
+.form-login {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: auto;
+  font-family: "Jua";
+}
+
+label {
+  margin: 10px;
+}
+
+h1 {
+  color: #fec0a0;
+}
+
+form {
+  align-items: center;
+  text-align: center;
+}
+
+.link-signup {
+  margin: 10px;
+}
+input {
+  background: #ffffff;
+  /* mono/mono20 */
+
+  border: 1px solid #bfc6dc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
