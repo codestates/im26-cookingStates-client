@@ -1,0 +1,115 @@
+.unregister {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #24997f;
+}
+
+.unregister::before {
+  content: '';
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+}
+
+.nav {
+  width: 100%;
+  height: 120px;
+  background-color: #fec0a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+img {
+  width: 200px;
+  margin: 0.5em;
+}
+
+.unregister-contents {
+  width: 400px;
+  height: 450px;
+  border-radius: 30px;
+  background-color: #fec0a0;
+  text-align: center;
+  position: relative;
+}
+
+.unregister-contents-header {
+  width: 280px;
+  height: 40px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unregister-contents-header h1 {
+  margin: 0;
+  font-family: 'Jua';
+}
+
+.unregister-contents-article {
+  width: 310px;
+  height: 150px;
+  position: absolute;
+  top: 55%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+.warning-unregister img {
+  width: 10px;
+  height: 10px;
+}
+.warning-unregister div {
+  margin: 5px;
+  font-family: 'RIDIBatang';
+}
+
+.unregister-contents-footer {
+  width: 320px;
+  height: 100px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+}
+
+.confirm-unregister {
+  margin: 20px 20px;
+}
+
+.confirm-unregister span {
+  margin-left: 10px;
+  font-family: 'RIDIBatang';
+}
+
+.confirm-unregister-button .btn-myKitchen {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  font-family: 'RIDIBatang';
+  background: #59dbb7;
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+}
+
+.confirm-unregister-button .btn-delete-account {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  color: white;
+  font-family: 'RIDIBatang';
+  background: #d95948;
+  box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+}
