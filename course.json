@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",        
+        "title": "한식",
+        "image": "image1",
+        "description": "매일 먹는 집밥 만들기"
+    },
+    {
+        "id": "2",        
+        "title": "양식",
+        "image": "image2",
+        "description": "양식 스킬 만렙 찍기"
+    },
+    {
+        "id": "3",        
+        "title": "비건",
+        "image": "image3",
+        "description": "맛도 좋고 지구도 좋아하는"
+    },
+    {
+        "id": "4",        
+        "title": "디저트",
+        "image": "image4",
+        "description": "5성급 호텔 파티쉐가 되어보자"
+    },
+    {
+        "id": "5",        
+        "title": "혼술 안주",
+        "image": "image5",
+        "description": "혼술해도 괜찮아... 맛있으니까"
+    }
+]
