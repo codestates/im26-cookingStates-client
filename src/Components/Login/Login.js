@@ -1,10 +1,40 @@
-import React from "react";
-import "../../pages/CSS/login.css";
-import bgImgLogin from "../../Images/login-bg-img.png";
-import logoImgYellow from "../../Images/logo-1-yellow.png";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState } from 'react';
+import '../../pages/CSS/login.css';
+import bgImgLogin from '../../Images/login-bg-img.png';
+import logoImgYellow from '../../Images/logo-1-yellow.png';
+import { Link, withRouter } from 'react-router-dom';
+import axios from 'axios';
+import API from '../../api';
 
 function Login(props) {
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+
+  const onEmailHandler = (event) => {
+    setEmail(event.currentTarget.value);
+  };
+  const onPasswordHandler = (event) => {
+    setPassword(event.currentTarget.value);
+  };
+
+  // login button 클릭
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    let body = {
+      email: Email,
+      password: Password,
+    };
+
+    // 액션 생성 함수에 들어가는 부분
+    //! dispatch로 수정해야 함
+    axios.post(API.USER_LOGIN, body, { withCredentials: true }).then((res) => {
+      console.log(res.data.accessToken);
+      //! dispatch & reducer로 token, login, admin 바꿔주기
+      props.history.push('/mykitchen');
+    });
+  };
+
   return (
     <div className="login">
       <div className="bgImgLogin">
@@ -15,11 +45,7 @@ function Login(props) {
         <span className="title">WELCOME BACK</span>
         <form>
           <div className="input-id">
-            <input
-              className="input-email"
-              placeholder="Insert Your Email"
-              type="email"
-            ></input>
+            <input className="input-email" placeholder="Insert Your Email" type="email"></input>
           </div>
           <div className="input-pw">
             <input type="password" placeholder="Insert Your Password"></input>

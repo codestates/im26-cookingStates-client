@@ -14,7 +14,7 @@ function MenuList() {
   }, []);
 
   const getRecipes = (courseId) => {
-    axios.get(API.COURSE_INFO + '/' + courseId).then((res) => {
+    axios.get(API.COURSE_INFO + `/${courseId}`).then((res) => {
       //console.log(res.data);
       setRecipes(res.data);
     });
