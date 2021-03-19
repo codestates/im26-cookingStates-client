@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function CourseListItem(props) {
   console.log(props);
   return (
@@ -10,7 +10,8 @@ function CourseListItem(props) {
       <div>
         <div className="course-title">{props.course.title}</div>
         <div className="course-desc">{props.course.description}</div>
-        <button className="btn-learn">지금 학습하기</button>
+        {/* <button className="btn-learn">지금 학습하기</button> */}
+        <Link to="/course">지금 학습하기</Link>
       </div>
     </div>
   );

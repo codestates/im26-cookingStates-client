@@ -2,6 +2,7 @@ import React from "react";
 import "../../pages/CSS/login.css";
 import bgImgLogin from "../../Images/login-bg-img.png";
 import logoImgYellow from "../../Images/logo-1-yellow.png";
+import { Link, withRouter } from "react-router-dom";
 
 function Login(props) {
   return (
@@ -24,13 +25,17 @@ function Login(props) {
             <input type="password" placeholder="Insert Your Password"></input>
           </div>
           <div className="link-signup">아직 아이디가 없으신가요?</div>
-          <button className="login-btn" type="submit">
+
+          <Link to="/" className="login-btn">
             로그인
-          </button>
+          </Link>
+          {/* <button className="login-btn" type="submit">
+            로그인
+          </button> */}
         </form>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default withRouter(Login);
