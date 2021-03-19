@@ -35,6 +35,8 @@ img {
   margin: 0.5em;
 }
 
+/* Unregister page */
+
 .unregister-contents {
   width: 400px;
   height: 450px;
@@ -42,6 +44,7 @@ img {
   background-color: #fec0a0;
   text-align: center;
   position: relative;
+  box-shadow: 10px -10px rgba(244, 153, 152, 0.607);
 }
 
 .unregister-contents-header {
@@ -109,7 +112,83 @@ img {
   margin: 10px;
   color: white;
   font-family: 'RIDIBatang';
-  background: #d95948;
+  background: #d95847;
   box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
+}
+
+/* Unregister_yes page */
+
+.unregister_yes-content {
+  width: 400px;
+  height: 450px;
+  border-radius: 30px;
+  background-color: #fec0a0;
+  position: relative;
+  box-shadow: 10px -10px rgba(244, 153, 152, 0.607);
+}
+
+.unregister_yes-content-header {
+  width: 280px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unregister_yes-content-header .goodbye {
+  font-family: 'Jua';
+  font-size: 40px;
+}
+
+.unregister_yes-content-article {
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unregister_yes-content-article .goodbye-desc {
+  font-family: 'RIDIBatang';
+  font-size: 30px;
+}
+
+.icon-bye {
+  width: 50px;
+  height: 50px;
+  margin: 0%;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  animation: iconbye-move ease-in-out 3s infinite;
+}
+
+@keyframes iconbye-move {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.unregister_yes-content-footer {
+  width: 320px;
+  height: 50px;
+  text-align: center;
+  font-family: 'RIDIBatang';
+  font-size: 20px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
