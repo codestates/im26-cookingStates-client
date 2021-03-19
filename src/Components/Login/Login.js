@@ -1,27 +1,34 @@
 import React from "react";
-import "../CSS/login.css";
+import "../../pages/CSS/login.css";
+import bgImgLogin from "../../Images/login-bg-img.png";
+import logoImgYellow from "../../Images/logo-1-yellow.png";
 
 function Login(props) {
   return (
-    <div>
-      <div>
-        <div className="input-id">
-          <label>Email</label>
-          <input type="text"></input>
-        </div>
-        <div className="input-pw">
-          <label>Password</label>
-          <input type="password"></input>
-        </div>
+    <div className="login">
+      <div className="bgImgLogin">
+        <img src={bgImgLogin} className="bgImgLogin" alt="bgLogin" />
       </div>
-      {/* 없는 아이디거나 비밀번호가 일치하지 않을 경우 */}
-      <div className="alert-login">아이디 및 비밀번호가 일치하지 않습니다.</div>
-
-      {/* 회원가입 유도 */}
-      <div>아직 아이디가 없으신가요?</div>
-      <button className="btn-login" type="submit" onClick={props.handleLogin}>
-        로그인
-      </button>
+      <div className="form-login">
+        <img src={logoImgYellow} className="loginLogo" alt="loginLogo" />
+        <span className="title">WELCOME BACK</span>
+        <form>
+          <div className="input-id">
+            <input
+              className="input-email"
+              placeholder="Insert Your Email"
+              type="email"
+            ></input>
+          </div>
+          <div className="input-pw">
+            <input type="password" placeholder="Insert Your Password"></input>
+          </div>
+          <div className="link-signup">아직 아이디가 없으신가요?</div>
+          <button className="login-btn" type="submit">
+            로그인
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
