@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../Images/logo-1.png';
-import Check from '../Images/check-mark-black.png';
 import './CSS/unregister.css';
 
 function unregister() {
