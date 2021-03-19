@@ -1,14 +1,14 @@
-import Nav from "./Components/Nav";
-import "./App.css";
-import Login from "./Components/Login/Login";
-import CourseList from "./Components/Main/CourseList";
+
+// import Nav from './Components/Nav';
+import './App.css';
+// import CourseList from './Components/Main/CourseList';
+import Unregister from './pages/unregister';
+
 
 function App() {
   return (
     <>
-      {/* <Nav />
-      /*<CourseList /> */}
-      <Login />
+      <Unregister />
     </>
   );
 }
