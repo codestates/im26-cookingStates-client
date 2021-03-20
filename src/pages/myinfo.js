@@ -41,4 +41,4 @@ function myinfo(props) {
   );
 }
 
-export default myinfo;
+export default withRouter(Myinfo);

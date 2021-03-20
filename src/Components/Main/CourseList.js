@@ -1,14 +1,25 @@
-import React from "react";
-import CourseListItem from "./CourseListItem";
+import React, { useState, useEffect } from 'react';
+import CourseListItem from './CourseListItem';
+import '../../pages/CSS/courseList.css';
+import axios from 'axios';
+import API from '../../api';
 
-import courseListData from "../../course.json";
+function CourseList(props) {
+  const [Courses, setCourses] = useState([]);
 
-import "../../pages/CSS/courseList.css";
+  useEffect(() => {
+    getCourses();
+  }, []);
 
-function CourseList() {
+  const getCourses = () => {
+    axios.get(API.COURSE_INFO).then((res) => {
+      setCourses(res.data);
+    });
+  };
+
   return (
     <div className="course-list">
-      {courseListData.map((course) => (
+      {Courses.map((course) => (
         <CourseListItem course={course} key={course.id} />
       ))}
     </div>
