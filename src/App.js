@@ -4,7 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './pages/main';
 import CourseTitle from './pages/contents-coursetitle';
 import Menutitle from './pages/contents-menutitle';
+import Myinfo from './pages/myinfo';
+import Mykitchen from './pages/mykitchen';
+import Unregister from './pages/unregister';
 import Login from './Components/Login/Login';
+import Nav from './Components/Nav';
 
 function App() {
   const [AccessToken, setAccessToken] = useState('');
@@ -12,14 +16,17 @@ function App() {
 
   const getAccessToken = (token) => {
     setAccessToken(token);
+    // console.log(AccessToken);
   };
 
   const loginHandler = (boolean) => {
     setIsLogin(boolean);
+    // console.log(IsLogin);
   };
 
   return (
     <Router>
+      <Nav IsLogin={IsLogin} loginHandler={loginHandler} />
       <Switch>
         <Route exact={true} path="/">
           <Main />
@@ -31,12 +38,18 @@ function App() {
           <Menutitle />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login getAccessToken={getAccessToken} loginHandler={loginHandler} />
+        </Route>
+        <Route path="/myinfo">
+          <Myinfo />
+        </Route>
+        <Route path="/mykitchen">
+          <Mykitchen />
+        </Route>
+        <Route path="/unregister">
+          <Unregister />
         </Route>
         <Route path="/signup"></Route>
-        <Route path="/myinfo"></Route>
-        <Route path="/mykitchen"></Route>
-        <Route path="/unregister"></Route>
         {/* <Route path=""></Route>
         <Route path=""></Route> */}
       </Switch>

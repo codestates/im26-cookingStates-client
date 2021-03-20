@@ -4,7 +4,7 @@ import '../../pages/CSS/courseList.css';
 import axios from 'axios';
 import API from '../../api';
 
-function CourseList() {
+function CourseList(props) {
   const [Courses, setCourses] = useState([]);
 
   useEffect(() => {

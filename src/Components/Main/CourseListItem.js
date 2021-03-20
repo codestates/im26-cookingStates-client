@@ -1,7 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 function CourseListItem(props) {
-  console.log(props);
   return (
     <div className="course-list-item">
       <div className="course-img">
