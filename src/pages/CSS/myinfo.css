@@ -1,0 +1,126 @@
+.myinfo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #24997f;
+}
+
+.myinfo-contents {
+  flex: 1;
+  position: relative;
+}
+
+.myinfo-content-form {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  background-color: #fec0a0;
+  box-shadow: 10px -10px rgba(246, 178, 145, 0.8);
+  border-radius: 40px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+.myinfo-content-form h1 {
+  margin: 0;
+  font-family: 'Jua';
+  font-size: 40px;
+  position: absolute;
+  top: 7%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.myinfo-content-form form {
+  width: 400px;
+  height: 380px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+
+.myinfo-content-form form label {
+  display: block;
+  font-family: 'Jua';
+  font-size: 20px;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.myinfo-content-form form label input {
+  padding: 0px;
+  font-family: 'RIDIBatang';
+  background-color: #fec0a0;
+  margin-left: 10px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.myinfo-content-form form label input:focus {
+  border-bottom: 3px solid dodgerblue;
+}
+
+.bio {
+  display: inline-block;
+  position: absolute;
+  bottom: 40%;
+}
+
+.bio-textarea {
+  resize: none;
+  outline: none;
+  width: 300px;
+  height: 110px;
+  font-family: 'RIDIBatang';
+  font-size: 15px;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+}
+.bio-textarea:focus {
+  border: 3px solid dodgerblue;
+}
+.myinfo-btn {
+  width: 240px;
+  height: 40px;
+  position: absolute;
+  bottom: 6%;
+  left: 25%;
+}
+
+.btn-myKitchen {
+  margin-right: 20px;
+  width: 120px;
+  height: 40px;
+  background-color: #393a73;
+  color: white;
+  font-family: 'Jua';
+  font-size: 20px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.btn-myKitchen:hover {
+  background: white;
+  color: #393a73;
+}
+
+.btn-delete-account {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  color: #d95948;
+  font-family: 'Jua';
+  font-size: 20px;
+  box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  outline: none;
+}
+
+.btn-delete-account:hover {
+  background: #d95948;
+  color: white;
+}
