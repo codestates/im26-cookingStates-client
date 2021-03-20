@@ -1,14 +1,12 @@
-import Nav from "./Components/Nav";
-import "./App.css";
-import CourseList from "./Components/Main/CourseList";
+import CourseList from '../Components/Main/CourseList';
+import { withRouter } from 'react-router-dom';
 
 function main() {
   return (
     <>
-      <Nav />
       <CourseList />
     </>
   );
 }
 
-export default main;
+export default withRouter(main);
