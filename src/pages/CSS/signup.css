@@ -1,0 +1,134 @@
+#root {
+  background-color: #24997f;
+}
+
+.signupCard {
+  background-color: #ffeedf;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  font-family: "Jua";
+  margin: auto;
+  width: 60%;
+  padding: 100px;
+  border-radius: 15px;
+}
+
+.valid-result {
+  text-align: center;
+}
+
+span.success {
+  color: #146354;
+}
+
+span.danger {
+  color: #bc1c47;
+}
+input {
+  margin: 25px 0px 25px 0px;
+  text-align: center;
+  outline-style: none;
+  width: 100%;
+  font-family: "Jua";
+  font-size: 1.5rem;
+  padding: 15px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 3px solid #393a73;
+
+  border-radius: 6px;
+}
+
+input.success {
+  border: 3px solid #24997f;
+  box-sizing: border-box;
+  background-image: url("../../Images/icon-valid-check-success.png");
+}
+
+input.danger {
+  border: 3px solid #bc1c47;
+  background-image: url("../../Images/icon-valid-check-danger.png");
+}
+
+.input-bio {
+  height: 100px;
+  font-family: "Jua";
+  padding: 5px;
+  resize: none;
+  width: 70%;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.card-label {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #193c34;
+}
+.card-desc {
+  font-size: 1rem;
+}
+
+.btn-back {
+  background: #ffffff;
+  margin-right: 5px;
+  padding: 5px;
+  color: #393a73;
+  font-family: "Jua";
+
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 50px;
+  height: auto;
+}
+.btn-back:hover {
+  background: #393a73;
+  margin-right: 5px;
+  padding: 5px;
+  color: #ffffff;
+
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 50px;
+  height: auto;
+  font-family: "Jua";
+}
+
+.btn-next {
+  /* green/green50 */
+
+  background: #59dbb7;
+  /* elevation20 */
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 5px;
+  padding: 5px;
+  width: 50px;
+  height: auto;
+  font-family: "Jua";
+}
+
+.btn-next:hover {
+  /* green/green50 */
+
+  background: #59dbb7;
+  /* elevation20 */
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 5px;
+  padding: 5px;
+  width: 50px;
+  height: auto;
+  font-family: "Jua";
+  color: #ffffff;
+}

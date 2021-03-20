@@ -1,15 +1,11 @@
 import React from 'react';
 import Logo from '../Images/logo-1.png';
-import Check from '../Images/check-mark-black.png';
 import './CSS/unregister.css';
 
-function unregister() {
+function Unregister() {
   return (
     <>
       <div className="unregister">
-        <div className="nav">
-          <img src={Logo} alt="logo" />
-        </div>
         <div className="unregister-contents">
           <div className="unregister-contents-header">
             <h1>정말 떠나실 건가요 ?</h1>
@@ -37,4 +33,4 @@ function unregister() {
   );
 }
 
-export default unregister;
+export default Unregister;
