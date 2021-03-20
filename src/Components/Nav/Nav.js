@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import logo from '../../Images/logo-1.png';
 import '../../pages/CSS/Nav.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Nav(props) {
-  //const [IsLogin, setIsLogin] = useState(false);
+  const isLogin = useSelector((state) => state.userReducer.login);
+
   return (
     <div className="nav">
       <div className="logo">
@@ -19,7 +21,7 @@ function Nav(props) {
         로그인 상태 바꾸기
       </button>
 
-      {props.IsLogin ? (
+      {isLogin ? (
         <div className="nav-btn-group">
           <button className="btn-logout">
             <Link to="/login" onClick={props.loginHandler(false)}>
@@ -29,7 +31,6 @@ function Nav(props) {
           <button className="btn-Mykitchen">
             <Link to="/mykitchen">my 부엌</Link>
           </button>
-
           {/* <button className="btn-logout" onClick={props.loginHandler(false)}>
             Log out
           </button>
@@ -40,9 +41,7 @@ function Nav(props) {
           <button className="btn-login">
             <Link to="/login">Log in</Link>
           </button>
-
           {/* <button className="btn-login">Log in</button> */}
-
           <button className="btn-signup">Sign up</button>
         </div>
       )}
