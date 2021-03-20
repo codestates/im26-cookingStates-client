@@ -1,8 +1,5 @@
-#root {
-  background-color: #ffeedf;
-}
-
 .signupCard {
+  background-color: #ffeedf;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -10,7 +7,9 @@
   align-content: center;
   font-family: "Jua";
   margin: auto;
-  width: 50%;
+  width: 60%;
+  padding: 100px;
+  border-radius: 15px;
 }
 
 .valid-result {
@@ -25,9 +24,6 @@ span.danger {
   color: #bc1c47;
 }
 input {
-  border-right: 0px;
-  border-left: 0px;
-  border-top: 0px;
   margin: 25px 0px 25px 0px;
   text-align: center;
   outline-style: none;
@@ -38,6 +34,8 @@ input {
   background-size: auto;
   background-repeat: no-repeat;
   background-position: right;
+  border: 3px solid #393a73;
+
   border-radius: 6px;
 }
 

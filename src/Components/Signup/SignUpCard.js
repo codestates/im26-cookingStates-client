@@ -20,6 +20,7 @@ function SignUpCard(props) {
       <div className="card-desc">이메일 주소는 아이디로 사용됩니다.</div>
       <input className="input-email default" type="email"></input>
       <div className="valid-result">
+        <input className="input-email" type="email"></input>
         <input className="input-email success" type="email"></input>
         <input className="input-email danger" type="email"></input>
         <span className="danger">이미 등록된 이메일 주소입니다.</span>
