@@ -29,7 +29,7 @@ function SignUpCard(props) {
       </div>
     </div> */
 
-    <div className="signupCard">
+    /* <div className="signupCard">
       <div className="card-label">쉐프님의 비밀번호를 입력하세요</div>
       <div className="card-desc">
         알파벳 대소문자,숫자와 특수문자를 1개 이상 포함하여 8자리 이상의
@@ -39,6 +39,19 @@ function SignUpCard(props) {
       <input className="input-password success" type="password"></input>
       <input className="input-password danger" type="password"></input>
       <span className="danger">비밀번호 형식이 올바르지 않습니다.</span>
+
+      <div className="btn-group">
+        <button className="btn-back">뒤로</button>
+        <button className="btn-next">다음</button>
+      </div>
+
+
+    </div> */
+
+    <div className="signupCard">
+      <div className="card-label">쉐프님을 소개해주세요</div>
+      <div className="card-desc"></div>
+      <textarea className="input-bio" type="text"></textarea>
 
       <div className="btn-group">
         <button className="btn-back">뒤로</button>

@@ -1,3 +1,7 @@
+#root {
+  background-color: #24997f;
+}
+
 .signupCard {
   background-color: #ffeedf;
   display: flex;
@@ -50,18 +54,33 @@ input.danger {
   background-image: url("../../Images/icon-valid-check-danger.png");
 }
 
+.input-bio {
+  height: 100px;
+  font-family: "Jua";
+  padding: 5px;
+  resize: none;
+  width: 70%;
+}
+
+textarea:focus {
+  outline: none;
+}
+
 .card-label {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: #193c34;
 }
 .card-desc {
   font-size: 1rem;
 }
+
 .btn-back {
   background: #ffffff;
   margin-right: 5px;
   padding: 5px;
   color: #393a73;
+  font-family: "Jua";
 
   box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
@@ -80,6 +99,7 @@ input.danger {
   margin-top: 20px;
   width: 50px;
   height: auto;
+  font-family: "Jua";
 }
 
 .btn-next {
@@ -94,6 +114,7 @@ input.danger {
   padding: 5px;
   width: 50px;
   height: auto;
+  font-family: "Jua";
 }
 
 .btn-next:hover {
@@ -108,4 +129,6 @@ input.danger {
   padding: 5px;
   width: 50px;
   height: auto;
+  font-family: "Jua";
+  color: #ffffff;
 }
