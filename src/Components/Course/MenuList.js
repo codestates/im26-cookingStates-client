@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import MenuCard from './MenuCard';
-import '../../pages/CSS/content-coursetitle.css';
-import axios from 'axios';
-import API from '../../api';
+import React, { useState, useEffect } from "react";
+import MenuCard from "./MenuCard";
+import "../../pages/CSS/content-coursetitle.css";
+import axios from "axios";
+import API from "../../api";
 
 function MenuList() {
   const [Recipes, setRecipes] = useState([]);
