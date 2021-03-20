@@ -1,0 +1,67 @@
+#root {
+  background-color: #24997f;
+}
+
+.container {
+  background-color: #ffeedf;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  font-family: "Jua";
+  margin: auto;
+  width: 60%;
+  height: 50%;
+  padding-top: 20px;
+  /* padding: 5%; */
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.header {
+  flex: 2 1 0;
+}
+.contents {
+  flex: 2 1 0;
+}
+.footer {
+  flex: 1 1 0;
+  bottom: 50%;
+  color: #82889e;
+}
+
+.username {
+  color: #193c34;
+}
+.welcome-title {
+  margin: 10px;
+  font-size: 2.5rem;
+  color: #24997f;
+  text-shadow: 2px 2px 2px gray;
+}
+.welcome-desc {
+  color: #146354;
+  font-size: 1.5rem;
+}
+.contents {
+  font-size: 1.5rem;
+  color: #535867;
+}
+
+.level {
+  font-size: 1.7rem;
+  text-shadow: -1px 0 #111342, 0 1px #111342, 1px 0 #111342, 0 -1px#111342;
+}
+#lv1 {
+  color: #dedff7;
+}
+
+#lv2 {
+  color: #9495d3;
+}
+
+#lv3 {
+  color: #393a73;
+}
