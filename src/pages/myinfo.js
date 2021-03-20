@@ -1,6 +1,7 @@
-import React from 'react';
-import NavMykitchen from '../Components/Nav/Nav-mykitchen';
-import './CSS/myinfo.css';
+import React from "react";
+import NavMykitchen from "../Components/Nav/Nav-mykitchen";
+import "./CSS/myinfo.css";
+import { withRouter } from "react-router-dom";
 
 function myinfo(props) {
   return (
@@ -41,4 +42,4 @@ function myinfo(props) {
   );
 }
 
-export default withRouter(Myinfo);
+export default withRouter(myinfo);

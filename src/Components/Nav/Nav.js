@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import logo from '../Images/logo-1.png';
-import '../pages/CSS/Nav.css';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import logo from "../../Images/logo-1.png";
+import "../../pages/CSS/Nav.css";
+import { Link } from "react-router-dom";
 
 function Nav(props) {
   //const [IsLogin, setIsLogin] = useState(false);
@@ -21,7 +21,11 @@ function Nav(props) {
 
       {props.IsLogin ? (
         <div className="nav-btn-group">
-          <Link to="/login" className="btn-login" onClick={props.loginHandler(false)}>
+          <Link
+            to="/login"
+            className="btn-login"
+            onClick={props.loginHandler(false)}
+          >
             로그아웃
           </Link>
           <Link to="/mykitchen" className="btn-login">
