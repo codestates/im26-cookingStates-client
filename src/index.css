@@ -1,3 +1,6 @@
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -11,32 +14,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-}
-
-code {
-  font-family: 'Jua', sans-serif;
-}
-
-@font-face {
-  font-family: 'RIDIBatang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Jua';
-  src: url('https://fonts.googleapis.com/css2?family=Jua&display=swap')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 #root {
   width: 100%;
-  height: 100%;
+  height: inherit;
   display: flex;
   flex-direction: column;
 }

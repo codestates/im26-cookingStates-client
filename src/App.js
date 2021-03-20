@@ -7,8 +7,9 @@ import Menutitle from './pages/contents-menutitle';
 import Myinfo from './pages/myinfo';
 import Mykitchen from './pages/mykitchen';
 import Unregister from './pages/unregister';
+import Unregister_yes from './pages/unregister_yes';
 import Login from './Components/Login/Login';
-import Nav from './Components/Nav';
+import Nav from './Components/Nav/Nav';
 
 function App() {
   const [AccessToken, setAccessToken] = useState('');
@@ -48,6 +49,9 @@ function App() {
         </Route>
         <Route path="/unregister">
           <Unregister />
+        </Route>
+        <Route path="/unregister_yes">
+          <Unregister_yes />
         </Route>
         <Route path="/signup"></Route>
         {/* <Route path=""></Route>

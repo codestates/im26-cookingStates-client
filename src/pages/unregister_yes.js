@@ -1,15 +1,11 @@
 import React from 'react';
 import './CSS/unregister.css';
-import Logo from '../Images/logo-1.png';
 import Bye from '../Images/goodbye.png';
 
 function unregister_yes() {
   return (
     <>
       <div className="unregister">
-        <div className="nav">
-          <img src={Logo} alt="logo" />
-        </div>
         <div className="unregister_yes-content">
           <div className="unregister_yes-content-header">
             <span className="goodbye">Good Bye!!</span>
