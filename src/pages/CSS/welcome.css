@@ -1,63 +1,99 @@
+.welcome {
+  width: 100%;
+  height: 100vh;
+  background-color: #24997f;
+}
+.welcome::before {
+  content: '';
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+}
 .container {
-  background-color: #ffeedf;
+  width: 470px;
+  height: 400px;
   display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  align-content: center;
-  font-family: 'Jua';
-  margin: auto;
-  width: 60%;
-  height: 50%;
-  padding-top: 20px;
-  /* padding: 5%; */
-  border-radius: 15px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffeedf;
+  border-radius: 40px;
+  box-shadow: 10px -10px #ffeedfc5;
+}
+
+.welcome-header {
+  width: 450px;
+  height: 100px;
   text-align: center;
-  justify-content: center;
+  position: absolute;
+  top: 8%;
+  left: 2%;
 }
 
-.header {
-  flex: 2 1 0;
-}
-.contents {
-  flex: 2 1 0;
-}
-.footer {
-  flex: 1 1 0;
-  bottom: 50%;
-  color: #82889e;
-}
-
-.username {
-  color: #193c34;
-}
-.welcome-title {
+.welcome-header-title {
   margin: 10px;
   font-size: 2.5rem;
   color: #24997f;
   text-shadow: 2px 2px 2px gray;
 }
-.welcome-desc {
+
+.welcome-header-desc {
   color: #146354;
   font-size: 1.5rem;
 }
-.contents {
-  font-size: 1.5rem;
-  color: #535867;
+
+.welcome-contents {
+  width: 370px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  top: 48%;
+  left: 10%;
 }
 
-.level {
+.welcome-contents-level1,
+.welcome-contents-level2,
+.welcome-contents-level3 {
+  width: 370px;
+  height: 40px;
+  font-family: 'Jua';
+  font-size: 20px;
+}
+
+.level1,
+.level2,
+.level3 {
+  text-align: center;
+  padding: 0px 10px;
   font-size: 1.7rem;
   text-shadow: -1px 0 #111342, 0 1px #111342, 1px 0 #111342, 0 -1px#111342;
 }
-#lv1 {
+
+.level1 {
   color: #dedff7;
 }
 
-#lv2 {
+.level2 {
   color: #9495d3;
 }
 
-#lv3 {
+.level3 {
   color: #393a73;
+}
+
+.welcome-footer {
+  width: 260px;
+  height: 50px;
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  color: #82889e;
+  font-size: 20px;
 }

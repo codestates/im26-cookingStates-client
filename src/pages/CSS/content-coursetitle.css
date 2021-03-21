@@ -22,7 +22,8 @@
 }
 
 .menu-card:hover .recipe-img img {
-  transform: scale(2);
+  width: 230px;
+  height: 230px;
 }
 
 .recipe-img img {
