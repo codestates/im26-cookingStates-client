@@ -1,9 +1,12 @@
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
+import Menu from "../Components/Course/Menu";
+import MenuNav from "../Components/Course/MenuNav";
 
 function Menutitle() {
   return (
     <>
-      <h1> 레시피 상세 페이지</h1>
+      <MenuNav />
+      <Menu />
     </>
   );
 }
