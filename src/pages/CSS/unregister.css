@@ -20,21 +20,6 @@
   background-color: #000;
 }
 
-.nav {
-  width: 100%;
-  height: 120px;
-  background-color: #fec0a0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4em;
-}
-
-img {
-  width: 200px;
-  margin: 0.5em;
-}
-
 /* Unregister page */
 
 .unregister-contents {
@@ -43,7 +28,10 @@ img {
   border-radius: 30px;
   background-color: #fec0a0;
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: 10px -10px rgba(244, 153, 152, 0.607);
 }
 
@@ -63,26 +51,24 @@ img {
 
 .unregister-contents-article {
   width: 310px;
-  height: 150px;
+  height: 120px;
   position: absolute;
-  top: 55%;
-  left: 49%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
-.warning-unregister img {
-  width: 10px;
-  height: 10px;
-}
+
 .warning-unregister div {
   margin: 5px;
   font-family: 'RIDIBatang';
+  font-size: 16px;
 }
 
 .unregister-contents-footer {
   width: 320px;
-  height: 100px;
+  height: 80px;
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
   left: 50%;
   transform: translate(-50%, -15%);
 }
@@ -94,27 +80,41 @@ img {
 .confirm-unregister span {
   margin-left: 10px;
   font-family: 'RIDIBatang';
+  font-size: 16px;
 }
 
-.confirm-unregister-button .btn-myKitchen {
-  width: 100px;
+.btn-myKitchen {
+  width: 140px;
   height: 40px;
   margin: 10px;
   font-family: 'RIDIBatang';
-  background: #59dbb7;
+  background: #24997f;
+  font-size: 20px;
+  color: white;
   box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
 }
 
-.confirm-unregister-button .btn-delete-account {
+.btn-myKitchen:hover {
+  background-color: white;
+  color: #24997f;
+}
+
+.btn-delete-account {
   width: 100px;
   height: 40px;
   margin: 10px;
-  color: white;
+  color: #d95847;
   font-family: 'RIDIBatang';
-  background: #d95847;
+  font-size: 20px;
+  background-color: white;
   box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
+}
+
+.btn-delete-account:hover {
+  background-color: #d95847;
+  color: white;
 }
 
 /* Unregister_yes page */
@@ -124,7 +124,10 @@ img {
   height: 450px;
   border-radius: 30px;
   background-color: #fec0a0;
-  position: relative;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: 10px -10px rgba(244, 153, 152, 0.607);
 }
 

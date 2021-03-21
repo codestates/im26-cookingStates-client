@@ -5,9 +5,9 @@ import '../../pages/CSS/login.css';
 import bgImgLogin from '../../Images/login-bg-img.png';
 import logoImgYellow from '../../Images/logo-1-yellow.png';
 import { Link, withRouter } from 'react-router-dom';
-import axios from 'axios';
-import API from '../../api';
-import { bindActionCreators } from 'redux';
+// import axios from 'axios';
+// import API from '../../api';
+// import { bindActionCreators } from 'redux';
 
 function Login(props) {
   const dispatch = useDispatch();
@@ -66,10 +66,20 @@ function Login(props) {
         <span className="title">WELCOME BACK</span>
         <form>
           <div className="input-id">
-            <input className="input-email" placeholder="Insert Your Email" type="email" onChange={onEmailHandler}></input>
+            <input
+              className="input-email"
+              placeholder="Insert Your Email"
+              type="email"
+              onChange={onEmailHandler}
+            ></input>
           </div>
-          <div className="input-pw">
-            <input type="password" placeholder="Insert Your Password" onChange={onPasswordHandler}></input>
+          <div className="input-password">
+            <input
+              className="input-pw"
+              type="password"
+              placeholder="Insert Your Password"
+              onChange={onPasswordHandler}
+            ></input>
           </div>
           <div className="link-signup">아직 아이디가 없으신가요?</div>
 
