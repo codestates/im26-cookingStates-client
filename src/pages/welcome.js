@@ -1,8 +1,13 @@
-import './CSS/welcome.css';
-
-import React from 'react';
+import "./CSS/welcome.css";
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 function Welcome(props) {
+  console.log(props.location.state.score);
+
+  setTimeout(() => {
+    props.history.push("/login");
+  }, 5000);
   return (
     <div className="welcome">
       <div className="container">
@@ -16,29 +21,15 @@ function Welcome(props) {
           {/* username === 로그인한 유저이름 */}
           <div className="welcome-contents-level1">
             <span className="welcome-username">
-              username 쉐프님의 요리 레벨은
-              <span className="level1">Lv1.</span>
+              쉐프님의 요리 레벨은
+              <span className="level1">{props.location.state.score}</span>
               입니다.
             </span>
           </div>
-          {/* <div className="welcome-contents-level2">
-            <span className="welcome-username">
-              username 쉐프님의 요리 레벨은
-              <span className="level2">Lv2.</span>
-              입니다.
-            </span>
-          </div> */}
-          {/* <div className="welcome-contents-level3">
-            <span className="welcome-username">
-              username 쉐프님의 요리 레벨은
-              <span className="level3">Lv3.</span>
-              입니다.
-            </span>
-          </div> */}
         </div>
         <div className="welcome-footer">
           <div className="welcome-footer-content">
-            ...초 뒤 메인 페이지로 이동합니다
+            5초 뒤 메인 페이지로 이동합니다
           </div>
         </div>
       </div>
@@ -46,4 +37,4 @@ function Welcome(props) {
   );
 }
 
-export default Welcome;
+export default withRouter(Welcome);

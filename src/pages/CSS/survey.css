@@ -38,6 +38,13 @@ input[type="checkbox"] + label {
   cursor: pointer;
 }
 
+input[type="number"] {
+  font-size: smaller;
+  padding: 5px;
+  margin: 0px 5px;
+  width: max-content;
+}
+
 input[type="text"] {
   width: 25px;
   height: 20px;

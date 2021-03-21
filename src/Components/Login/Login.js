@@ -66,13 +66,14 @@ function Login(props) {
               onChange={onPasswordHandler}
             ></input>
           </div>
-          <div className="link-signup">아직 아이디가 없으신가요?</div>
-          {/* <Link to="/" className="login-btn">
-            로그인
-          </Link> */}
           <button className="login-btn" type="submit" onClick={onSubmitHandler}>
             로그인
           </button>
+          <br />
+          <br />
+          <Link className="link-signup" to="/signup">
+            아직 아이디가 없으신가요?
+          </Link>
         </form>
       </div>
     </div>
