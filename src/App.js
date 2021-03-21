@@ -10,6 +10,7 @@ import Unregister from "./pages/unregister";
 import Unregister_yes from "./pages/unregister_yes";
 import Login from "./Components/Login/Login";
 import Nav from "./Components/Nav/Nav";
+import Menu from "./pages/Menu";
 
 function App() {
   const [AccessToken, setAccessToken] = useState("");
@@ -54,8 +55,10 @@ function App() {
           <Unregister_yes />
         </Route>
         <Route path="/signup"></Route>
-        {/* <Route path=""></Route>
-        <Route path=""></Route> */}
+        <Route path="/menu">
+          <Menu />
+        </Route>
+        {/*<Route path=""></Route> */}
       </Switch>
     </Router>
   );

@@ -1,11 +1,10 @@
 import { withRouter } from "react-router-dom";
-import Menu from "../Components/Course/Menu";
-import MenuNav from "../Components/Course/MenuNav";
+import Menu from "./Menu";
+import "../pages/CSS/contents-menutitle.css";
 
 function Menutitle() {
   return (
     <>
-      <MenuNav />
       <Menu />
     </>
   );

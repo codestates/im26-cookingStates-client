@@ -3,11 +3,12 @@ import { withRouter } from "react-router-dom";
 
 function MenuCard(props) {
   console.log(props);
+
   return (
     <div
       className="menu-card"
       onClick={() => {
-        props.history.push("/recipe");
+        props.history.push(`/recipe/${props.recipe.id}`);
       }}
     >
       <div className="recipe-img">

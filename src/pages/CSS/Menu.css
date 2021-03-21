@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.menu-container {
+  top: 120px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  background-color: #24997f;
+}
+
+.menu-Nav {
+  width: 25%;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fec0a0;
+}
+.menu-Nav-Title {
+  font-family: "Jua";
+  font-size: 2.5rem;
+  color: #ffffff;
+  background-color: #24997f;
+  padding: 2px;
+  width: 80px;
+  border-radius: 5px;
+  box-shadow: 0.2em 0 0 #24997f, -0.2em 0 0 #24997f;
+  margin-bottom: 30px;
+}
+
+.menu-Nav-item {
+  width: fit-content;
+  margin: 10px;
+  font-family: "Jua";
+  font-size: 1.5rem;
+  color: #393a73;
+  background-color: #ffffff;
+  padding: 2px;
+  box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
+  border-radius: 5px;
+}
+
+.menu-body {
+  width: 75%;
+}
+
+.menu-body > .menu-title {
+  font-size: 3rem;
+  color: #fec0a0;
+  margin-top: 3%;
+}
+
+#menu-recipe-info {
+  height: 400px;
+  display: flex;
+}
+
+.chart {
+  flex: 1 1 0;
+  position: absolute;
+  right: 37%;
+  top: 6%;
+}
+
+#menu-ingredient {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 6%;
+  right: 10%;
+}
+
+#menu-recipe-list {
+  display: flex;
+  flex-direction: column;
+  top: 70%;
+  font-family: "RIDIBatang";
+  background-color: #fec0a0;
+  margin: 30px;
+  padding: 30px 20px 30px 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.menu-ingredient-desc > img {
+  height: 150px;
+}
+
+img[alt="manualImg"] {
+  height: 250px;
+  align-self: center;
+}
+
+.menu-ingredient-title {
+  align-items: center;
+
+  font-size: 2rem;
+  color: #ffeedf;
+  font-family: "Jua";
+}
+.menu-ingredient-desc {
+  align-items: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: "RIDIBatang";
+  width: 300px;
+}
+.menu-recipe-list-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #2e2f37;
+}
+
+.recipe-desc {
+  margin: 10px;
+  font-size: 1rem;
+  color: #535867;
+}
+
+.recipe-img {
+  margin: 15px;
+}
