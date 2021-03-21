@@ -39,7 +39,7 @@ function App() {
           <Menutitle />
         </Route>
         <Route path="/login">
-          <Login getAccessToken={getAccessToken} loginHandler={loginHandler} />
+          <Login getAccessToken={getAccessToken} IsLogin={IsLogin} loginHandler={loginHandler} />
         </Route>
         <Route path="/myinfo">
           <Myinfo />
