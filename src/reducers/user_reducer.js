@@ -1,17 +1,24 @@
-import { USER_LOGIN, USER_LOGOUT, USER_INFO, USER_UPDATE, USER_REGISTER, USER_UNREGISTER } from '../actions/user_action';
+import {
+  SET_ACCESS_TOKEN,
+  USER_LOGOUT,
+  SET_USER_INFO,
+  USER_UPDATE,
+  USER_REGISTER,
+  USER_UNREGISTER,
+} from "../actions/user_action";
 
 export default function user(state = {}, action) {
   // 새로운 state를 만들어 반환
 
   switch (action.type) {
-    case USER_LOGIN:
-      return { ...state, login: action.payload };
+    case SET_ACCESS_TOKEN:
+      return { ...state, accessToken: action.payload };
 
     case USER_LOGOUT:
-      return { ...state, logout: action.payload };
+      return { ...state, accessToken: null, userInfo: null };
 
-    case USER_INFO:
-      return { ...state, info: action.payload };
+    case SET_USER_INFO:
+      return { ...state, userInfo: action.payload };
 
     case USER_UPDATE:
       return { ...state, update: action.payload };
