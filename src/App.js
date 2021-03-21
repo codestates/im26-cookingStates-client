@@ -13,7 +13,7 @@ import Nav from './Components/Nav/Nav';
 import Welcome from './pages/welcome';
 
 function App() {
-  const [AccessToken, setAccessToken] = useState('');
+  const [AccessToken, setAccessToken] = useState("");
   const [IsLogin, setIsLogin] = useState(false);
 
   const getAccessToken = (token) => {
@@ -40,7 +40,7 @@ function App() {
           <Menutitle />
         </Route>
         <Route path="/login">
-          <Login getAccessToken={getAccessToken} loginHandler={loginHandler} />
+          <Login getAccessToken={getAccessToken} IsLogin={IsLogin} loginHandler={loginHandler} />
         </Route>
         <Route path="/myinfo">
           <Myinfo />

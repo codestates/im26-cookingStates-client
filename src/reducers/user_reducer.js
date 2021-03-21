@@ -1,6 +1,6 @@
 import { USER_LOGIN, USER_LOGOUT, USER_INFO, USER_UPDATE, USER_REGISTER, USER_UNREGISTER } from '../actions/user_action';
 
-export default function (state = {}, action) {
+export default function user(state = {}, action) {
   // 새로운 state를 만들어 반환
 
   switch (action.type) {

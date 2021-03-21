@@ -1,6 +1,6 @@
-import React from 'react';
-import './CSS/myinfo.css';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import "./CSS/myinfo.css";
+import { withRouter } from "react-router-dom";
 
 function myinfo(props) {
   return (
