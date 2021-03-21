@@ -15,7 +15,7 @@ function Survey(props) {
 
   return (
     <div className="survey-box">
-      <div className="survey-title"> 쉐프님의 요리 레벨 테스트! {Score}</div>
+      <div className="survey-title"> 쉐프님의 요리 레벨 테스트!</div>
       <div className="survey-group">
         <div className="question">
           <input id="ckb1" type="checkbox" onChange={onChangeHandler}></input>
