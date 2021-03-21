@@ -58,7 +58,9 @@ function Nav(props) {
           <button className="btn-login">
             <Link to="/login">Log in</Link>
           </button>
-          <button className="btn-signup">Sign up</button>
+          <Link to="/signup">
+            <button className="btn-signup">Sign up</button>
+          </Link>
         </div>
       )}
     </div>

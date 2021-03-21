@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './pages/main';
-import CourseTitle from './pages/contents-coursetitle';
-import Menutitle from './pages/contents-menutitle';
-import Myinfo from './pages/myinfo';
-import Mykitchen from './pages/mykitchen';
-import Unregister from './pages/unregister';
-import Unregister_yes from './pages/unregister_yes';
-import Login from './Components/Login/Login';
-import Nav from './Components/Nav/Nav';
-import Welcome from './pages/welcome';
+import React, { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Main from "./pages/main";
+import CourseTitle from "./pages/contents-coursetitle";
+import Menutitle from "./pages/contents-menutitle";
+import Myinfo from "./pages/myinfo";
+import Mykitchen from "./pages/mykitchen";
+import Unregister from "./pages/unregister";
+import Unregister_yes from "./pages/unregister_yes";
+import Login from "./Components/Login/Login";
+import Nav from "./Components/Nav/Nav";
+import Welcome from "./pages/welcome";
+import Signup from "./pages/Signup";
 
 function App() {
   const [AccessToken, setAccessToken] = useState("");
@@ -40,7 +41,11 @@ function App() {
           <Menutitle />
         </Route>
         <Route path="/login">
-          <Login getAccessToken={getAccessToken} IsLogin={IsLogin} loginHandler={loginHandler} />
+          <Login
+            getAccessToken={getAccessToken}
+            IsLogin={IsLogin}
+            loginHandler={loginHandler}
+          />
         </Route>
         <Route path="/myinfo">
           <Myinfo />
@@ -57,9 +62,14 @@ function App() {
         <Route path="/welcome">
           <Welcome />
         </Route>
-        <Route path="/signup"></Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
         {/* <Route path=""></Route>
         <Route path=""></Route> */}
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
       </Switch>
     </Router>
   );
