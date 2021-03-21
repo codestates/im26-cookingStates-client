@@ -10,6 +10,7 @@ import Unregister from './pages/unregister';
 import Unregister_yes from './pages/unregister_yes';
 import Login from './Components/Login/Login';
 import Nav from './Components/Nav/Nav';
+import Welcome from './pages/welcome';
 
 function App() {
   const [AccessToken, setAccessToken] = useState('');
@@ -52,6 +53,9 @@ function App() {
         </Route>
         <Route path="/unregister_yes">
           <Unregister_yes />
+        </Route>
+        <Route path="/welcome">
+          <Welcome />
         </Route>
         <Route path="/signup"></Route>
         {/* <Route path=""></Route>
