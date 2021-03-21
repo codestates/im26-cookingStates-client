@@ -1,27 +1,38 @@
-import React, { useState } from 'react';
-import logo from '../../Images/logo-1.png';
-import '../../pages/CSS/Nav.css';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import logo from "../../Images/logo-1.png";
+import "../../pages/CSS/Nav.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import API from "../../api";
 
 function Nav(props) {
-  const isLogin = useSelector((state) => state.userReducer.login);
+  const accessToken = useSelector((state) => state.userReducer.accessToken);
+  const [UserData, setUserData] = useState({});
+
+  useEffect(() => {
+    async function fetchUserData() {
+      const userData = await axios.get(API.USER_INFO + `${}/info`, {
+        withCredentials: true,
+        headers: {
+          authorization: "Bearer " + accessToken,
+        },
+      });
+      setUserData(userData);
+    }
+    fetchUserData();
+  }, [accessToken]);
+
+  console.log("UserData", UserData);
 
   return (
     <div className="nav">
+      <div>{UserData.userName}</div>
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
-      <button
-        className="test"
-        onClick={() => {
-          props.loginHandler(!props.IsLogin);
-        }}
-      >
-        로그인 상태 바꾸기
-      </button>
 
-      {isLogin ? (
+      {accessToken ? (
         <div className="nav-btn-group">
           <button className="btn-logout">
             <Link to="/login" onClick={props.loginHandler(false)}>
