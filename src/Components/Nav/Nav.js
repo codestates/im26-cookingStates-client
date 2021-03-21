@@ -2,32 +2,37 @@ import React, { useState, useEffect } from "react";
 import logo from "../../Images/logo-1.png";
 import "../../pages/CSS/Nav.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import API from "../../api";
+import { setUserInfo, userLogout } from "../../actions/user_action";
 
 function Nav(props) {
+  const dispatch = useDispatch();
   const accessToken = useSelector((state) => state.userReducer.accessToken);
-  const [UserData, setUserData] = useState({});
+  const userInfo = useSelector((state) => state.userReducer.userInfo);
 
   useEffect(() => {
     async function fetchUserData() {
-      const userData = await axios.get(API.USER_INFO + `${}/info`, {
+      const userData = await axios.get(API.USER_INFO, {
         withCredentials: true,
         headers: {
           authorization: "Bearer " + accessToken,
         },
       });
-      setUserData(userData);
+      dispatch(setUserInfo(userData));
     }
     fetchUserData();
   }, [accessToken]);
 
-  console.log("UserData", UserData);
-
   return (
     <div className="nav">
-      <div>{UserData.userName}</div>
+      {userInfo ? (
+        <div>안녕하세요 !! {userInfo.data.userName}님</div>
+      ) : (
+        <div>안녕하세요 !! 고객님</div>
+      )}
+
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
@@ -35,24 +40,24 @@ function Nav(props) {
       {accessToken ? (
         <div className="nav-btn-group">
           <button className="btn-logout">
-            <Link to="/login" onClick={props.loginHandler(false)}>
+            <Link
+              to="/login"
+              onClick={() => {
+                dispatch(userLogout());
+              }}
+            >
               로그아웃
             </Link>
           </button>
           <button className="btn-Mykitchen">
             <Link to="/mykitchen">my 부엌</Link>
           </button>
-          {/* <button className="btn-logout" onClick={props.loginHandler(false)}>
-            Log out
-          </button>
-          <button className="btn-mykitchen">my 부엌</button> */}
         </div>
       ) : (
         <div className="nav-btn-group">
           <button className="btn-login">
             <Link to="/login">Log in</Link>
           </button>
-          {/* <button className="btn-login">Log in</button> */}
           <button className="btn-signup">Sign up</button>
         </div>
       )}

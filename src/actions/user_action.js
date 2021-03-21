@@ -1,19 +1,27 @@
-import axios from 'axios';
-import API from '../api';
-
 // 액션 타입
-export const USER_LOGIN = 'USER_LOGIN';
-export const USER_LOGOUT = 'USER_LOGOUT';
-export const USER_REGISTER = 'USER_REGISTER';
-export const USER_INFO = 'USER_INFO';
-export const USER_UPDATE = 'USER_UPDATE';
-export const USER_UNREGISTER = 'USER_UNREGISTER';
+export const SET_ACCESS_TOKEN = "SET_ACCESS_TOKEN";
+export const USER_LOGOUT = "USER_LOGOUT";
+export const USER_REGISTER = "USER_REGISTER";
+export const SET_USER_INFO = "SET_USER_INFO";
+export const USER_UPDATE = "USER_UPDATE";
+export const USER_UNREGISTER = "USER_UNREGISTER";
 
-export function userLogin(body) {
-  const accessToken = axios.post(API.USER_LOGIN, body, { withCredentials: true }).then((res) => res.data);
-
+export function setAccessToken(accessToken) {
   return {
-    type: USER_LOGIN,
+    type: SET_ACCESS_TOKEN,
     payload: accessToken,
+  };
+}
+
+export function setUserInfo(userData) {
+  return {
+    type: SET_USER_INFO,
+    payload: userData,
+  };
+}
+
+export function userLogout() {
+  return {
+    type: USER_LOGOUT,
   };
 }
