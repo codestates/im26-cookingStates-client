@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import API from '../../api';
+import MedalList from './MedalList';
+import CompleteCourse from './CompleteCourse';
+import Profile from './Profile';
+import RecentMenu from './RecentMenu';
 
 function Kitchen(props) {
   const getUserInfo = (id) => {
@@ -17,7 +21,21 @@ function Kitchen(props) {
       });
   };
 
-  return <div></div>;
+  return (
+    <div className="kitchen">
+      <div className="kitchen-article">
+        <div className="kitchen-article-header">
+          <h1>My Kitchen</h1>
+        </div>
+        <div className="kitchen-article-contents">
+          <Profile />
+          <RecentMenu />
+          <MedalList />
+          <CompleteCourse />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Kitchen;
