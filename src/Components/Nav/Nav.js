@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../Images/logo-1.png";
 import "../../pages/CSS/Nav.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import API from "../../api";
@@ -46,7 +46,12 @@ function Nav(props) {
         </div>
       )}
 
-      <div className="logo">
+      <div
+        className="logo"
+        onClick={() => {
+          props.history.push("/");
+        }}
+      >
         <img src={logo} alt="logo" />
       </div>
 
@@ -56,6 +61,7 @@ function Nav(props) {
             <Link
               to="/login"
               onClick={() => {
+                setIsAdmin(false);
                 dispatch(userLogout());
               }}
             >
@@ -80,4 +86,4 @@ function Nav(props) {
   );
 }
 
-export default Nav;
+export default withRouter(Nav);
