@@ -15,6 +15,7 @@ function Survey(props) {
 
   return (
     <div className="survey-box">
+      <h1>🎉 회원가입을 축하합니다 🎉</h1>
       <div className="survey-title"> 쉐프님의 요리 레벨 테스트!</div>
       <div className="survey-group">
         <div className="question">
@@ -45,7 +46,8 @@ function Survey(props) {
           백종원 선생님의 레시피를 참고해서 직접 요리를 만들어본 적이 있다.
         </label>
       </div>
-
+      <br />
+      <br />
       <button
         onClick={() => {
           let location = {
@@ -60,7 +62,7 @@ function Survey(props) {
           props.history.push(location);
         }}
       >
-        가입 완료하기
+        레벨 테스트 완료
       </button>
     </div>
   );
