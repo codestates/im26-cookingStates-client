@@ -1,0 +1,278 @@
+.kitchen {
+  width: 100%;
+  height: 100vh;
+  background-color: #24997f;
+  color: #0a3175;
+  position: relative;
+}
+
+.kitchen-article {
+  width: 1000px;
+  height: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kitchen-article-header {
+  background-color: #ffeedf;
+  width: 920px;
+  height: 40px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kitchen-article-header h1 {
+  margin: 0;
+  width: 920px;
+  height: 40px;
+  font-family: 'Jua';
+  text-align: center;
+}
+
+.kitchen-article-contents {
+  width: 940px;
+  height: 500px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.recentmenu,
+.medalList,
+.profile,
+.completecourse {
+  width: 450px;
+  height: 230px;
+  margin: 10px;
+  background-color: #ffeedf;
+  position: relative;
+  display: flex;
+  color: #0a3175;
+  border-radius: 30px;
+}
+
+/* recentmenu */
+.recentmenu-info {
+  width: 400px;
+  height: 210px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recentmenu-info-header {
+  width: 400px;
+  height: 30px;
+  text-align: center;
+  position: absolute;
+}
+
+.recentmenu-info-header span {
+  font-family: 'Jua';
+  font-size: 25px;
+}
+
+.recentmenu-info-article {
+  width: 280px;
+  height: 130px;
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.recentmenu-info-article-session-img,
+.recentmenu-info-article-session-img img {
+  width: 150px;
+  height: 130px;
+}
+
+.recentmenu-info-article-session-content {
+  width: 130px;
+  height: 130px;
+  position: relative;
+}
+
+.recentmenu-info-article-session-content .recent-course {
+  font-size: 30px;
+  font-family: 'Jua';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-bg-bar {
+  width: 300px;
+  height: 30px;
+  display: inline-block;
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  background-color: rgba(128, 128, 128, 0.627);
+  border-radius: 10px;
+}
+.progress-bar {
+  height: 30px;
+  border-radius: 10px;
+  background-color: #f9dabecf;
+}
+
+/* Profile */
+.profile-contents {
+  width: 450px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.profile-header,
+.profile-header span {
+  width: 450px;
+  height: 30px;
+  font-size: 25px;
+  font-family: 'Jua';
+  text-align: center;
+}
+
+.profile-header {
+  position: absolute;
+  top: 5%;
+}
+
+.profile-article {
+  position: absolute;
+  width: 450px;
+  height: 150px;
+  top: 20%;
+  left: 0%;
+  display: flex;
+}
+
+.profile-logo {
+  width: 225px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-logo img {
+  width: 200px;
+  height: 100px;
+}
+
+.profile-article-content {
+  display: flex;
+  width: 225px;
+  height: 150px;
+  position: relative;
+}
+.profile-article-content span {
+  width: 205px;
+  height: 60px;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  font-size: 25px;
+  font-family: 'Jua';
+  text-align: center;
+}
+.profile-article-content button {
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  bottom: 10%;
+  right: 25%;
+  color: #0a3175;
+  font-size: 15px;
+  font-family: 'Jua';
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(110, 116, 134, 0.24);
+  border-radius: 8px;
+}
+
+.profile-article-content button:hover {
+  background-color: #0a3175;
+  color: white;
+}
+
+/* Medallist */
+
+.medalList {
+  flex-direction: column;
+  font-family: 'Jua';
+  align-items: center;
+}
+
+.medalList-title {
+  margin: 20px 0 20px 0;
+  font-size: 25px;
+  text-align: center;
+}
+
+.medalList-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.medalList-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-medal {
+  width: 64px;
+  color: #307dfb;
+  text-align: center;
+}
+
+/* CompleteCourse */
+
+.completecourse {
+  font-family: 'Jua';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.completecourse-title {
+  text-align: center;
+  margin: 20px 0 20px 0;
+  font-size: 25px;
+}
+
+.completecourse-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-between;
+  height: 50%;
+}
+.complete-course-entry {
+  display: flex;
+  flex-direction: row;
+}
+
+.complete-course-name {
+  font-size: 1.2rem;
+  flex: 3 1 0;
+}
+
+.complete-course-date {
+  font-size: 1rem;
+  position: absolute;
+  right: 10%;
+  line-height: 1.2rem;
+  flex: 1 1 0;
+}
