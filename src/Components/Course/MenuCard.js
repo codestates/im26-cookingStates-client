@@ -1,5 +1,5 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 function MenuCard(props) {
   console.log(props);
@@ -14,7 +14,7 @@ function MenuCard(props) {
       <div className="recipe-img">
         <img src={props.recipe.image.small} alt="" />
       </div>
-      <div>
+      <div className="recipe-content">
         <div className="recipe-title">{props.recipe.title}</div>
       </div>
     </div>
