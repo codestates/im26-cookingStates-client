@@ -1,12 +1,14 @@
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Kitchen from '../Components/Kitchen/Kitchen';
+import './CSS/mykitchen.css';
 function Mykitchen() {
   return (
     <>
-      <h1> mykitchen</h1>
-      <Link to="/myinfo">내 정보</Link>
+      <Kitchen />
     </>
   );
 }
 
-export default withRouter(Mykitchen);
+// export default withRouter(Mykitchen);
+export default Mykitchen;
