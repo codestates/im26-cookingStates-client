@@ -8,7 +8,9 @@ function Test() {
   // const state = useSelector((state) => state.recipeReducer);
   const [Recipes, setRecipes] = useState([]);
   const [Course, setCourse] = useState([]);
+  const [CourseInRecipe, setCourseInRecipe] = useState([]);
   const [EditCoures, setEditCoures] = useState(false);
+
   useEffect(() => {
     let recipe;
     let course;
@@ -26,7 +28,7 @@ function Test() {
       if (Array.isArray(course) && course.length > 0) {
         setCourse(course.data);
       } else {
-        course = await axios.get(API.COURSE_INFO);
+        course = await axios.get("http://localhost:4000/course");
         localStorage.setItem("Course", recipe);
         setCourse(course.data);
       }
@@ -49,7 +51,7 @@ function Test() {
       <label>레시피 관리</label>
       <section className="recipe-section">
         <div>
-          <h4>레시피 리스트</h4>
+          <h4>기본 레시피 리스트</h4>
           {Recipes.map((recipe) => {
             return <div key={recipe.id}>{recipe.title}</div>;
           })}
@@ -69,17 +71,68 @@ function Test() {
           </h4>
           {EditCoures && (
             <div className="course-add">
-              코스 이름 : <input type="text"></input>
-              <button>추가</button>
+              코스 이름 : <input id="course-input-name" type="text"></input>
+              코스 소개 : <input id="course-input-dsc" type="text"></input>
+              <button
+                onClick={() => {
+                  const courseName = document.querySelector(
+                    "#course-input-name"
+                  ).value;
+                  const courseDsc = document.querySelector("#course-input-dsc")
+                    .value;
+                  if (courseName && courseDsc) {
+                    document.querySelector("#course-input-name").value = "";
+                    document.querySelector("#course-input-dsc").value = "";
+                    axios
+                      .post("http://localhost:4000/course", {
+                        courseName: courseName,
+                        courseDiscription: courseDsc,
+                      })
+                      .then((res) => {
+                        axios
+                          .get("http://localhost:4000/course")
+                          .then((res) => {
+                            setCourse(res.data);
+                          });
+                        console.log("결과: ", res);
+                      });
+                  } else {
+                    alert("입력값을 모두 적어주세요!");
+                  }
+                }}
+              >
+                추가
+              </button>
             </div>
           )}
           {Course.map((course) => {
             return (
-              <div className="course-item" key={course.id}>
+              <div
+                className="course-item"
+                key={course.id}
+                onClick={async () => {
+                  const result = await axios.get(
+                    `http://localhost:4000/course/${course.id}`
+                  );
+                  setCourseInRecipe(result.data);
+                }}
+              >
                 {course.title}
               </div>
             );
           })}
+        </div>
+        <div>
+          <h4>코스 상세 데이터</h4>
+          {CourseInRecipe.length > 0 ? (
+            <div>
+              {CourseInRecipe.map((recipe) => {
+                return <div>{recipe.title}</div>;
+              })}
+            </div>
+          ) : (
+            <div>코스에 레시피가 없습니다 ㅠ</div>
+          )}
         </div>
       </section>
 
