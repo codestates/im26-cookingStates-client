@@ -53,17 +53,19 @@
   font-size: 3rem;
   color: #fec0a0;
   margin-top: 3%;
+  font-family: "Jua";
 }
 
 #menu-recipe-info {
   height: 400px;
   display: flex;
+  width: 1060px;
 }
 
 .chart {
   flex: 1 1 0;
   position: absolute;
-  right: 37%;
+  right: 40%;
   top: 6%;
 }
 
@@ -73,6 +75,8 @@
   position: absolute;
   top: 6%;
   right: 10%;
+  height: 300px;
+  width: 450px;
 }
 
 #menu-recipe-list {
@@ -103,7 +107,8 @@
   align-items: center;
   font-size: 1rem;
   font-family: "RIDIBatang";
-  width: 300px;
+  width: 400px;
+  height: max-content;
   border-radius: 5px;
   box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
   background-color: #ffffff;
