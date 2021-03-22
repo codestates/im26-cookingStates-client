@@ -60,7 +60,7 @@ function Survey(props) {
           props.history.push(location);
         }}
       >
-        가입 완료하기
+        레벨 테스트 완료
       </button>
     </div>
   );
