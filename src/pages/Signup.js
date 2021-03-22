@@ -120,16 +120,16 @@ function Signup(props) {
       <button
         className="email-vailidation-check"
         onClick={async () => {
-          const result = await axios.post(API.EMAIL_CHECK, {
-            email: Email,
-          });
-          if (result.data === "ok") {
+          try {
+            await axios.post(API.EMAIL_CHECK, {
+              email: Email,
+            });
             const btn = document.querySelector(".email-vailidation-check");
             btn.textContent = "인증완료";
             document
               .querySelector("#email-next-btn")
               .classList.remove("display-none");
-          } else {
+          } catch (error) {
             const btn = document.querySelector(".email-vailidation-check");
             btn.textContent = "이미 등록된 이메일 입니다!";
           }
