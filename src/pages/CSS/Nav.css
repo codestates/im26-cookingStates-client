@@ -89,3 +89,18 @@
   background: #ffffff;
   color: #146354;
 }
+
+.nav .user-info {
+  width: max-content;
+  padding-left: 3rem;
+  position: absolute;
+  font-size: 1.2rem;
+  font-family: "jua";
+  top: 40%;
+}
+
+.nav .test-page button {
+  position: absolute;
+  top: 35%;
+  margin-left: 20rem;
+}
