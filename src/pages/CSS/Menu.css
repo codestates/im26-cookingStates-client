@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "RIDIBatang";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
-    format("woff");
+  font-family: 'RIDIBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,7 +22,7 @@
   background-color: #fec0a0;
 }
 .menu-Nav-Title {
-  font-family: "Jua";
+  font-family: 'Jua';
   font-size: 2.5rem;
   color: #ffffff;
   background-color: #24997f;
@@ -36,7 +36,7 @@
 .menu-Nav-item {
   width: fit-content;
   margin: 10px;
-  font-family: "Jua";
+  font-family: 'Jua';
   font-size: 1.5rem;
   color: #393a73;
   background-color: #ffffff;
@@ -53,6 +53,7 @@
   font-size: 3rem;
   color: #fec0a0;
   margin-top: 3%;
+  font-family: 'Jua';
 }
 
 #menu-recipe-info {
@@ -73,13 +74,14 @@
   position: absolute;
   top: 6%;
   right: 10%;
+  height: max-content;
 }
 
 #menu-recipe-list {
   display: flex;
   flex-direction: column;
   top: 70%;
-  font-family: "RIDIBatang";
+  font-family: 'RIDIBatang';
   background-color: #fec0a0;
   margin: 20px;
   padding: 30px 20px 30px 20px;
@@ -97,12 +99,12 @@
   align-items: center;
   font-size: 2rem;
   color: #ffeedf;
-  font-family: "Jua";
+  font-family: 'Jua';
 }
 .menu-ingredient-desc {
   align-items: center;
   font-size: 1rem;
-  font-family: "RIDIBatang";
+  font-family: 'RIDIBatang';
   width: 300px;
   border-radius: 5px;
   box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
@@ -114,7 +116,7 @@
   color: #2e2f37;
 }
 
-img[alt="manualImg"] {
+img[alt='manualImg'] {
   height: 250px;
   align-self: center;
 }
@@ -136,7 +138,7 @@ img[alt="manualImg"] {
   right: 2%;
   bottom: 0.1%;
 }
-.complete-chk input[type="checkbox"] {
+.complete-chk input[type='checkbox'] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -147,16 +149,16 @@ img[alt="manualImg"] {
   border: 0;
 }
 
-.complete-chk input[type="checkbox"] + label {
+.complete-chk input[type='checkbox'] + label {
   display: inline-block;
   position: relative;
   cursor: pointer;
   padding-left: 30px;
 }
 
-.complete-chk input[type="checkbox"] + label:before {
+.complete-chk input[type='checkbox'] + label:before {
   /* 가짜 체크박스 */
-  content: " ";
+  content: ' ';
   display: inline-block;
   width: 21px; /* 체크박스의 너비를 지정 */
   height: 21px; /* 체크박스의 높이를 지정 */
@@ -171,15 +173,15 @@ img[alt="manualImg"] {
     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 }
 
-.complete-chk input[type="checkbox"] + label:active:before,
-.complete-chk input[type="checkbox"]:checked + label:active:before {
+.complete-chk input[type='checkbox'] + label:active:before,
+.complete-chk input[type='checkbox']:checked + label:active:before {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.complete-chk input[type="checkbox"]:checked + label:before {
+.complete-chk input[type='checkbox']:checked + label:before {
   /* 체크박스를 체크했을때 */
-  content: "\2714"; /* 체크표시 유니코드 사용 */
+  content: '\2714'; /* 체크표시 유니코드 사용 */
   color: #ffffff;
   text-shadow: 1px 1px #fff;
   background: #393a73;

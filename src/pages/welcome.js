@@ -1,12 +1,12 @@
-import "./CSS/welcome.css";
-import React from "react";
-import { withRouter } from "react-router-dom";
+import './CSS/welcome.css';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 function Welcome(props) {
   console.log(props.location.state.score);
 
   setTimeout(() => {
-    props.history.push("/login");
+    props.history.push('/login');
   }, 5000);
   return (
     <div className="welcome">
