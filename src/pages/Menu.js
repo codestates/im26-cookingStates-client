@@ -34,9 +34,12 @@ function Menu(props) {
               <Nutrition />
               <div id="menu-ingredient">
                 <div className="menu-ingredient-title">재료</div>
-                <div className="menu-ingredient-desc">
-                  <img src={recipe.image.small} alt="" />
-                </div>
+                <img
+                  src={recipe.image.small}
+                  className="menu-ingredient-img"
+                  alt=""
+                />
+                <div className="menu-ingredient-desc"></div>
                 <div className="menu-ingredient-desc">{recipe.ingredient}</div>
               </div>
             </div>
@@ -45,6 +48,10 @@ function Menu(props) {
               {recipe["manual"].map((step) => (
                 <RecipeComponent step={step} />
               ))}
+              <div class="complete-chk">
+                <input type="checkbox" id="complete-chk"></input>
+                <label for="complete-chk">요리 완성!</label>
+              </div>
             </div>
           </div>
         </div>

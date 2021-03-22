@@ -81,39 +81,42 @@
   top: 70%;
   font-family: "RIDIBatang";
   background-color: #fec0a0;
-  margin: 30px;
+  margin: 20px;
   padding: 30px 20px 30px 20px;
   border-radius: 10px;
   text-align: left;
 }
 
-.menu-ingredient-desc > img {
-  height: 150px;
-}
-
-img[alt="manualImg"] {
-  height: 250px;
-  align-self: center;
+.menu-ingredient-img {
+  height: 160px;
+  width: 160px;
+  margin-bottom: 15px;
 }
 
 .menu-ingredient-title {
   align-items: center;
-
   font-size: 2rem;
   color: #ffeedf;
   font-family: "Jua";
 }
 .menu-ingredient-desc {
   align-items: center;
-  margin-top: 10px;
   font-size: 1rem;
   font-family: "RIDIBatang";
   width: 300px;
+  border-radius: 5px;
+  box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
+  background-color: #ffffff;
 }
 .menu-recipe-list-title {
   font-size: 2rem;
   font-weight: 900;
   color: #2e2f37;
+}
+
+img[alt="manualImg"] {
+  height: 250px;
+  align-self: center;
 }
 
 .recipe-desc {
@@ -124,4 +127,57 @@ img[alt="manualImg"] {
 
 .recipe-img {
   margin: 15px;
+}
+
+.complete-chk input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.complete-chk input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.complete-chk input[type="checkbox"] + label:before {
+  /* 가짜 체크박스 */
+  content: " ";
+  display: inline-block;
+  width: 21px; /* 체크박스의 너비를 지정 */
+  height: 21px; /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #282a62;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
+
+.complete-chk input[type="checkbox"] + label:active:before,
+.complete-chk input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.complete-chk input[type="checkbox"]:checked + label:before {
+  /* 체크박스를 체크했을때 */
+  content: "\2714"; /* 체크표시 유니코드 사용 */
+  color: #ffffff;
+  text-shadow: 1px 1px #fff;
+  background: #393a73;
+  border-color: #adb8c0;
+
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
 }
