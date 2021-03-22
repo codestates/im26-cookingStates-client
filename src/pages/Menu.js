@@ -39,7 +39,6 @@ function Menu(props) {
                   className="menu-ingredient-img"
                   alt=""
                 />
-                <div className="menu-ingredient-desc"></div>
                 <div className="menu-ingredient-desc">{recipe.ingredient}</div>
               </div>
             </div>
