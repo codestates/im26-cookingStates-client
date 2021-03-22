@@ -7,8 +7,9 @@ function Nutrition(props) {
   return (
     <div className="chart">
       <Chart
-        width={'300px'}
-        height={'250px'}
+        width={"350px"}
+        height={"350px"}
+
         chartType="PieChart"
         loader={<div>Loading Chart</div>}
         data={[
