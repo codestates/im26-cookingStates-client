@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.menu-container {
+  top: 120px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  background-color: #24997f;
+}
+
+.menu-Nav {
+  width: 25%;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fec0a0;
+}
+.menu-Nav-Title {
+  font-family: "Jua";
+  font-size: 2.5rem;
+  color: #ffffff;
+  background-color: #24997f;
+  padding: 2px;
+  width: 80px;
+  border-radius: 5px;
+  box-shadow: 0.2em 0 0 #24997f, -0.2em 0 0 #24997f;
+  margin-bottom: 30px;
+}
+
+.menu-Nav-item {
+  width: fit-content;
+  margin: 10px;
+  font-family: "Jua";
+  font-size: 1.5rem;
+  color: #393a73;
+  background-color: #ffffff;
+  padding: 2px;
+  box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
+  border-radius: 5px;
+}
+
+.menu-body {
+  width: 75%;
+}
+
+.menu-body > .menu-title {
+  font-size: 3rem;
+  color: #fec0a0;
+  margin-top: 3%;
+}
+
+#menu-recipe-info {
+  height: 400px;
+  display: flex;
+}
+
+.chart {
+  flex: 1 1 0;
+  position: absolute;
+  right: 37%;
+  top: 6%;
+}
+
+#menu-ingredient {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 6%;
+  right: 10%;
+}
+
+#menu-recipe-list {
+  display: flex;
+  flex-direction: column;
+  top: 70%;
+  font-family: "RIDIBatang";
+  background-color: #fec0a0;
+  margin: 20px;
+  padding: 30px 20px 30px 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.menu-ingredient-img {
+  height: 160px;
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.menu-ingredient-title {
+  align-items: center;
+  font-size: 2rem;
+  color: #ffeedf;
+  font-family: "Jua";
+}
+.menu-ingredient-desc {
+  align-items: center;
+  font-size: 1rem;
+  font-family: "RIDIBatang";
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
+  background-color: #ffffff;
+}
+.menu-recipe-list-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #2e2f37;
+}
+
+img[alt="manualImg"] {
+  height: 250px;
+  align-self: center;
+}
+
+.recipe-desc {
+  margin: 10px;
+  font-size: 1rem;
+  color: #535867;
+}
+
+.recipe-img {
+  margin: 15px;
+}
+
+.complete-chk input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.complete-chk input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.complete-chk input[type="checkbox"] + label:before {
+  /* 가짜 체크박스 */
+  content: " ";
+  display: inline-block;
+  width: 21px; /* 체크박스의 너비를 지정 */
+  height: 21px; /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #282a62;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
+
+.complete-chk input[type="checkbox"] + label:active:before,
+.complete-chk input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.complete-chk input[type="checkbox"]:checked + label:before {
+  /* 체크박스를 체크했을때 */
+  content: "\2714"; /* 체크표시 유니코드 사용 */
+  color: #ffffff;
+  text-shadow: 1px 1px #fff;
+  background: #393a73;
+  border-color: #adb8c0;
+
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}

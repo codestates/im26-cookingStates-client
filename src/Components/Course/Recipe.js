@@ -1,16 +1,15 @@
 import React from "react";
-import recipeData from "../../recipe.json";
+import "../../pages/CSS/Menu.css";
 
 function Recipe(props) {
-  return (
-    <div>
-      <div>요리 순서</div>
-      <div>
-        {recipeData[0].manual[0]}
-        <img src={recipeData[0].manual[1]} alt="manualImg"></img>
-      </div>
-    </div>
-  );
+  for (let i = 0; i < props.step.length; i++) {
+    return (
+      <>
+        <div className="recipe-desc">{props.step[0]}</div>
+        <img src={props.step[1]} className="recipe-img" alt="manualImg"></img>
+      </>
+    );
+  }
 }
 
 export default Recipe;
