@@ -109,6 +109,7 @@
   border-radius: 5px;
   box-shadow: 0.2em 0 0 #ffffff, -0.2em 0 0 #ffffff;
   background-color: #ffffff;
+  padding: 2px 4px 2px 4px;
 }
 .menu-recipe-list-title {
   font-size: 2rem;
