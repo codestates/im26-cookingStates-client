@@ -13,10 +13,10 @@ import Nav from "./Components/Nav/Nav";
 import Menu from "./pages/Menu";
 import Welcome from "./pages/welcome";
 import Signup from "./pages/Signup";
-
+import Test from "./pages/Test";
 
 function App() {
-  const [AccessToken, setAccessToken] = useState("");
+  const [AccessToken, setAccessToken] = useState('');
   const [IsLogin, setIsLogin] = useState(false);
 
   const getAccessToken = (token) => {
@@ -69,6 +69,9 @@ function App() {
         </Route>
         <Route path="/signup">
           <Signup />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
       </Switch>
     </Router>

@@ -27,7 +27,8 @@ span.success {
 span.danger {
   color: #bc1c47;
 }
-input {
+
+.signupCard > input {
   margin: 25px 0px 25px 0px;
   text-align: center;
   outline-style: none;
@@ -131,4 +132,8 @@ textarea:focus {
   height: auto;
   font-family: "Jua";
   color: #ffffff;
+}
+
+.display-none {
+  display: none;
 }

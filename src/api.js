@@ -5,6 +5,7 @@ export default {
   USER_LOGOUT: `https://server.cookingstates.cf:${port}/user/logout`,
   USER_REGISTER: `https://server.cookingstates.cf:${port}/user/register`,
   USER_INFO: `https://server.cookingstates.cf:${port}/user/info`,
+  EMAIL_CHECK: `https://server.cookingstates.cf:${port}/user/checkemail`,
   USER_UPDATE: `https://server.cookingstates.cf:${port}/user/:id/update`,
   USER_UNREGISTER: `https://server.cookingstates.cf:${port}/user/:id/unregister`,
   COURSE_INFO: `https://server.cookingstates.cf:${port}/course`,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../Images/logo-1.png";
 import "../../pages/CSS/Nav.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import API from "../../api";
@@ -11,6 +11,7 @@ function Nav(props) {
   const dispatch = useDispatch();
   const accessToken = useSelector((state) => state.userReducer.accessToken);
   const userInfo = useSelector((state) => state.userReducer.userInfo);
+  const [IsAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     async function fetchUserData() {
@@ -20,6 +21,9 @@ function Nav(props) {
           authorization: "Bearer " + accessToken,
         },
       });
+      if (userData.data.type === "A") {
+        setIsAdmin(true);
+      }
       dispatch(setUserInfo(userData));
     }
     fetchUserData();
@@ -27,13 +31,27 @@ function Nav(props) {
 
   return (
     <div className="nav">
-      {userInfo ? (
-        <div>안녕하세요 !! {userInfo.data.userName}님</div>
-      ) : (
-        <div>안녕하세요 !! 고객님</div>
+      <div className="user-info">
+        {userInfo ? (
+          <div>안녕하세요 !! {userInfo.data.userName}님</div>
+        ) : (
+          <div>쿠킹 스테이츠에 오신걸 환영힙니다!!</div>
+        )}
+      </div>
+      {IsAdmin && (
+        <div className="test-page">
+          <Link to="/test">
+            <button>테스트 페이지로 이동하기</button>
+          </Link>
+        </div>
       )}
 
-      <div className="logo">
+      <div
+        className="logo"
+        onClick={() => {
+          props.history.push("/");
+        }}
+      >
         <img src={logo} alt="logo" />
       </div>
 
@@ -43,6 +61,7 @@ function Nav(props) {
             <Link
               to="/login"
               onClick={() => {
+                setIsAdmin(false);
                 dispatch(userLogout());
               }}
             >
@@ -67,4 +86,4 @@ function Nav(props) {
   );
 }
 
-export default Nav;
+export default withRouter(Nav);
