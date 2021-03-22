@@ -1,41 +1,41 @@
-import React from "react";
-import Chart from "react-google-charts";
-import recipeData from "../../recipe.json";
+import React from 'react';
+import Chart from 'react-google-charts';
+import recipeData from '../../recipe.json';
 console.log(recipeData[0].nutrient);
 
 function Nutrition(props) {
   return (
     <div className="chart">
       <Chart
-        width={"300px"}
-        height={"300px"}
+        width={'300px'}
+        height={'250px'}
         chartType="PieChart"
         loader={<div>Loading Chart</div>}
         data={[
-          ["Nutrients", "Gram"],
-          ["탄수화물", Number(recipeData[0].nutrient.car)],
-          ["단백질", Number(recipeData[0].nutrient.pro)],
-          ["지방", Number(recipeData[0].nutrient.fat)],
+          ['Nutrients', 'Gram'],
+          ['탄수화물', Number(recipeData[0].nutrient.car)],
+          ['단백질', Number(recipeData[0].nutrient.pro)],
+          ['지방', Number(recipeData[0].nutrient.fat)],
         ]}
         options={{
-          title: "요리 영양정보",
+          title: '요리 영양정보',
           titleTextStyle: {
-            color: "#FFEEDF",
+            color: '#FFEEDF',
             fontSize: 27,
-            fontName: "Jua",
+            fontName: 'Jua',
           },
           tooltipTextStyle: {
-            color: "#535867",
+            color: '#535867',
             fontSize: 15,
-            fontName: "Jua",
+            fontName: 'Jua',
           },
           legendTextStyle: {
-            color: "FFEEDF",
-            fontName: "Jua",
-            fontSize: 13,
+            color: 'FFEEDF',
+            fontName: 'Jua',
+            fontSize: 10,
           },
 
-          backgroundColor: "#24997F",
+          backgroundColor: '#24997F',
         }}
       />
     </div>
