@@ -10,8 +10,10 @@ import Unregister from "./pages/unregister";
 import Unregister_yes from "./pages/unregister_yes";
 import Login from "./Components/Login/Login";
 import Nav from "./Components/Nav/Nav";
+import Menu from "./pages/Menu";
 import Welcome from "./pages/welcome";
 import Signup from "./pages/Signup";
+
 
 function App() {
   const [AccessToken, setAccessToken] = useState("");
@@ -59,16 +61,14 @@ function App() {
         <Route path="/unregister_yes">
           <Unregister_yes />
         </Route>
+        <Route path="/menu">
+          <Menu />
+        </Route>
         <Route path="/welcome">
           <Welcome />
         </Route>
         <Route path="/signup">
           <Signup />
-        </Route>
-        {/* <Route path=""></Route>
-        <Route path=""></Route> */}
-        <Route path="/welcome">
-          <Welcome />
         </Route>
       </Switch>
     </Router>
