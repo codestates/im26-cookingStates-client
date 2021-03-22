@@ -16,4 +16,5 @@ export default {
   TOKEN_ACCESS: `https://server.cookingstates.cf:${port}/token/access`,
   TOKEN_REFRESH: `https://server.cookingstates.cf:${port}/token/refresh`,
   OAUTH_GOOGLE: `https://server.cookingstates.cf:${port}/oauth/google`,
+  OAUTH_KAKAO: `https://server.cookingstates.cf:${port}/oauth/kakao`,
 };
