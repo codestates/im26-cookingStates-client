@@ -129,6 +129,13 @@ img[alt="manualImg"] {
   margin: 15px;
 }
 
+.complete-chk {
+  width: 160px;
+  height: 80px;
+  position: absolute;
+  right: 2%;
+  bottom: 0.1%;
+}
 .complete-chk input[type="checkbox"] {
   position: absolute;
   width: 1px;
@@ -144,6 +151,7 @@ img[alt="manualImg"] {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  padding-left: 30px;
 }
 
 .complete-chk input[type="checkbox"] + label:before {
