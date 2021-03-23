@@ -3,11 +3,6 @@
   height: inherit;
   background-color: #24997f;
 }
-.myinfo-contents {
-  width: inherit;
-  height: inherit;
-  position: relative;
-}
 
 .myinfo-form {
   width: 500px;
@@ -31,7 +26,8 @@
   transform: translate(-50%, -50%);
 }
 
-.myinfo-form form {
+.myinfoform {
+  margin: 0px;
   width: 400px;
   height: 380px;
   position: absolute;
@@ -43,6 +39,7 @@
 .email,
 .pw,
 .pw-confirm {
+  margin: 0px;
   display: block;
   font-family: 'Jua';
   font-size: 20px;
@@ -50,7 +47,7 @@
   text-align: left;
 }
 
-.myinfo-form form label input {
+.myinfoform label input {
   padding: 0px;
   font-family: 'RIDIBatang';
   background-color: #fec0a0;
@@ -61,11 +58,12 @@
   outline: none;
 }
 
-.myinfo-form form label input:focus {
+.myinfoform label input:focus {
   border-bottom: 3px solid dodgerblue;
 }
 
 .bio {
+  margin: 0px;
   display: inline-block;
   position: absolute;
   bottom: 40%;
