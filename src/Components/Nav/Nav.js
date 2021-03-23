@@ -35,7 +35,7 @@ function Nav(props) {
         {userInfo ? (
           <div>안녕하세요 !! {userInfo.data.userName}님</div>
         ) : (
-          <div>쿠킹 스테이츠에 오신걸 환영힙니다!!</div>
+          <div>쿠킹 스테이츠에 오신걸 환영합니다!!</div>
         )}
       </div>
       {IsAdmin && (
