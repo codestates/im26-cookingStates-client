@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setAccessToken, setUserInfo } from "../../actions/user_action";
 import "../../pages/CSS/login.css";
@@ -41,6 +41,38 @@ function Login(props) {
       });
   };
 
+  const KAKAO_LOGIN_URL = `https://kauth.kakao.com/oauth/authorize?client_id=5e6428a09b610bb178e40e30eab58591&redirect_uri=http://localhost:3000/login&response_type=code`;
+
+  const socialLoginHandler = (event) => {
+    event.preventDefault();
+    window.open(KAKAO_LOGIN_URL, "간편 로그인");
+  };
+
+  // 3. 카카오에서 코드를 받음
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const authorizationCode = url.searchParams.get("code"); // 구글에서 받은 인증 코드
+    // 4. 코드를 받아서 액세스 토큰 요청
+    if (authorizationCode) {
+      getKakaoCode(authorizationCode);
+    }
+  }, []);
+
+  const getKakaoCode = (authorizationCode) => {
+    console.log("카카오에서 받은 코드 : ", authorizationCode);
+
+    axios
+      .post(
+        "http://localhost:4000/oauth/kakao", // 5. code, redirect url, client id & key 제공하면, 구글은 액세스 토큰 반환
+        {
+          authorizationCode: authorizationCode,
+        }
+      )
+      .then((response) => {
+        dispatch(setAccessToken(response.data.access_token));
+      });
+  };
+
   return (
     <div className="login">
       <div className="bgImgLogin">
@@ -66,9 +98,22 @@ function Login(props) {
               onChange={onPasswordHandler}
             ></input>
           </div>
-          <button className="login-btn" type="submit" onClick={onSubmitHandler}>
-            로그인
-          </button>
+          <div>
+            <button
+              className="login-btn"
+              type="submit"
+              onClick={onSubmitHandler}
+            >
+              로그인
+            </button>
+            <button
+              className="login-btn"
+              type="submit"
+              onClick={socialLoginHandler}
+            >
+              kakao 로그인
+            </button>
+          </div>
           <br />
           <br />
           <Link className="link-signup" to="/signup">
