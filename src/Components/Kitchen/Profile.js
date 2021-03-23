@@ -1,12 +1,15 @@
-import React from 'react';
-import Profilelogo from '../../Images/logo-1-yellow.png';
+import React from "react";
+import Profilelogo from "../../Images/logo-1-yellow.png";
+import { Link, withRouter } from "react-router-dom";
 
 function Profile(props) {
+  const { userName } = props.UserData;
+
   return (
     <div className="profile">
       <div className="profile-contents">
         <div className="profile-header">
-          <span>Chef님 프로필</span>
+          <span>{userName}님 프로필</span>
         </div>
         <div className="profile-article">
           <div className="profile-logo">
@@ -14,9 +17,19 @@ function Profile(props) {
           </div>
           <div className="profile-article-content">
             <span>
-              Chef님 <br /> 안녕하세요~!
+              {userName}님 <br /> 안녕하세요~!
             </span>
-            <button>프로필 수정</button>
+            <button
+              onClick={() => {
+                let location = {
+                  pathname: "/myinfo",
+                  state: { UserData: props.UserData },
+                };
+                props.history.push(location);
+              }}
+            >
+              프로필 수정
+            </button>
           </div>
         </div>
       </div>
@@ -24,4 +37,4 @@ function Profile(props) {
   );
 }
 
-export default Profile;
+export default withRouter(Profile);
