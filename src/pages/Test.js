@@ -12,8 +12,36 @@ function Test() {
   const [CourseInRecipe, setCourseInRecipe] = useState([]);
   const [EditCoures, setEditCoures] = useState(false);
   const [Render, setRender] = useState(false);
+  const [CurrentCourse, setCurrentCourse] = useState("");
   const accessToken = useSelector((state) => state.userReducer.accessToken);
 
+  const permission = async (e, user, type) => {
+    await axios({
+      url: "http://localhost:4000/user/permission",
+      method: "post",
+      withCredentials: true,
+      headers: {
+        authorization: "Bearer " + accessToken,
+      },
+      data: {
+        type: type,
+        email: user.email,
+      },
+    })
+      .then(async (res) => {
+        user = await axios.get("http://localhost:4000/user/all", {
+          // ! 수정하기
+          withCredentials: true,
+          headers: {
+            authorization: "Bearer " + accessToken,
+          },
+        });
+        setUsers(user.data.userInfo);
+      })
+      .catch((e) => {
+        console.log("errer");
+      });
+  };
   useEffect(() => {
     axios
       .get(API.USER_INFO, {
@@ -46,7 +74,7 @@ function Test() {
       if (Array.isArray(course) && course.length > 0) {
         setCourse(course.data);
       } else {
-        course = await axios.get("http://localhost:4000/course");
+        course = await axios.get("http://localhost:4000/course"); // ! 수정하기
         localStorage.setItem("Course", recipe);
         setCourse(course.data);
       }
@@ -56,6 +84,7 @@ function Test() {
         setUsers(user.data);
       } else {
         user = await axios.get("http://localhost:4000/user/all", {
+          // ! 수정하기
           withCredentials: true,
           headers: {
             authorization: "Bearer " + accessToken,
@@ -85,24 +114,27 @@ function Test() {
           <label>레시피 관리</label>
           <section className="recipe-section">
             <div>
-              <h4>기본 레시피 리스트</h4>
+              <h2>기본 레시피 리스트</h2>
               {Recipes.map((recipe) => {
                 return <div key={recipe.id}>{recipe.title}</div>;
               })}
+            </div>
+            <div>
+              <h2>커스텀 레시피 리스트</h2>
             </div>
           </section>
 
           <label>코스 관리</label>
           <section className="course-section">
             <div>
-              <h4>
+              <h2>
                 코스 리스트
                 {EditCoures ? (
                   <button onClick={editCourseHandler}>취소</button>
                 ) : (
                   <button onClick={editCourseHandler}>코스 추가하기</button>
                 )}
-              </h4>
+              </h2>
               {EditCoures && (
                 <div className="course-add">
                   코스 이름 : <input id="course-input-name" type="text"></input>
@@ -120,16 +152,16 @@ function Test() {
                         document.querySelector("#course-input-dsc").value = "";
                         axios
                           .post("http://localhost:4000/course", {
+                            // ! 수정하기
                             courseName: courseName,
                             courseDiscription: courseDsc,
                           })
                           .then((res) => {
                             axios
-                              .get("http://localhost:4000/course")
+                              .get("http://localhost:4000/course") // ! 수정하기
                               .then((res) => {
                                 setCourse(res.data);
                               });
-                            console.log("결과: ", res);
                           });
                       } else {
                         alert("입력값을 모두 적어주세요!");
@@ -147,9 +179,10 @@ function Test() {
                     key={course.id}
                     onClick={async () => {
                       const result = await axios.get(
-                        `http://localhost:4000/course/${course.id}`
+                        `http://localhost:4000/course/${course.id}` // ! 수정하기
                       );
                       setCourseInRecipe(result.data);
+                      setCurrentCourse(course.title);
                     }}
                   >
                     {course.title}
@@ -158,7 +191,8 @@ function Test() {
               })}
             </div>
             <div>
-              <h4>코스 상세 데이터</h4>
+              <h2>코스 상세 데이터 : {CurrentCourse}</h2>
+
               {CourseInRecipe.length > 0 ? (
                 <div>
                   {CourseInRecipe.map((recipe) => {
@@ -167,6 +201,15 @@ function Test() {
                 </div>
               ) : (
                 <div>코스에 레시피가 없습니다 ㅠ</div>
+              )}
+            </div>
+            <div>
+              {CurrentCourse && (
+                <h2>
+                  코스 수정하기
+                  <button>코스 레시피 추가하기</button>
+                  <button>코스 레시피 삭제하기</button>
+                </h2>
               )}
             </div>
           </section>
@@ -183,8 +226,23 @@ function Test() {
                         <div>user name : {user.userName}</div>
                         <div>email : {user.email}</div>
                         <div>bio : {user.bio}</div>
-                        {/* <div>{user.}</div>
-                    <div>{user.userName}</div> */}
+                        {user.type === "A" ? (
+                          <button
+                            onClick={(e) => {
+                              permission(e, user, "U");
+                            }}
+                          >
+                            관리자 권한 회수하기
+                          </button>
+                        ) : (
+                          <button
+                            onClick={(e) => {
+                              permission(e, user, "A");
+                            }}
+                          >
+                            관리자 권한 주기
+                          </button>
+                        )}
                       </div>
                     );
                   })}
