@@ -3,7 +3,6 @@ import "./CSS/test.css";
 import API from "../api";
 import axios from "axios";
 import { useSelector } from "react-redux";
-// import { useSelector } from "react-redux";
 
 function Test() {
   // const state = useSelector((state) => state.recipeReducer);
