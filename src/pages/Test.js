@@ -78,7 +78,7 @@ function Test() {
   };
 
   return (
-    <div>
+    <div className="test-page-wrapper">
       {Render ? (
         <div className="test-page">
           <h1>관리자 용 페이지 입니다</h1>
