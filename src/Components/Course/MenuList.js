@@ -3,11 +3,13 @@ import MenuCard from "./MenuCard";
 import "../../pages/CSS/content-coursetitle.css";
 import axios from "axios";
 import API from "../../api";
+import { withRouter } from "react-router-dom";
 
-function MenuList() {
+function MenuList(props) {
+  const courseId = props.location.pathname.split("/")[2];
+
   const [Recipes, setRecipes] = useState([]);
-  const [CourseId, setCourseId] = useState(1); // ! state로 하지 않고 props로 받아와야 함
-
+  const [CourseId, setCourseId] = useState(courseId);
   useEffect(() => {
     getRecipes(CourseId);
     //console.log(Recipes);
@@ -23,10 +25,10 @@ function MenuList() {
   return (
     <div className="menu-list">
       {Recipes.map((recipe) => (
-        <MenuCard recipe={recipe} key={recipe.id} />
+        <MenuCard recipe={recipe} key={recipe.id} courseId={CourseId} />
       ))}
     </div>
   );
 }
 
-export default MenuList;
+export default withRouter(MenuList);
