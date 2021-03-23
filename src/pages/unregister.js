@@ -1,8 +1,11 @@
-import React from 'react';
-import Logo from '../Images/logo-1.png';
-import './CSS/unregister.css';
+import React from "react";
+import Logo from "../Images/logo-1.png";
+import "./CSS/unregister.css";
+import { Link, withRouter } from "react-router-dom";
+import API from "../api";
+import axios from "axios";
 
-function Unregister() {
+function Unregister(props) {
   return (
     <>
       <div className="unregister">
@@ -23,8 +26,22 @@ function Unregister() {
               <span>쿠킹스테이츠 회원탈퇴에 동의합니다</span>
             </div>
             <div className="confirm-unregister-button">
-              <button className="btn-myKitchen">My Kitchen</button>
-              <button className="btn-delete-account">탈퇴하기</button>
+              <button
+                className="btn-myKitchen"
+                onClick={() => {
+                  props.history.goBack();
+                }}
+              >
+                돌아가기
+              </button>
+              <button
+                className="btn-delete-account"
+                onClick={() => {
+                  axios.post(API.USER_UNREGISTER, {});
+                }}
+              >
+                탈퇴하기
+              </button>
             </div>
           </div>
         </div>
@@ -33,4 +50,4 @@ function Unregister() {
   );
 }
 
-export default Unregister;
+export default withRouter(Unregister);
