@@ -5,6 +5,10 @@
   font-family: "jua";
 }
 
+.test-page label {
+  font-size: 2rem;
+}
+
 .test-page section {
   margin: 1.5rem;
   display: flex;
@@ -25,6 +29,7 @@ section.recipe-section {
 
 section.course-section .course-item {
   font-size: 1.5rem;
+  width: max-content;
 }
 
 section.course-section .course-add {
@@ -35,4 +40,18 @@ section.course-section .course-add {
 section.course-section .course-add input {
   width: 10rem;
   padding: 1rem;
+}
+
+section.user-section .user-list {
+  display: flex;
+  flex-direction: column;
+}
+
+section.user-section .user-item {
+  display: flex;
+  flex-direction: row;
+}
+
+section.user-section .user-item > * {
+  padding-left: 1rem;
 }

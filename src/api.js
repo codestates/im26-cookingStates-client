@@ -15,6 +15,7 @@ export default {
   RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
   TOKEN_ACCESS: `https://server.cookingstates.cf:${port}/token/access`,
   TOKEN_REFRESH: `https://server.cookingstates.cf:${port}/token/refresh`,
+  ADD_COURSE: `https://server.cookingstates.cf:${port}/course`,
   OAUTH_GOOGLE: `https://server.cookingstates.cf:${port}/oauth/google`,
   OAUTH_KAKAO: `https://server.cookingstates.cf:${port}/oauth/kakao`,
 };
