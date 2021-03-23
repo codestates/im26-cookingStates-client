@@ -1,9 +1,9 @@
 // 액션 타입
-export const GET_RECIPE_INFO = "GET_RECIPE_INFO";
+export const SET_RECIPE_INFO = "SET_RECIPE_INFO";
 
-export function getRecipeInfo(recipeInfo) {
+export function setRecipeInfo(recipeInfo) {
   return {
-    type: GET_RECIPE_INFO,
+    type: SET_RECIPE_INFO,
     payload: recipeInfo,
   };
 }

@@ -1,7 +1,5 @@
-import React from 'react';
-import Chart from 'react-google-charts';
-import recipeData from '../../recipe.json';
-console.log(recipeData[0].nutrient);
+import React from "react";
+import Chart from "react-google-charts";
 
 function Nutrition(props) {
   return (
@@ -9,7 +7,6 @@ function Nutrition(props) {
       <Chart
         width={"350px"}
         height={"350px"}
-
         chartType="PieChart"
         loader={<div>Loading Chart</div>}
         data={[
@@ -19,24 +16,24 @@ function Nutrition(props) {
           ["지방", Number(props.recipe.nutrient.fat)],
         ]}
         options={{
-          title: '요리 영양정보',
+          title: "요리 영양정보",
           titleTextStyle: {
-            color: '#FFEEDF',
+            color: "#FFEEDF",
             fontSize: 27,
-            fontName: 'Jua',
+            fontName: "Jua",
           },
           tooltipTextStyle: {
-            color: '#535867',
+            color: "#535867",
             fontSize: 15,
-            fontName: 'Jua',
+            fontName: "Jua",
           },
           legendTextStyle: {
-            color: 'FFEEDF',
-            fontName: 'Jua',
+            color: "FFEEDF",
+            fontName: "Jua",
             fontSize: 10,
           },
 
-          backgroundColor: '#24997F',
+          backgroundColor: "#24997F",
         }}
       />
     </div>
