@@ -1,9 +1,9 @@
 // 액션 타입
-export const GET_COURSE_INTO = "GET_COURSE_INTO";
+export const SET_COURSE_INFO = "SET_COURSE_INFO";
 
-export function getCourseInfo(courseInfo) {
+export function setCourseInfo(courseInfo) {
   return {
-    type: GET_COURSE_INTO,
+    type: SET_COURSE_INFO,
     payload: courseInfo,
   };
 }

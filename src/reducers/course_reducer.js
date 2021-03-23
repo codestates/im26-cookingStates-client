@@ -1,10 +1,10 @@
-import { GET_COURSE_INFO } from "../actions/course_action";
+import { SET_COURSE_INFO } from "../actions/course_action";
 
 export default function courseReducer(state = {}, action) {
-  // 새로운 state를 만들어 반환
+  // 코스 id, title,image, description 전달
 
   switch (action.type) {
-    case GET_COURSE_INFO:
+    case SET_COURSE_INFO:
       return { ...state, courseInfo: action.payload };
     default:
       return state;
