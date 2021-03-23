@@ -1,6 +1,6 @@
 import { GET_RECIPE_INFO } from "../actions/recipe_action";
 
-export default function recipe(state = {}, action) {
+export default function recipeReducer(state = {}, action) {
   // 새로운 state를 만들어 반환
 
   switch (action.type) {
