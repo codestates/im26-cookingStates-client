@@ -3,9 +3,14 @@ import CourseListItem from "./CourseListItem";
 import "../../pages/CSS/courseList.css";
 import axios from "axios";
 import API from "../../api";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function CourseList(props) {
   const [Courses, setCourses] = useState([]);
+  const userInfo = useSelector((state) => state.userReducer.userInfo);
+
+  console.log(userInfo);
 
   useEffect(() => {
     getCourses();
@@ -18,10 +23,20 @@ function CourseList(props) {
   };
 
   return (
-    <div className="course-list">
-      {Courses.map((course) => (
-        <CourseListItem course={course} key={course.id} />
-      ))}
+    <div>
+      <div className="course-list">
+        {Courses.map((course) => (
+          <CourseListItem course={course} key={course.id} />
+        ))}
+      </div>
+      {userInfo && userInfo.data.isPassed && (
+        <div>
+          <h1>커스텀 레시피</h1>
+          <Link to="/customRecipe">
+            <button>레시피 등록하기</button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

@@ -14,6 +14,7 @@ import Menu from "./pages/Menu";
 import Welcome from "./pages/welcome";
 import Signup from "./pages/Signup";
 import Test from "./pages/Test";
+import CustomRecipe from "./pages/CustomRecipe";
 
 function App() {
   const [AccessToken, setAccessToken] = useState("");
@@ -69,6 +70,9 @@ function App() {
         </Route>
         <Route path="/test">
           <Test />
+        </Route>
+        <Route path="/customRecipe">
+          <CustomRecipe />
         </Route>
       </Switch>
     </Router>
