@@ -6,8 +6,8 @@ export default {
   USER_REGISTER: `https://server.cookingstates.cf:${port}/user/register`,
   USER_INFO: `https://server.cookingstates.cf:${port}/user/info`,
   EMAIL_CHECK: `https://server.cookingstates.cf:${port}/user/checkemail`,
-  USER_UPDATE: `https://server.cookingstates.cf:${port}/user/:id/update`,
-  USER_UNREGISTER: `https://server.cookingstates.cf:${port}/user/:id/unregister`,
+  USER_UPDATE: `https://server.cookingstates.cf:${port}/user/update`,
+  USER_UNREGISTER: `https://server.cookingstates.cf:${port}/user/unregister`,
   COURSE_INFO: `https://server.cookingstates.cf:${port}/course`,
   COURSE_DETAIL: `https://server.cookingstates.cf:${port}/course`, // /:id
   RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe`,
