@@ -1,13 +1,13 @@
-import React from "react";
-import "./CSS/myinfo.css";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import './CSS/myinfo.css';
+import { withRouter } from 'react-router-dom';
 
 function myinfo(props) {
   return (
     <div className="myinfo">
       <div className="myinfo-form">
         <h1>My Info</h1>
-        <form>
+        <form className="myinfoform">
           <label className="username">
             Username :
             <input type="text" disabled />
