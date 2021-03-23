@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import logo from "../../Images/logo-1.png";
-import "../../pages/CSS/Nav.css";
-import { Link, withRouter } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-import API from "../../api";
-import { setUserInfo, userLogout } from "../../actions/user_action";
+import React, { useState, useEffect } from 'react';
+import logo from '../../Images/logo-1.png';
+import '../../pages/CSS/Nav.css';
+import { Link, withRouter } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+import API from '../../api';
+import { setUserInfo, userLogout } from '../../actions/user_action';
 
 function Nav(props) {
   const dispatch = useDispatch();
@@ -18,10 +18,10 @@ function Nav(props) {
       const userData = await axios.get(API.USER_INFO, {
         withCredentials: true,
         headers: {
-          authorization: "Bearer " + accessToken,
+          authorization: 'Bearer ' + accessToken,
         },
       });
-      if (userData.data.type === "A") {
+      if (userData.data.type === 'A') {
         setIsAdmin(true);
       }
       dispatch(setUserInfo(userData));
@@ -49,7 +49,7 @@ function Nav(props) {
       <div
         className="logo"
         onClick={() => {
-          props.history.push("/");
+          props.history.push('/');
         }}
       >
         <img src={logo} alt="logo" />
@@ -69,7 +69,7 @@ function Nav(props) {
             </Link>
           </button>
           <button className="btn-Mykitchen">
-            <Link to="/mykitchen">my 부엌</Link>
+            <Link to="/mykitchen">My Kitchen</Link>
           </button>
         </div>
       ) : (

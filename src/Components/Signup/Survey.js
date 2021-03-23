@@ -48,7 +48,7 @@ function Survey(props) {
       </div>
       <br />
       <br />
-      <button
+      <button className="survey-complete"
         onClick={() => {
           let location = {
             pathname: "/welcome",
