@@ -4,21 +4,23 @@ import "../../pages/CSS/content-coursetitle.css";
 import axios from "axios";
 import API from "../../api";
 import { withRouter } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setRecipeInfo } from "../../actions/recipe_action";
 
 function MenuList(props) {
   const courseId = props.location.pathname.split("/")[2];
+  const dispatch = useDispatch();
 
   const [Recipes, setRecipes] = useState([]);
   const [CourseId, setCourseId] = useState(courseId);
   useEffect(() => {
     getRecipes(CourseId);
-    //console.log(Recipes);
   }, []);
 
   const getRecipes = (courseId) => {
     axios.get(API.COURSE_INFO + `/${courseId}`).then((res) => {
-      //console.log(res.data);
       setRecipes(res.data);
+      dispatch(setRecipeInfo(res.data));
     });
   };
 
