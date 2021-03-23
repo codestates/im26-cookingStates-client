@@ -9,6 +9,8 @@ import MenuNav from "../Components/Course/MenuNav";
 
 function Menu(props) {
   const [Recipe, setRecipe] = useState([]);
+  console.log("^^^^^^", props.location.state.courseId);
+  const [RecipesInCourse, setRecipiesInCourse] = useState([]);
 
   // 액션 생성 함수에 들어가는 부분
   const getRecipe = async (recipeId) => {
@@ -17,21 +19,29 @@ function Menu(props) {
     });
   };
 
+  const getRecipesInCourse = (courseId) => {
+    axios.get(API.COURSE_DETAIL + `/${courseId}`).then((res) => {
+      setRecipiesInCourse(res.data);
+    });
+  };
+
   useEffect(() => {
     const SEQ = props.location.pathname.split("/")[2];
     getRecipe(SEQ);
+    getRecipesInCourse(props.location.state.courseId);
   }, []);
 
   if (Recipe.length > 0) {
     const recipe = Recipe[0];
+
     return (
       <>
         <div className="menu-container">
-          <MenuNav />
+          <MenuNav RecipesInCourse={RecipesInCourse} />
           <div className="menu-body">
             <div className="menu-title">{recipe.title}</div>
             <div id="menu-recipe-info">
-              <Nutrition />
+              <Nutrition recipe={recipe} />
               <div id="menu-ingredient">
                 <div className="menu-ingredient-title">재료</div>
                 <img

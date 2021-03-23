@@ -13,9 +13,9 @@ function Nutrition(props) {
         loader={<div>Loading Chart</div>}
         data={[
           ["Nutrients", "Gram"],
-          ["탄수화물", Number(recipeData[0].nutrient.car)],
-          ["단백질", Number(recipeData[0].nutrient.pro)],
-          ["지방", Number(recipeData[0].nutrient.fat)],
+          ["탄수화물", Number(props.recipe.nutrient.car)],
+          ["단백질", Number(props.recipe.nutrient.pro)],
+          ["지방", Number(props.recipe.nutrient.fat)],
         ]}
         options={{
           title: "요리 영양정보",

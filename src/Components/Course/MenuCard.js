@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { withRouter } from "react-router-dom";
 
@@ -9,6 +10,11 @@ function MenuCard(props) {
       className="menu-card"
       onClick={() => {
         props.history.push(`/recipe/${props.recipe.id}`);
+        let location = {
+          pathname: `/recipe/${props.recipe.id}`,
+          state: { courseId: props.courseId },
+        };
+        props.history.push(location);
       }}
     >
       <div className="recipe-img">
