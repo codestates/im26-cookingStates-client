@@ -5,13 +5,11 @@ import axios from "axios";
 import API from "../../api";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setCourseInfo } from "../../actions/course_action";
 
 function CourseList(props) {
   const userInfo = useSelector((state) => state.userReducer.userInfo);
   const [Courses, setCourses] = useState([]);
   // map을 하려면 전체 코스 정보(Courses) 가 있어야됨
-  const dispatch = useDispatch();
   const getCourses = () => {
     axios.get(API.COURSE_INFO).then((res) => {
       setCourses(res.data);
@@ -21,20 +19,11 @@ function CourseList(props) {
     getCourses();
   }, []);
 
-  /* 코스 */
-  const handleClick = (course) => {
-    dispatch(setCourseInfo(course));
-  };
-
   return (
     <div>
       <div className="course-list">
         {Courses.map((course) => (
-          <CourseListItem
-            course={course}
-            key={course.id}
-            handleClick={handleClick}
-          />
+          <CourseListItem course={course} key={course.id} />
         ))}
       </div>
       {userInfo && userInfo.data.isPassed && (

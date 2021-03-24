@@ -7,7 +7,6 @@ import API from "../../api";
 
 function MenuCard(props) {
   const dispatch = useDispatch();
-
   const getRecipe = async (recipeId) => {
     await axios.get(API.RECIPE_DETAIL + `/${recipeId}`).then((res) => {
       dispatch(setCurrentRecipe(res.data));
@@ -19,7 +18,6 @@ function MenuCard(props) {
       className="menu-card"
       onClick={() => {
         getRecipe(props.recipe.id);
-        props.history.push(`/recipe/${props.recipe.id}`);
         let location = {
           pathname: `/recipe/${props.recipe.id}`,
           state: { courseId: props.courseId },
