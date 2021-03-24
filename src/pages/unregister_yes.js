@@ -8,15 +8,14 @@ const START_SECOND = 5;
 function Unregister_yes(props) {
   const [count, setCount] = useState(START_SECOND);
 
-  useEffect(() => {
-    if (!count) {
-      props.history.push("/");
-    } else {
-      setInterval(() => {
-        setCount(count - 1);
-      }, 1000);
-    }
-  }, []);
+  if (count < 1) {
+    props.history.push("/");
+  }
+
+  setTimeout(() => {
+    setCount(count - 1);
+  }, 1000);
+
   return (
     <>
       <div className="unregister">

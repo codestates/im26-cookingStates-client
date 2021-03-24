@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import API from "../api";
-import axios from "axios";
+import React from "react";
 import Nutrition from "../Components/Course/Nutrition";
 import "./CSS/Menu.css";
 import { withRouter } from "react-router-dom";
 import RecipeComponent from "../Components/Course/Recipe";
 import MenuNav from "../Components/Course/MenuNav";
-import { useSelector, useDispatch } from "react-redux";
-import { setCurrentRecipe } from "../actions/recipe_action";
+import { useSelector } from "react-redux";
 
 function Menu(props) {
   const currentRecipe = useSelector(
@@ -40,7 +37,7 @@ function Menu(props) {
               {currentRecipe[0]["manual"].map((step) => (
                 <RecipeComponent step={step} />
               ))}
-              <div class="complete-chk">
+              <div className="complete-chk">
                 <input type="checkbox" id="complete-chk"></input>
                 <label for="complete-chk">요리 완성!</label>
               </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setAccessToken, setUserInfo } from "../../actions/user_action";
+import { setAccessToken } from "../../actions/user_action";
 import "../../pages/CSS/login.css";
 import bgImgLogin from "../../Images/login-bg-img.png";
 import logoImgYellow from "../../Images/logo-1-yellow.png";
@@ -29,16 +29,20 @@ function Login(props) {
       password: Password,
     };
 
-    axios
-      .post(API.USER_LOGIN, body, { withCredentials: true })
-      .then((res) => {
-        dispatch(setAccessToken(res.data.accessToken));
-        props.history.push("/");
-      })
-      .catch((e) => {
-        // console.log("error : ", e);
-        alert("아이디와 비밀번호를 확인해주세요");
-      });
+    if (Email && Password) {
+      axios
+        .post(API.USER_LOGIN, body, { withCredentials: true })
+        .then((res) => {
+          dispatch(setAccessToken(res.data.accessToken));
+          props.history.push("/");
+        })
+        .catch((e) => {
+          // console.log("error : ", e);
+          alert("아이디와 비밀번호를 확인해주세요");
+        });
+    } else {
+      alert("아이디, 비밀번호를 모두 입력해주세요!!");
+    }
   };
 
   const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;

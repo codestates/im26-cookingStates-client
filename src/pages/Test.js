@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 function Test() {
   // const state = useSelector((state) => state.recipeReducer);
   const [Recipes, setRecipes] = useState([]);
+  const [CustomRecipes, setCustomRecipes] = useState([]);
   const [Course, setCourse] = useState([]);
   const [Users, setUsers] = useState([]);
   const [CourseInRecipe, setCourseInRecipe] = useState([]);
@@ -17,7 +18,7 @@ function Test() {
 
   const permission = async (e, user, type) => {
     await axios({
-      url: "http://localhost:4000/user/permission",
+      url: API.PERMISSION,
       method: "post",
       withCredentials: true,
       headers: {
@@ -29,7 +30,7 @@ function Test() {
       },
     })
       .then(async (res) => {
-        user = await axios.get("http://localhost:4000/user/all", {
+        user = await axios.get(API.ALL_USER, {
           // ! 수정하기
           withCredentials: true,
           headers: {
@@ -60,6 +61,14 @@ function Test() {
     let recipe;
     let course;
     let user;
+    // let customRecipe;  // ? 데이터 많아지면 localstroage 사용하기
+    axios
+      .get(API.CUSTOM_RECIPE_INFO)
+      .then((res) => {
+        setCustomRecipes(res.data);
+      })
+      .catch((e) => console.log(e));
+
     const run = async () => {
       recipe = localStorage.getItem("Recipe");
       if (Array.isArray(recipe) && recipe.length > 0) {
@@ -83,7 +92,7 @@ function Test() {
       if (Array.isArray(user) && user.length > 0) {
         setUsers(user.data);
       } else {
-        user = await axios.get("http://localhost:4000/user/all", {
+        user = await axios.get(API.ALL_USER, {
           // ! 수정하기
           withCredentials: true,
           headers: {
@@ -121,6 +130,13 @@ function Test() {
             </div>
             <div>
               <h2>커스텀 레시피 리스트</h2>
+              {CustomRecipes.map((recipe) => {
+                return (
+                  <div>
+                    <div>{recipe.title}</div>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
