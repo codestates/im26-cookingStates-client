@@ -34,12 +34,12 @@ function Menu(props) {
             </div>
             <div id="menu-recipe-list">
               <span className="menu-recipe-list-title">요리 순서</span>
-              {currentRecipe[0]['manual'].map((step) => (
-                <RecipeComponent step={step} />
+              {currentRecipe[0]["manual"].map((step, idx) => (
+                <RecipeComponent key={idx} step={step} />
               ))}
               <div className="complete-chk">
                 <input type="checkbox" id="complete-chk"></input>
-                <label for="complete-chk">요리 완성!</label>
+                <label htmlFor="complete-chk">요리 완성!</label>
               </div>
             </div>
           </div>

@@ -36,9 +36,9 @@ function CourseList(props) {
           <Link to="/customRecipe">
             <button>레시피 등록하기</button>
           </Link>
-          {CustomRecipes.map((recipe) => {
+          {CustomRecipes.map((recipe, idx) => {
             return (
-              <div>
+              <div key={idx}>
                 <div>제목 : {recipe.title}</div>
                 <div>제작자 : {recipe.author}</div>
                 <div>난이도 : {recipe.difficulty}</div>

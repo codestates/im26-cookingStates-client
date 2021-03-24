@@ -1,26 +1,27 @@
 import React from "react";
 import "./CSS/unregister.css";
 import { Link, withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import API from "../api";
 import axios from "axios";
+import { userLogout } from "../actions/user_action";
 
 function Unregister(props) {
+  const dispatch = useDispatch();
   const accessToken = useSelector((state) => state.userReducer.accessToken);
   const userInfo = useSelector((state) => state.userReducer.userInfo);
 
   const onClickHandler = () => {
-    axios
-      .post(
-        API.USER_UNREGISTER,
-        { email: userInfo.data.email },
-        {
-          withCredentials: true,
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+    axios.post(
+      API.USER_UNREGISTER,
+      { email: userInfo.data.email },
+      {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
   };
 
   return (
@@ -55,6 +56,7 @@ function Unregister(props) {
                 className="btn-delete-account"
                 onClick={() => {
                   onClickHandler();
+                  dispatch(userLogout());
                   let location = {
                     pathname: "/unregister_yes",
                   };

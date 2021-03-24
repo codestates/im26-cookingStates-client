@@ -47,8 +47,8 @@ function Login(props) {
     }
   };
 
-  const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
-  const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+  const KAKAO_CLIENT_ID = "5e6428a09b610bb178e40e30eab58591";
+  const KAKAO_REDIRECT_URI = "https://cookingstates.cf/login";
   const KAKAO_LOGIN_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
 
   const socialLoginHandler = (event) => {
