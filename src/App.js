@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './pages/main';
-import CourseTitle from './pages/contents-coursetitle';
-import Menutitle from './pages/contents-menutitle';
-import Myinfo from './pages/myinfo';
-import Mykitchen from './pages/mykitchen';
-import Unregister from './pages/unregister';
-import UnregisterYes from './pages/unregister_yes';
-import Login from './Components/Login/Login';
-import Nav from './Components/Nav/Nav';
-import Welcome from './pages/welcome';
-import Signup from './pages/Signup';
-import Test from './pages/Test';
+import React, { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Main from "./pages/main";
+import CourseTitle from "./pages/contents-coursetitle";
+import Menutitle from "./pages/contents-menutitle";
+import Myinfo from "./pages/myinfo";
+import Mykitchen from "./pages/mykitchen";
+import Unregister from "./pages/unregister";
+import UnregisterYes from "./pages/unregister_yes";
+import Login from "./Components/Login/Login";
+import Nav from "./Components/Nav/Nav";
+import Menu from "./pages/Menu";
+import Welcome from "./pages/welcome";
+import Signup from "./pages/Signup";
+import Test from "./pages/Test";
+import CustomRecipe from "./pages/CustomRecipe";
 
 function App() {
-  const [AccessToken, setAccessToken] = useState('');
+  const [AccessToken, setAccessToken] = useState("");
   const [IsLogin, setIsLogin] = useState(false);
 
   const getAccessToken = (token) => {
@@ -68,6 +70,9 @@ function App() {
         </Route>
         <Route path="/test">
           <Test />
+        </Route>
+        <Route path="/customRecipe">
+          <CustomRecipe />
         </Route>
       </Switch>
     </Router>

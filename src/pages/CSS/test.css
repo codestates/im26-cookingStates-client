@@ -1,8 +1,14 @@
 .test-page {
+  font-family: "jua";
+  height: 100%;
+}
+
+.test-page-wrapper {
   padding-left: 1rem;
   height: 100%;
   overflow: scroll;
-  font-family: "jua";
+  background-color: #24997f;
+  margin-bottom: 1rem;
 }
 
 .test-page label {
@@ -23,7 +29,7 @@
   padding: 1rem;
 }
 
-section.recipe-section {
+section.recipe-section div {
   overflow: scroll;
 }
 
@@ -53,5 +59,10 @@ section.user-section .user-item {
 }
 
 section.user-section .user-item > * {
+  padding-left: 1rem;
+}
+
+section.user-section button {
+  width: max-content;
   padding-left: 1rem;
 }

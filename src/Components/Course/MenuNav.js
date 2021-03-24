@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentRecipe } from "../../actions/recipe_action";
+import axios from "axios";
+import API from "../../api";
 
 function MenuNav(props) {
   const courseInfo = useSelector((state) => state.courseReducer.courseInfo);
@@ -9,8 +11,10 @@ function MenuNav(props) {
 
   const dispatch = useDispatch();
 
-  const handleClick = (recipe) => {
-    dispatch(setCurrentRecipe(recipe));
+  const handleClick = async (recipeId) => {
+    await axios.get(API.RECIPE_DETAIL + `/${recipeId}`).then((res) => {
+      dispatch(setCurrentRecipe(res.data));
+    });
   };
 
   return (
@@ -29,7 +33,7 @@ function MenuNav(props) {
                       state: { courseId: props.courseId },
                     };
                     props.history.push(location);
-                    handleClick(props.Recipe);
+                    handleClick(recipe.id);
                   }}
                 >
                   {recipe.title}
