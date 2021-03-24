@@ -7,6 +7,7 @@ import Survey from "../Components/Signup/Survey";
 import "./CSS/signup.css";
 
 const PASSWORD_RE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
+// eslint-disable-next-line no-useless-escape
 const EMAIL_RE = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi;
 
 function Signup(props) {

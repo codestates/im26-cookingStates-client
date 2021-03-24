@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../../Images/logo-1.png';
-import '../../pages/CSS/Nav.css';
-import { Link, withRouter } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
-import API from '../../api';
-import { setUserInfo, userLogout } from '../../actions/user_action';
+import React, { useState, useEffect } from "react";
+import logo from "../../Images/logo-1.png";
+import "../../pages/CSS/Nav.css";
+import { Link, withRouter } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import API from "../../api";
+import { setUserInfo, userLogout } from "../../actions/user_action";
 
 function Nav(props) {
   const dispatch = useDispatch();
@@ -14,19 +14,21 @@ function Nav(props) {
   const [IsAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    async function fetchUserData() {
-      const userData = await axios.get(API.USER_INFO, {
-        withCredentials: true,
-        headers: {
-          authorization: 'Bearer ' + accessToken,
-        },
-      });
-      if (userData.data.type === 'A') {
-        setIsAdmin(true);
+    if (props.location.pathname !== "/login" || accessToken) {
+      async function fetchUserData() {
+        const userData = await axios.get(API.USER_INFO, {
+          withCredentials: true,
+          headers: {
+            authorization: "Bearer " + accessToken,
+          },
+        });
+        if (userData.data.type === "A") {
+          setIsAdmin(true);
+        }
+        dispatch(setUserInfo(userData));
       }
-      dispatch(setUserInfo(userData));
+      fetchUserData();
     }
-    fetchUserData();
   }, [accessToken]);
 
   return (
@@ -49,7 +51,7 @@ function Nav(props) {
       <div
         className="logo"
         onClick={() => {
-          props.history.push('/');
+          props.history.push("/");
         }}
       >
         <img src={logo} alt="logo" />

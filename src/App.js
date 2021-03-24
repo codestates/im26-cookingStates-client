@@ -17,17 +17,10 @@ import Survey from "./Components/Signup/Survey";
 import CustomRecipe from "./pages/CustomRecipe";
 
 function App() {
-  const [AccessToken, setAccessToken] = useState("");
   const [IsLogin, setIsLogin] = useState(false);
-
-  const getAccessToken = (token) => {
-    setAccessToken(token);
-    // console.log(AccessToken);
-  };
 
   const loginHandler = (boolean) => {
     setIsLogin(boolean);
-    // console.log(IsLogin);
   };
 
   return (
@@ -44,11 +37,7 @@ function App() {
           <Menutitle />
         </Route>
         <Route path="/login">
-          <Login
-            getAccessToken={getAccessToken}
-            IsLogin={IsLogin}
-            loginHandler={loginHandler}
-          />
+          <Login IsLogin={IsLogin} loginHandler={loginHandler} />
         </Route>
         <Route path="/myinfo">
           <Myinfo />
