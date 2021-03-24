@@ -9,12 +9,15 @@ export default {
   USER_UPDATE: `https://server.cookingstates.cf:${port}/user/update`,
   USER_UNREGISTER: `https://server.cookingstates.cf:${port}/user/unregister`,
   PERMISSION: `https://server.cookingstates.cf:${port}/user/permission`,
+  ALL_USER: `https://server.cookingstates.cf:${port}/user/all`,
 
   COURSE_INFO: `https://server.cookingstates.cf:${port}/course`,
   COURSE_DETAIL: `https://server.cookingstates.cf:${port}/course`, // /:id
   ADD_COURSE: `https://server.cookingstates.cf:${port}/course`,
 
   RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe`,
+  CUSTOM_RECIPE_INFO: `http://server.cookingstates.cf:${port}/recipe/custom/list`,
+  CUSTOM_RECIPE_UPLOAD: `http://server.cookingstates.cf:${port}/recipe/upload`,
   RECIPE_DETAIL: `https://server.cookingstates.cf:${port}/recipe`, // /:id
   RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
 
