@@ -37,7 +37,7 @@ function Menu(props) {
               {currentRecipe[0]["manual"].map((step) => (
                 <RecipeComponent step={step} />
               ))}
-              <div class="complete-chk">
+              <div className="complete-chk">
                 <input type="checkbox" id="complete-chk"></input>
                 <label for="complete-chk">요리 완성!</label>
               </div>
