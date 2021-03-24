@@ -1,6 +1,6 @@
-import './CSS/welcome.css';
-import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import "./CSS/welcome.css";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 
 const START_SECOND = 5;
 
@@ -9,13 +9,13 @@ function Welcome(props) {
 
   useEffect(() => {
     if (!count) {
-      props.history.push('/login');
+      props.history.push("/login");
     } else {
       setInterval(() => {
         setCount(count - 1);
       }, 1000);
     }
-  });
+  }, []);
   return (
     <div className="welcome">
       <div className="container">
