@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import API from '../api';
+import React, { useState } from "react";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
+import API from "../api";
 // import SignUpCard from "../Components/Signup/SignUpCard";
-import Survey from '../Components/Signup/Survey';
-import './CSS/signup.css';
+import Survey from "../Components/Signup/Survey";
+import "./CSS/signup.css";
 
 const PASSWORD_RE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
 const EMAIL_RE = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi;
 
 function Signup(props) {
-  const [Email, setEmail] = useState('');
-  const [UserName, setUserName] = useState('');
-  const [Password, setPassword] = useState('');
-  const [Bio, setBio] = useState('');
+  const [Email, setEmail] = useState("");
+  const [UserName, setUserName] = useState("");
+  const [Password, setPassword] = useState("");
+  const [Bio, setBio] = useState("");
   const [Index, setIndex] = useState(0);
 
   const onNameHandler = (event) => {
@@ -21,61 +21,43 @@ function Signup(props) {
   };
 
   const onEmailHandler = (event) => {
-    const regex = new RegExp(EMAIL_RE, 'i');
-    const btn = document.querySelector('.email-vailidation-check');
-    document.querySelector('#email-next-btn').classList.add('display-none');
-    btn.textContent = '이메일 중복 검사';
+    const regex = new RegExp(EMAIL_RE, "i");
+    const btn = document.querySelector(".email-vailidation-check");
+    document.querySelector("#email-next-btn").classList.add("display-none");
+    btn.textContent = "이메일 중복 검사";
     if (regex.test(event.currentTarget.value)) {
       setEmail(event.currentTarget.value);
-      document.querySelector('#emailInputForm').classList.remove('danger');
-      document.querySelector('#emailInputForm').classList.add('success');
+      document.querySelector("#emailInputForm").classList.remove("danger");
+      document.querySelector("#emailInputForm").classList.add("success");
     } else {
       setEmail(event.currentTarget.value);
-      document.querySelector('#emailInputForm').classList.add('danger');
-      document.querySelector('#emailInputForm').classList.remove('success');
+      document.querySelector("#emailInputForm").classList.add("danger");
+      document.querySelector("#emailInputForm").classList.remove("success");
     }
   };
 
   const onPasswordHandler = (event) => {
-    const regex = new RegExp(PASSWORD_RE, 'i');
-    const password = document.querySelector('.input-password');
+    const regex = new RegExp(PASSWORD_RE, "i");
+    const password = document.querySelector(".input-password");
     if (regex.test(event.currentTarget.value)) {
       setPassword(event.currentTarget.value);
-      password.classList.remove('danger');
-      password.classList.add('success');
+      password.classList.remove("danger");
+      password.classList.add("success");
       document
-        .querySelector('#password-next-btn')
-        .classList.remove('display-none');
+        .querySelector("#password-next-btn")
+        .classList.remove("display-none");
     } else {
       setPassword(event.currentTarget.value);
-      password.classList.add('danger');
-      password.classList.remove('success');
+      password.classList.add("danger");
+      password.classList.remove("success");
       document
-        .querySelector('#password-next-btn')
-        .classList.add('display-none');
+        .querySelector("#password-next-btn")
+        .classList.add("display-none");
     }
   };
 
   const onBioHandler = (event) => {
     setBio(event.currentTarget.value);
-  };
-
-  // submit button 클릭시
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    let body = {
-      email: Email,
-      password: Password,
-      userName: UserName,
-      bio: Bio,
-    };
-
-    // 액션 생성 함수에 들어가는 부분
-    // ! dispatch로 수정해야 함
-    axios.post(API.USER_REGISTER, body).then((res) => {
-      //! redux 적용시 코드 추가
-      props.history.push('/login');
-    });
   };
 
   const nameCard = (
@@ -92,12 +74,12 @@ function Signup(props) {
         <button
           className="btn-first"
           onClick={() => {
-            if (document.querySelector('.input-username').value) {
+            if (document.querySelector(".input-username").value) {
               setIndex(Index + 1);
             } else {
               document
-                .querySelector('.valid-chk')
-                .classList.remove('display-none');
+                .querySelector(".valid-chk")
+                .classList.remove("display-none");
             }
           }}
         >
@@ -123,22 +105,22 @@ function Signup(props) {
       <button
         className="email-vailidation-check"
         onClick={async () => {
-          if (!document.querySelector('.input-email').value) {
-            document.querySelector('.email-vailidation-check').textContent =
-              '이메일 입력후 다시 클릭해주세요';
+          if (!document.querySelector(".input-email").value) {
+            document.querySelector(".email-vailidation-check").textContent =
+              "이메일 입력후 다시 클릭해주세요";
           } else {
             try {
               await axios.post(API.EMAIL_CHECK, {
                 email: Email,
               });
-              const btn = document.querySelector('.email-vailidation-check');
-              btn.textContent = '인증완료';
+              const btn = document.querySelector(".email-vailidation-check");
+              btn.textContent = "인증완료";
               document
-                .querySelector('#email-next-btn')
-                .classList.remove('display-none');
+                .querySelector("#email-next-btn")
+                .classList.remove("display-none");
             } catch (error) {
-              const btn = document.querySelector('.email-vailidation-check');
-              btn.textContent = '이미 등록된 이메일 입니다!';
+              const btn = document.querySelector(".email-vailidation-check");
+              btn.textContent = "이미 등록된 이메일 입니다!";
             }
           }
         }}
