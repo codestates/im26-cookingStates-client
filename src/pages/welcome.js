@@ -1,5 +1,5 @@
 import "./CSS/welcome.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const START_SECOND = 5;
@@ -7,15 +7,14 @@ const START_SECOND = 5;
 function Welcome(props) {
   const [count, setCount] = useState(START_SECOND);
 
-  useEffect(() => {
-    if (!count) {
-      props.history.push("/login");
-    } else {
-      setInterval(() => {
-        setCount(count - 1);
-      }, 1000);
-    }
-  }, []);
+  if (count < 1) {
+    props.history.push("/");
+  }
+
+  setTimeout(() => {
+    setCount(count - 1);
+  }, 1000);
+
   return (
     <div className="welcome">
       <div className="container">
@@ -26,11 +25,12 @@ function Welcome(props) {
           </div>
         </div>
         <div className="welcome-contents">
-          {/* username === 로그인한 유저이름 */}
           <div className="welcome-contents-level1">
             <span className="welcome-username">
               쉐프님의 요리 레벨은
-              {/* <span className="level1">{props.location.state.score}</span> */}
+              <span className="level1">
+                {props.location.state ? props.location.state.score : "0"}
+              </span>
               입니다.
             </span>
           </div>
