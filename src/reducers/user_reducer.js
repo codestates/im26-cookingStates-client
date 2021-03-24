@@ -21,7 +21,6 @@ export default function user(state = {}, action) {
       return { ...state, userInfo: action.payload };
 
     case USER_UPDATE:
-      
       return { ...state, update: action.payload };
 
     case USER_REGISTER:
