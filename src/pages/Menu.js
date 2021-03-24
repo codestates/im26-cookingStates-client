@@ -1,10 +1,10 @@
-import React from "react";
-import Nutrition from "../Components/Course/Nutrition";
-import "./CSS/Menu.css";
-import { withRouter } from "react-router-dom";
-import RecipeComponent from "../Components/Course/Recipe";
-import MenuNav from "../Components/Course/MenuNav";
-import { useSelector } from "react-redux";
+import React from 'react';
+import Nutrition from '../Components/Course/Nutrition';
+import './CSS/Menu.css';
+import { withRouter } from 'react-router-dom';
+import RecipeComponent from '../Components/Course/Recipe';
+import MenuNav from '../Components/Course/MenuNav';
+import { useSelector } from 'react-redux';
 
 function Menu(props) {
   const currentRecipe = useSelector(
@@ -34,7 +34,7 @@ function Menu(props) {
             </div>
             <div id="menu-recipe-list">
               <span className="menu-recipe-list-title">요리 순서</span>
-              {currentRecipe[0]["manual"].map((step) => (
+              {currentRecipe[0]['manual'].map((step) => (
                 <RecipeComponent step={step} />
               ))}
               <div className="complete-chk">
