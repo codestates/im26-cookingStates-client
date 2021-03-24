@@ -1,0 +1,17 @@
+.custom-recipe-page {
+  margin: 1rem;
+  font-family: "jua";
+}
+
+.custom-recipe-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-recipe-page .photoFrame {
+  width: 500px;
+  height: 500px;
+}
+.custom-recipe-page .photoFrame:hover {
+  cursor: pointer;
+}

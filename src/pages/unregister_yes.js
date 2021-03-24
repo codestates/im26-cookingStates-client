@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './CSS/unregister.css';
-import Bye from '../Images/goodbye.png';
-import { withRouter } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./CSS/unregister.css";
+import Bye from "../Images/goodbye.png";
+import { withRouter } from "react-router-dom";
 
 const START_SECOND = 5;
 
@@ -10,13 +10,13 @@ function Unregister_yes(props) {
 
   useEffect(() => {
     if (!count) {
-      props.history.push('/');
+      props.history.push("/");
     } else {
       setInterval(() => {
         setCount(count - 1);
       }, 1000);
     }
-  });
+  }, []);
   return (
     <>
       <div className="unregister">
