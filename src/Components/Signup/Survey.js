@@ -20,16 +20,18 @@ function Survey(props) {
       <div className="survey-group">
         <div className="question">
           <input id="ckb1" type="checkbox" onChange={onChangeHandler}></input>
-          <label for="ckb1"> 진간장과 양조간장의 차이를 알고 있다.</label>
+          <label htmlFor="ckb1"> 진간장과 양조간장의 차이를 알고 있다.</label>
         </div>
         <div className="question">
           <input id="ckb2" type="checkbox" onChange={onChangeHandler}></input>
-          <label for="ckb2">라면 말고 할 수 있는 요리가 2가지 이상이다.</label>
+          <label htmlFor="ckb2">
+            라면 말고 할 수 있는 요리가 2가지 이상이다.
+          </label>
         </div>
       </div>
       <div className="question">
         <input id="ckb3" type="checkbox" onChange={onChangeHandler}></input>
-        <label for="ckb3">
+        <label htmlFor="ckb3">
           주 3회 이상 온오프라인을 통해서 식재료를 구매한다.
         </label>
       </div>
@@ -42,13 +44,14 @@ function Survey(props) {
       </div>
       <div className="question">
         <input id="ckb4" type="checkbox" onChange={onChangeHandler}></input>
-        <label for="ckb4">
+        <label htmlFor="ckb4">
           백종원 선생님의 레시피를 참고해서 직접 요리를 만들어본 적이 있다.
         </label>
       </div>
       <br />
       <br />
-      <button className="survey-complete"
+      <button
+        className="survey-complete"
         onClick={() => {
           let location = {
             pathname: "/welcome",
