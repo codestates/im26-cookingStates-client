@@ -65,7 +65,7 @@ function Login(props) {
 
     axios
       .post(
-        "http://localhost:4000/oauth/kakao", // 5. code, redirect url, client id & key 제공하면, 카카오는 액세스 토큰 반환
+        API.OAUTH_KAKAO, // 5. code, redirect url, client id & key 제공하면, 카카오는 액세스 토큰 반환
         {
           authorizationCode: authorizationCode,
         }
@@ -80,7 +80,7 @@ function Login(props) {
             email,
             password: String(response.data.id),
           };
-          // console.log("bodybodybody", body); //? ok
+
           axios
             .post(API.USER_LOGIN, body, {
               withCredentials: true,
