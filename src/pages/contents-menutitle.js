@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Menu from "./Menu";
 import "../pages/CSS/contents-menutitle.css";
 
-function Menutitle() {
+function Menutitle(props) {
   return (
     <>
       <Menu />

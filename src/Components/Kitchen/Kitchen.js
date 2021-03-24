@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import API from "../../api";
-import MedalList from "./MedalList";
-import CompleteCourse from "./CompleteCourse";
-import Profile from "./Profile";
-import RecentMenu from "./RecentMenu";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import API from '../../api';
+import MedalList from './MedalList';
+import CompleteCourse from './CompleteCourse';
+import Profile from './Profile';
+import RecentMenu from './RecentMenu';
+import { useSelector } from 'react-redux';
 
 function Kitchen(props) {
   const accessToken = useSelector((state) => state.userReducer.accessToken);
@@ -21,7 +21,7 @@ function Kitchen(props) {
       .get(API.USER_INFO, {
         withCredentials: true,
         headers: {
-          authorization: "Bearer " + accessToken,
+          authorization: 'Bearer ' + accessToken,
         },
       })
       .then((res) => {

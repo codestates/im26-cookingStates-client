@@ -1,10 +1,10 @@
-import React from "react";
-import Nutrition from "../Components/Course/Nutrition";
-import "./CSS/Menu.css";
-import { withRouter } from "react-router-dom";
-import RecipeComponent from "../Components/Course/Recipe";
-import MenuNav from "../Components/Course/MenuNav";
-import { useSelector } from "react-redux";
+import React from 'react';
+import Nutrition from '../Components/Course/Nutrition';
+import './CSS/Menu.css';
+import { withRouter } from 'react-router-dom';
+import RecipeComponent from '../Components/Course/Recipe';
+import MenuNav from '../Components/Course/MenuNav';
+import { useSelector } from 'react-redux';
 
 function Menu(props) {
   const currentRecipe = useSelector(
