@@ -15,7 +15,6 @@ function CustomRecipe() {
     type: "",
     manual: "",
   });
-  console.log(userInfo.data.email);
 
   const onChangeHandler = (e) => {
     const { value, name } = e.target; // 우선 e.target 에서 name 과 value 를 추출
