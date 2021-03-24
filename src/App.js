@@ -10,10 +10,10 @@ import Unregister from "./pages/unregister";
 import UnregisterYes from "./pages/unregister_yes";
 import Login from "./Components/Login/Login";
 import Nav from "./Components/Nav/Nav";
-import Menu from "./pages/Menu";
 import Welcome from "./pages/welcome";
 import Signup from "./pages/Signup";
 import Test from "./pages/Test";
+import Survey from "./Components/Signup/Survey";
 import CustomRecipe from "./pages/CustomRecipe";
 
 function App() {
@@ -70,6 +70,9 @@ function App() {
         </Route>
         <Route path="/test">
           <Test />
+        </Route>
+        <Route path="/survey">
+          <Survey />
         </Route>
         <Route path="/customRecipe">
           <CustomRecipe />

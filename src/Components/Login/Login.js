@@ -41,7 +41,9 @@ function Login(props) {
       });
   };
 
-  const KAKAO_LOGIN_URL = `https://kauth.kakao.com/oauth/authorize?client_id=5e6428a09b610bb178e40e30eab58591&redirect_uri=http://localhost:3000/login&response_type=code`;
+  const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+  const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+  const KAKAO_LOGIN_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
 
   const socialLoginHandler = (event) => {
     event.preventDefault();
@@ -51,7 +53,7 @@ function Login(props) {
   // 3. 카카오에서 코드를 받음
   useEffect(() => {
     const url = new URL(window.location.href);
-    const authorizationCode = url.searchParams.get("code"); // 구글에서 받은 인증 코드
+    const authorizationCode = url.searchParams.get("code"); // 카카오에서 받은 인증 코드
     // 4. 코드를 받아서 액세스 토큰 요청
     if (authorizationCode) {
       getKakaoCode(authorizationCode);
@@ -63,13 +65,50 @@ function Login(props) {
 
     axios
       .post(
-        "http://localhost:4000/oauth/kakao", // 5. code, redirect url, client id & key 제공하면, 구글은 액세스 토큰 반환
+        "http://localhost:4000/oauth/kakao", // 5. code, redirect url, client id & key 제공하면, 카카오는 액세스 토큰 반환
         {
           authorizationCode: authorizationCode,
         }
       )
       .then((response) => {
-        dispatch(setAccessToken(response.data.access_token));
+        //console.log("oauth/kakao 응답!!!!!", response.data);
+        const { email, userName, isRegistered } = response.data;
+
+        if (isRegistered) {
+          // isRegistered가 true일때 (이미 등록된 유저) => 로그인 진행
+          let body = {
+            email,
+            password: String(response.data.id),
+          };
+          // console.log("bodybodybody", body); //? ok
+          axios
+            .post(API.USER_LOGIN, body, {
+              withCredentials: true,
+            })
+            .then((res) => {
+              console.log("2. isRegistered가 true일때 ", res.data);
+              dispatch(setAccessToken(res.data.accessToken));
+              props.history.push("/");
+            })
+            .catch((e) => {
+              // console.log(e);
+              alert("아이디와 비밀번호를 확인해주세요");
+            });
+        } else {
+          // isRegistered가 false일때 (등록되지 않은 유저) => 회원가입 진행
+          let body = {
+            email,
+            password: String(response.data.id),
+            userName,
+            bio: "",
+            socialType: "kakao",
+          };
+
+          axios.post(API.USER_REGISTER, body).then((res) => {
+            console.log("isRegistered가 false일때 ", res.data);
+            props.history.push("/survey");
+          });
+        }
       });
   };
 
