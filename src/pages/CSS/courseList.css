@@ -10,10 +10,15 @@
 .course-list {
   width: 100%;
   padding-top: 30px;
-  height: 100%;
+  height: max-content;
   display: flex;
   flex: 1;
   background-color: #24997f;
+}
+
+.custom-course-list {
+  background-color: #24997f;
+  height: max-content;
 }
 
 .course-list-item {
@@ -60,12 +65,12 @@
 .course-title {
   text-align: center;
   margin: 10px;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
   font-size: 20px;
 }
 
 .course-desc {
   text-align: center;
   margin: 10px;
-  font-family: 'RIDIBatang';
+  font-family: "RIDIBatang";
 }
