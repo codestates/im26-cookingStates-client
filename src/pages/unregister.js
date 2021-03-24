@@ -21,7 +21,6 @@ function Unregister(props) {
           },
         }
       )
-      .then((res) => props.history.push("/"));
   };
 
   return (
@@ -47,7 +46,6 @@ function Unregister(props) {
               <button
                 className="btn-myKitchen"
                 onClick={() => {
-                  onClickHandler();
                   props.history.goBack();
                 }}
               >
@@ -56,7 +54,7 @@ function Unregister(props) {
               <button
                 className="btn-delete-account"
                 onClick={() => {
-                  axios.post(API.USER_UNREGISTER, {});
+                  onClickHandler();
                   let location = {
                     pathname: "/unregister_yes",
                   };
