@@ -31,17 +31,19 @@ function Login(props) {
 
     if (Email && Password) {
       axios
-        .post(API.USER_LOGIN, body, { withCredentials: true })
+        .post(API.USER_LOGIN, body, {
+          withCredentials: true,
+        })
         .then((res) => {
           dispatch(setAccessToken(res.data.accessToken));
-          props.history.push("/");
+          props.history.push('/');
         })
         .catch((e) => {
           // console.log("error : ", e);
-          alert("아이디와 비밀번호를 확인해주세요");
+          alert('아이디와 비밀번호를 확인해주세요');
         });
     } else {
-      alert("아이디, 비밀번호를 모두 입력해주세요!!");
+      alert('아이디, 비밀번호를 모두 입력해주세요!!');
     }
   };
 
