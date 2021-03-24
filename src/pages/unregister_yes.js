@@ -32,7 +32,7 @@ function Unregister_yes(props) {
             </span>
           </div>
           <div className="unregister_yes-content-footer">
-            {count}초후 Main 페이지로 이동합니다!
+            {count}초후 메인 페이지로 이동합니다!
           </div>
         </div>
       </div>
