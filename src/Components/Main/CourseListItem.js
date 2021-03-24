@@ -1,17 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { setCourseInfo } from "../../actions/course_action";
-import { useSelector, useDispatch } from "react-redux";
 
 function CourseListItem(props) {
-  const courseInfo = useSelector((state) => state.courseReducer.courseInfo);
-  const dispatch = useDispatch();
-  console.log("CourseListItem", props.course);
-
-  const handleClick = (course) => {
-    dispatch(setCourseInfo(course));
-  };
-
   return (
     <div className="course-list-item">
       <Link to={`/course/${props.course.id}`}>

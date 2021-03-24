@@ -1,9 +1,8 @@
-import React from "react";
-import Logo from "../Images/logo-1.png";
-import "./CSS/unregister.css";
-import { Link, withRouter } from "react-router-dom";
-import API from "../api";
-import axios from "axios";
+import React from 'react';
+import './CSS/unregister.css';
+import { Link, withRouter } from 'react-router-dom';
+import API from '../api';
+import axios from 'axios';
 
 function Unregister(props) {
   return (
@@ -38,6 +37,10 @@ function Unregister(props) {
                 className="btn-delete-account"
                 onClick={() => {
                   axios.post(API.USER_UNREGISTER, {});
+                  let location = {
+                    pathname: '/unregister_yes',
+                  };
+                  props.history.push(location);
                 }}
               >
                 탈퇴하기

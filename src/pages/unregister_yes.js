@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './CSS/unregister.css';
 import Bye from '../Images/goodbye.png';
+import { withRouter } from 'react-router-dom';
 
-function unregister_yes() {
+const START_SECOND = 5;
+
+function Unregister_yes(props) {
+  const [count, setCount] = useState(START_SECOND);
+
+  useEffect(() => {
+    if (!count) {
+      props.history.push('/');
+    } else {
+      setInterval(() => {
+        setCount(count - 1);
+      }, 1000);
+    }
+  });
   return (
     <>
       <div className="unregister">
@@ -18,7 +32,7 @@ function unregister_yes() {
             </span>
           </div>
           <div className="unregister_yes-content-footer">
-            ?? 초후 Main 페이지로 이동합니다!
+            {count}초후 메인 페이지로 이동합니다!
           </div>
         </div>
       </div>
@@ -26,4 +40,4 @@ function unregister_yes() {
   );
 }
 
-export default unregister_yes;
+export default withRouter(Unregister_yes);

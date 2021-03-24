@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import Menu from "./Menu";
 import "../pages/CSS/contents-menutitle.css";
-import axios from "axios";
-import API from "../api";
+import { useSelector } from "react-redux";
 
 function Menutitle() {
-  const [Course, setCourse] = useState([]);
-
-  // const getCourse = async (courseId) => {
-  //   await axios.get(API.COURSE_);
-  // };
+  const currentRecipe = useSelector(
+    (state) => state.recipeReducer.currentRecipe
+  );
+  console.log(currentRecipe);
 
   return (
     <>
-      <Menu />
+      <Menu currentRecipe={currentRecipe} />
     </>
   );
 }
