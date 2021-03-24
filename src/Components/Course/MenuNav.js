@@ -23,9 +23,10 @@ function MenuNav(props) {
         <div>
           <div className="menu-Nav-Title">{courseInfo.title}</div>
           {recipeInfo &&
-            recipeInfo.map((recipe) => {
+            recipeInfo.map((recipe, idx) => {
               return (
                 <div
+                  key={idx}
                   className="menu-Nav-item"
                   onClick={() => {
                     let location = {
