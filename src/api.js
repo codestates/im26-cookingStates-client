@@ -16,8 +16,8 @@ export default {
   ADD_COURSE: `https://server.cookingstates.cf:${port}/course`,
 
   RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe`,
-  CUSTOM_RECIPE_INFO: `http://server.cookingstates.cf:${port}/recipe/custom/list`,
-  CUSTOM_RECIPE_UPLOAD: `http://server.cookingstates.cf:${port}/recipe/upload`,
+  CUSTOM_RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe/custom/list`,
+  CUSTOM_RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
   RECIPE_DETAIL: `https://server.cookingstates.cf:${port}/recipe`, // /:id
   RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
 
