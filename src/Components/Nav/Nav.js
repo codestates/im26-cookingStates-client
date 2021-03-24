@@ -63,6 +63,7 @@ function Nav(props) {
             <Link
               to="/login"
               onClick={() => {
+                localStorage.clear();
                 setIsAdmin(false);
                 dispatch(userLogout());
               }}
