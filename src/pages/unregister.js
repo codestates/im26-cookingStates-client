@@ -1,10 +1,29 @@
-import React from 'react';
-import './CSS/unregister.css';
-import { Link, withRouter } from 'react-router-dom';
-import API from '../api';
-import axios from 'axios';
+import React from "react";
+import "./CSS/unregister.css";
+import { Link, withRouter } from "react-router-dom";
+import { useSelector } from "react-redux";
+import API from "../api";
+import axios from "axios";
 
 function Unregister(props) {
+  const accessToken = useSelector((state) => state.userReducer.accessToken);
+  const userInfo = useSelector((state) => state.userReducer.userInfo);
+
+  const onClickHandler = () => {
+    axios
+      .post(
+        API.USER_UNREGISTER,
+        { email: userInfo.data.email },
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+      .then((res) => props.history.push("/"));
+  };
+
   return (
     <>
       <div className="unregister">
@@ -28,6 +47,7 @@ function Unregister(props) {
               <button
                 className="btn-myKitchen"
                 onClick={() => {
+                  onClickHandler();
                   props.history.goBack();
                 }}
               >
@@ -38,7 +58,7 @@ function Unregister(props) {
                 onClick={() => {
                   axios.post(API.USER_UNREGISTER, {});
                   let location = {
-                    pathname: '/unregister_yes',
+                    pathname: "/unregister_yes",
                   };
                   props.history.push(location);
                 }}
