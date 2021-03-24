@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import fail from '../Images/icon-valid-check-danger.png';
 import './CSS/myinfo.css';
 import { withRouter, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,9 +7,12 @@ import { updateUserInfo } from '../actions/user_action';
 import axios from 'axios';
 import API from '../api';
 
+const PASSWORD_RE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
+
 function Myinfo(props) {
   const UserData = props.location.state.UserData;
   const [userPw, setUpdatePw] = useState(UserData.password);
+  const [userPwValid, setUserPwValid] = useState(false);
   const [userPwChk, setUpdatePwChk] = useState('');
   const [pwErr, setPwErr] = useState(false);
   const [userBio, setUpdateBio] = useState(UserData.bio);
@@ -30,7 +34,14 @@ function Myinfo(props) {
   };
 
   const onPwUpdateHandler = (e) => {
-    setUpdatePw(e.target.value);
+    const regex = new RegExp(PASSWORD_RE, 'i');
+    if (regex.test(e.currentTarget.value)) {
+      setUserPwValid(false);
+      setUpdatePw(e.currentTarget.value);
+    } else {
+      setUserPwValid(true);
+      setUpdatePw(e.currentTarget.value);
+    }
   };
   const onPwChkUpdateHandler = (e) => {
     setPwErr(e.target.value !== userPw);
@@ -63,6 +74,11 @@ function Myinfo(props) {
               defaultValue={UserData.password}
               readOnly
             />
+            {userPwValid && (
+              <div className="fail">
+                대소문자(영문),특수문자 포함 8자리 비밀번호를 입력
+              </div>
+            )}
           </label>
           <label className="pw-confirm">
             Comfirm Password :
