@@ -6,6 +6,7 @@ export default function courseReducer(state = {}, action) {
   switch (action.type) {
     case SET_COURSE_INFO:
       return { ...state, courseInfo: action.payload };
+
     default:
       return state;
   }

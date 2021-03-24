@@ -4,7 +4,7 @@ import "../../pages/CSS/content-coursetitle.css";
 import axios from "axios";
 import API from "../../api";
 import { withRouter } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setRecipeInfo } from "../../actions/recipe_action";
 
 function MenuList(props) {
