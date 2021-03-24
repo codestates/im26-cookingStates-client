@@ -1,9 +1,8 @@
-import React from 'react';
-import './CSS/myinfo.css';
-import { withRouter, Link } from 'react-router-dom';
+import React from "react";
+import "./CSS/myinfo.css";
+import { withRouter, Link } from "react-router-dom";
 
 function Myinfo(props) {
-  console.log(props);
   const { userName, email, password, bio } = props.location.state.UserData;
   return (
     <div className="myinfo">
@@ -48,24 +47,24 @@ function Myinfo(props) {
           <button
             className="myinfo-update"
             onClick={() => {
-              const inputPw = document.querySelector('#userpw');
-              const inputPwchk = document.querySelector('#userpwchk');
-              const textareaBio = document.querySelector('.bio-textarea');
-              const myinfoUpdateBtn = document.querySelector('.myinfo-update');
+              const inputPw = document.querySelector("#userpw");
+              const inputPwchk = document.querySelector("#userpwchk");
+              const textareaBio = document.querySelector(".bio-textarea");
+              const myinfoUpdateBtn = document.querySelector(".myinfo-update");
 
-              if (inputPw.hasAttribute('readOnly')) {
-                myinfoUpdateBtn.textContent = '프로필 수정완료';
-                inputPw.removeAttribute('readOnly');
-                inputPwchk.removeAttribute('readOnly');
-                textareaBio.removeAttribute('readOnly');
+              if (inputPw.hasAttribute("readOnly")) {
+                myinfoUpdateBtn.textContent = "프로필 수정완료";
+                inputPw.removeAttribute("readOnly");
+                inputPwchk.removeAttribute("readOnly");
+                textareaBio.removeAttribute("readOnly");
               } else {
-                myinfoUpdateBtn.textContent = '프로필 수정하기';
-                inputPw.setAttribute('readOnly', '');
-                inputPwchk.setAttribute('readOnly', '');
-                textareaBio.setAttribute('readOnly', '');
-                inputPw.value = '';
-                inputPwchk.value = '';
-                textareaBio.value = '';
+                myinfoUpdateBtn.textContent = "프로필 수정하기";
+                inputPw.setAttribute("readOnly", "");
+                inputPwchk.setAttribute("readOnly", "");
+                textareaBio.setAttribute("readOnly", "");
+                inputPw.value = "";
+                inputPwchk.value = "";
+                textareaBio.value = "";
               }
             }}
           >
