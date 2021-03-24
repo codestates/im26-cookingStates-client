@@ -12,7 +12,6 @@ function Nav(props) {
   const accessToken = useSelector((state) => state.userReducer.accessToken);
   const userInfo = useSelector((state) => state.userReducer.userInfo);
   const [IsAdmin, setIsAdmin] = useState(false);
-
   useEffect(() => {
     if (props.location.pathname !== "/login" || accessToken) {
       async function fetchUserData() {
