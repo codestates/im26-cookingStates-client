@@ -9,6 +9,13 @@ import { useSelector } from "react-redux";
 
 function Kitchen(props) {
   const UserData = useSelector((state) => state.userReducer.userInfo);
+  const [CourseInfo, setCourseInfo] = useState([]);
+
+  useEffect(() => {
+    axios.get(API.COURSE_INFO).then((res) => {
+      setCourseInfo(res.data);
+    });
+  }, []);
 
   return (
     <div className="kitchen">
@@ -19,8 +26,8 @@ function Kitchen(props) {
           </div>
           <div className="kitchen-article-contents">
             <Profile UserData={UserData} />
-            <RecentMenu UserData={UserData} />
-            <MedalList />
+            <RecentMenu UserData={UserData} CourseInfo={CourseInfo} />
+            <MedalList UserData={UserData} />
             <CompleteCourse UserData={UserData} />
           </div>
         </div>
