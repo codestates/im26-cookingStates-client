@@ -5,7 +5,7 @@ import {
   USER_UPDATE,
   USER_REGISTER,
   USER_UNREGISTER,
-} from "../actions/user_action";
+} from '../actions/user_action';
 
 export default function user(state = {}, action) {
   // 새로운 state를 만들어 반환

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setAccessToken } from "../../actions/user_action";
-import "../../pages/CSS/login.css";
-import bgImgLogin from "../../Images/login-bg-img.png";
-import logoImgYellow from "../../Images/logo-1-yellow.png";
-import { Link, withRouter } from "react-router-dom";
-import axios from "axios";
-import API from "../../api";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setAccessToken, setUserInfo } from '../../actions/user_action';
+import '../../pages/CSS/login.css';
+import bgImgLogin from '../../Images/login-bg-img.png';
+import logoImgYellow from '../../Images/logo-1-yellow.png';
+import { Link, withRouter } from 'react-router-dom';
+import axios from 'axios';
+import API from '../../api';
 
 function Login(props) {
   const dispatch = useDispatch();
 
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
 
   const onEmailHandler = (event) => {
     setEmail(event.currentTarget.value);
@@ -31,17 +31,19 @@ function Login(props) {
 
     if (Email && Password) {
       axios
-        .post(API.USER_LOGIN, body, { withCredentials: true })
+        .post(API.USER_LOGIN, body, {
+          withCredentials: true,
+        })
         .then((res) => {
           dispatch(setAccessToken(res.data.accessToken));
-          props.history.push("/");
+          props.history.push('/');
         })
         .catch((e) => {
           // console.log("error : ", e);
-          alert("아이디와 비밀번호를 확인해주세요");
+          alert('아이디와 비밀번호를 확인해주세요');
         });
     } else {
-      alert("아이디, 비밀번호를 모두 입력해주세요!!");
+      alert('아이디, 비밀번호를 모두 입력해주세요!!');
     }
   };
 
@@ -51,13 +53,13 @@ function Login(props) {
 
   const socialLoginHandler = (event) => {
     event.preventDefault();
-    window.open(KAKAO_LOGIN_URL, "간편 로그인");
+    window.open(KAKAO_LOGIN_URL, '간편 로그인');
   };
 
   // 3. 카카오에서 코드를 받음
   useEffect(() => {
     const url = new URL(window.location.href);
-    const authorizationCode = url.searchParams.get("code"); // 카카오에서 받은 인증 코드
+    const authorizationCode = url.searchParams.get('code'); // 카카오에서 받은 인증 코드
     // 4. 코드를 받아서 액세스 토큰 요청
     if (authorizationCode) {
       getKakaoCode(authorizationCode);
@@ -65,7 +67,7 @@ function Login(props) {
   }, []);
 
   const getKakaoCode = (authorizationCode) => {
-    console.log("카카오에서 받은 코드 : ", authorizationCode);
+    console.log('카카오에서 받은 코드 : ', authorizationCode);
 
     axios
       .post(
@@ -90,13 +92,13 @@ function Login(props) {
               withCredentials: true,
             })
             .then((res) => {
-              console.log("2. isRegistered가 true일때 ", res.data);
+              console.log('2. isRegistered가 true일때 ', res.data);
               dispatch(setAccessToken(res.data.accessToken));
-              props.history.push("/");
+              props.history.push('/');
             })
             .catch((e) => {
               // console.log(e);
-              alert("아이디와 비밀번호를 확인해주세요");
+              alert('아이디와 비밀번호를 확인해주세요');
             });
         } else {
           // isRegistered가 false일때 (등록되지 않은 유저) => 회원가입 진행
@@ -104,13 +106,13 @@ function Login(props) {
             email,
             password: String(response.data.id),
             userName,
-            bio: "",
-            socialType: "kakao",
+            bio: '',
+            socialType: 'kakao',
           };
 
           axios.post(API.USER_REGISTER, body).then((res) => {
-            console.log("isRegistered가 false일때 ", res.data);
-            props.history.push("/survey");
+            console.log('isRegistered가 false일때 ', res.data);
+            props.history.push('/survey');
           });
         }
       });

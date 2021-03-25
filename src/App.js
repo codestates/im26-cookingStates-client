@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Main from "./pages/main";
-import CourseTitle from "./pages/contents-coursetitle";
-import Menutitle from "./pages/contents-menutitle";
-import Myinfo from "./pages/myinfo";
-import Mykitchen from "./pages/mykitchen";
-import Unregister from "./pages/unregister";
-import UnregisterYes from "./pages/unregister_yes";
-import Login from "./Components/Login/Login";
-import Nav from "./Components/Nav/Nav";
-import Welcome from "./pages/welcome";
-import Signup from "./pages/Signup";
-import Test from "./pages/Test";
-import Survey from "./Components/Signup/Survey";
-import CustomRecipe from "./pages/CustomRecipe";
+import React, { useState } from 'react';
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Main from './pages/main';
+import CourseTitle from './pages/contents-coursetitle';
+import Menutitle from './pages/contents-menutitle';
+import Myinfo from './pages/myinfo';
+import Mykitchen from './pages/mykitchen';
+import Unregister from './pages/unregister';
+import UnregisterYes from './pages/unregister_yes';
+import Login from './Components/Login/Login';
+import Nav from './Components/Nav/Nav';
+import Welcome from './pages/welcome';
+import Signup from './pages/Signup';
+import Test from './pages/Test';
+import Survey from './Components/Signup/Survey';
+import CustomRecipe from './pages/CustomRecipe';
 
 function App() {
   const [IsLogin, setIsLogin] = useState(false);

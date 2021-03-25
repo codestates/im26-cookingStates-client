@@ -58,6 +58,19 @@
   outline: none;
 }
 
+.pw {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.fail {
+  font-size: 18px;
+  color: red;
+}
+.pwchk {
+  color: red;
+}
+
 .myinfoform label input:focus {
   border-bottom: 3px solid dodgerblue;
 }
