@@ -24,10 +24,12 @@ function Menu(props) {
   ]; //! 위험한 알고리즘...
 
   const dispatch = useDispatch();
-  const [IsChecked, setIsChecked] = useState(false);
+  const [IsChecked, setIsChecked] = useState(
+    passedRecipes.includes(curRecipeId)
+  );
 
   useEffect(() => {
-    axios // 완료 체크 db 저장
+    axios
       .post(
         `${API.RECIPE_INFO}/${curRecipeId}/checked`,
         { isChecked: IsChecked },

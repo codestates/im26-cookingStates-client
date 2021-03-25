@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../pages/CSS/survey.css";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 function Survey(props) {
   const [Score, setScore] = useState(0);

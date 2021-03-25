@@ -1,6 +1,6 @@
 const port = 4000;
 
-export default {
+const API = {
   USER_LOGIN: `https://server.cookingstates.cf:${port}/user/login`,
   USER_LOGOUT: `https://server.cookingstates.cf:${port}/user/logout`,
   USER_REGISTER: `https://server.cookingstates.cf:${port}/user/register`,
@@ -29,3 +29,5 @@ export default {
   OAUTH_GOOGLE: `https://server.cookingstates.cf:${port}/oauth/google`,
   OAUTH_KAKAO: `https://server.cookingstates.cf:${port}/oauth/kakao`,
 };
+
+export default API;

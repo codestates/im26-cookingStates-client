@@ -1,6 +1,6 @@
 import React from "react";
 import "./CSS/unregister.css";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import API from "../api";
 import axios from "axios";

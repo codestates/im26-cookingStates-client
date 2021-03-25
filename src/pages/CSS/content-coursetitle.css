@@ -13,7 +13,7 @@
   background: #ffeedf;
   border-radius: 8px;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem 1rem 5rem 1rem;
   display: flex;
   flex-direction: column;
   flex: 1 0 280px;
@@ -21,26 +21,35 @@
 }
 
 .menu-card:hover .recipe-img img {
-  transform: scale(2);
+  transform: scale(1.1);
 }
 
 .recipe-img img {
   border-radius: 5px;
-  width: 150px;
-  height: 154px;
+  width: 250px;
+  height: 500px;
   transition: 0.8s;
+  object-fit: cover;
 }
 
 .recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .recipe-title {
   text-align: center;
   font-family: "Jua", sans-serif;
-  font-size: 17px;
+  font-size: 1.2rem;
   transition: 0.8s;
 }
 
-.menu-card:hover .recipe-title {
+.recipe-diff {
+  transition: 0.8s;
+}
+
+.menu-card:hover .recipe-content > * {
   opacity: 0;
 }
