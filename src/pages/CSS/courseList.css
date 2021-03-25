@@ -18,9 +18,8 @@
 }
 
 .course-list-item {
-  padding-top: 5rem;
+  padding: 2rem 0;
   flex: 1 0 280px;
-  height: 400px;
   background: #ffeedf;
   border-radius: 8px;
   margin: 10px;
@@ -49,22 +48,37 @@
   justify-content: space-around;
 }
 
+.custom-recipe-card-body {
+  margin: 2rem;
+  padding-left: 1rem;
+}
+
 .custom-section-header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.custom-recipe-card-body > div {
+  margin: 0.5rem;
+}
+
+.custom-recipe-card-body > div:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .custom-recipe-btn {
-  padding: 0.4rem;
+  border: 5px solid #19987f;
+  padding: 1rem;
   width: max-content;
   background: #146354;
   color: white;
-  box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
-  border-radius: 8px;
-  margin: 10px;
+  border-radius: 12px;
   font-family: "Jua";
-  font-size: 20px;
-  margin-top: 4rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
 
 .custom-wrapper {
@@ -75,41 +89,43 @@
   font-family: "Jua";
   width: max-content;
   box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
-  padding: 2rem 10rem 2rem 4rem;
+  padding: 0.5rem 2rem;
   border-radius: 12px;
   background-color: #ffbfa0;
   margin: 2rem;
 }
 
-.custom-recipe-card img {
-  width: 230px;
-  height: 230px;
-}
-
 .course-img {
-  width: 160px;
-  height: 200px;
+  width: 250px;
+  height: 500px;
   border-radius: 5px;
   transition: 0.8s;
+  object-fit: cover;
 }
 .course-list-item:hover .course-img {
-  transform: scale(1.7);
+  transform: scale(1.1);
 }
 
 h1#cours-list {
   font-family: "Jua";
   width: max-content;
   box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
-  padding: 2rem 10rem 2rem 4rem;
+  padding: 0.5rem 2rem;
   border-radius: 12px;
   background-color: #ffbfa0;
   margin: 2rem 2rem 0 2rem;
 }
 
 .custom-recipe-card-image {
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 400px;
+}
+
+.custom-recipe-card-image img {
+  height: 400px;
 }
 
 .course-contents {

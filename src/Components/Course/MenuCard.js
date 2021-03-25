@@ -12,6 +12,8 @@ function MenuCard(props) {
       dispatch(setCurrentRecipe(res.data));
     });
   };
+  const diff = Number(props.recipe.difficulty);
+  let star = "✰".repeat(diff);
 
   return (
     <div
@@ -30,6 +32,7 @@ function MenuCard(props) {
       </div>
       <div className="recipe-content">
         <div className="recipe-title">{props.recipe.title}</div>
+        <div className="recipe-diff">{star}</div>
       </div>
     </div>
   );
