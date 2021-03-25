@@ -34,14 +34,20 @@ function CompleteCourse(props) {
           <div className="completecourse-title">완료한 요리 코스</div>
           <div className="completecourse-box">
             <div className="complete-course-entry">
-              {completeCourse.map((ele) => {
-                return <div className="complete-course-name">{ele.title}</div>;
+              {completeCourse.map((ele, idx) => {
+                return (
+                  <div key={idx} className="complete-course-name">
+                    {ele.title}
+                  </div>
+                );
               })}
             </div>
             <div className="complete-course-entry">
-              {completeCourseEndDate.map((ele) => {
+              {completeCourseEndDate.map((ele, idx) => {
                 return (
-                  <div className="complete-course-date">{ele.endDate}</div>
+                  <div key={idx} className="complete-course-date">
+                    {ele.endDate}
+                  </div>
                 );
               })}
             </div>
