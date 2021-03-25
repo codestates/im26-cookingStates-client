@@ -18,7 +18,6 @@ body {
 
 #root {
   width: 100%;
-  height: inherit;
   display: flex;
   flex-direction: column;
 }
