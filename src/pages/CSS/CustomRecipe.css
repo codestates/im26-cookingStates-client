@@ -1,5 +1,5 @@
 .custom-recipe-page {
-  padding: 1rem;
+  padding: 3rem;
   margin: 1rem;
   font-family: "jua";
   background-color: #ffeedf;
@@ -26,4 +26,13 @@
 }
 .custom-recipe-page .photoFrame:hover {
   cursor: pointer;
+}
+
+img.photoFrame {
+  width: 300px;
+  height: 300px;
+}
+
+.pictures {
+  text-align: center;
 }
