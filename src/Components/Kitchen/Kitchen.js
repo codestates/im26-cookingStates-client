@@ -37,7 +37,7 @@ function Kitchen(props) {
         </div>
         <div className="kitchen-article-contents">
           <Profile UserData={UserData} />
-          <RecentMenu />
+          <RecentMenu UserData={UserData} />
           <MedalList />
           <CompleteCourse UserData={UserData} />
         </div>

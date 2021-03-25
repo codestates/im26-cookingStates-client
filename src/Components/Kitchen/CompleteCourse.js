@@ -3,9 +3,9 @@ import React from "react";
 function CompleteCourse(props) {
   const userInfo = props.UserData;
   // 완료한 요리 코스가 있는 경우
-  console.log(userInfo.course.passedCourses.length);
+  console.log(userInfo);
 
-  if (userInfo.course.passedCourses.length > 0) {
+  /* if (userInfo.course.passedCourses.length > 0) {
     return (
       <div className="completecourse">
         <div className="completecourse-title">완료한 요리 코스</div>
@@ -17,14 +17,13 @@ function CompleteCourse(props) {
         </div>
       </div>
     );
-  } else {
-    return (
-      <div className="completecourse">
-        <div className="completecourse-title">완료한 요리 코스</div>
-        <div>수강완료한 요리 코스가 없습니다!</div>
-      </div>
-    );
-  }
+  } else { */
+  return (
+    <div className="completecourse">
+      <div className="completecourse-title">완료한 요리 코스</div>
+      <div>수강완료한 요리 코스가 없습니다!</div>
+    </div>
+  );
 }
 
 export default CompleteCourse;
