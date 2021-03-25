@@ -43,6 +43,7 @@ function Test() {
         console.log("errer");
       });
   };
+
   useEffect(() => {
     axios
       .get(API.USER_INFO, {
@@ -83,7 +84,7 @@ function Test() {
       if (Array.isArray(course) && course.length > 0) {
         setCourse(course.data);
       } else {
-        course = await axios.get("http://localhost:4000/course"); // ! 수정하기
+        course = await axios.get(API.COURSE_INFO); // ? RDS 코스 데이터
         localStorage.setItem("Course", recipe);
         setCourse(course.data);
       }
@@ -93,7 +94,6 @@ function Test() {
         setUsers(user.data);
       } else {
         user = await axios.get(API.ALL_USER, {
-          // ! 수정하기
           withCredentials: true,
           headers: {
             authorization: "Bearer " + accessToken,
@@ -155,7 +155,7 @@ function Test() {
                 <div className="course-add">
                   코스 이름 : <input id="course-input-name" type="text"></input>
                   코스 소개 : <input id="course-input-dsc" type="text"></input>
-                  <button
+                  {/* <button // ! 기능 봉인
                     onClick={() => {
                       const courseName = document.querySelector(
                         "#course-input-name"
@@ -185,7 +185,7 @@ function Test() {
                     }}
                   >
                     추가
-                  </button>
+                  </button> */}
                 </div>
               )}
               {Course.map((course) => {
@@ -195,7 +195,7 @@ function Test() {
                     key={course.id}
                     onClick={async () => {
                       const result = await axios.get(
-                        `http://localhost:4000/course/${course.id}` // ! 수정하기
+                        API.COURSE_DETAIL + `/${course.id}` // ? RDS 코스 디테일 데이터
                       );
                       setCourseInRecipe(result.data);
                       setCurrentCourse(course.title);
@@ -219,7 +219,7 @@ function Test() {
                 <div>코스에 레시피가 없습니다 ㅠ</div>
               )}
             </div>
-            <div>
+            {/* <div> // ! 기능 봉인
               {CurrentCourse && (
                 <h2>
                   코스 수정하기
@@ -227,7 +227,7 @@ function Test() {
                   <button>코스 레시피 삭제하기</button>
                 </h2>
               )}
-            </div>
+            </div> */}
           </section>
 
           <label>유저 관리</label>
