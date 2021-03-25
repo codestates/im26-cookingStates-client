@@ -8,40 +8,25 @@ import RecentMenu from "./RecentMenu";
 import { useSelector } from "react-redux";
 
 function Kitchen(props) {
-  const accessToken = useSelector((state) => state.userReducer.accessToken);
-  const [UserData, setUserData] = useState({});
-
-  useEffect(() => {
-    getUserInfo();
-    return () => {};
-  }, []);
-
-  const getUserInfo = () => {
-    axios
-      .get(API.USER_INFO, {
-        withCredentials: true,
-        headers: {
-          authorization: "Bearer " + accessToken,
-        },
-      })
-      .then((res) => {
-        setUserData(res.data);
-      });
-  };
+  const UserData = useSelector((state) => state.userReducer.userInfo);
 
   return (
     <div className="kitchen">
-      <div className="kitchen-article">
-        <div className="kitchen-article-header">
-          <h1>My Kitchen</h1>
+      {UserData ? (
+        <div className="kitchen-article">
+          <div className="kitchen-article-header">
+            <h1>My Kitchen</h1>
+          </div>
+          <div className="kitchen-article-contents">
+            <Profile UserData={UserData} />
+            <RecentMenu UserData={UserData} />
+            <MedalList />
+            <CompleteCourse UserData={UserData} />
+          </div>
         </div>
-        <div className="kitchen-article-contents">
-          <Profile UserData={UserData} />
-          <RecentMenu />
-          <MedalList />
-          <CompleteCourse UserData={UserData} />
-        </div>
-      </div>
+      ) : (
+        <div>loading</div>
+      )}
     </div>
   );
 }

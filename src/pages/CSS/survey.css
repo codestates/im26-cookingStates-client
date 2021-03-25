@@ -5,7 +5,7 @@
   position: relative;
   align-items: center;
   align-content: center;
-  font-family: 'Jua';
+  font-family: "Jua";
   margin: auto;
 
   width: 60%;
@@ -30,23 +30,23 @@
   margin-bottom: 10px;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"].survey-checkbox {
   display: none;
 }
 
-input[type='checkbox'] + label {
+input[type="checkbox"].survey-checkbox + label {
   cursor: pointer;
 }
 
-input[type='number'] {
+input[type="number"] {
   font-size: smaller;
   padding: 5px;
   margin: 0px 5px;
   width: max-content;
 }
 
-input[type='checkbox'] + label:before {
-  content: '';
+input[type="checkbox"].survey-checkbox + label:before {
+  content: "";
   width: 20px;
   height: 20px;
   margin-right: 20px;
@@ -59,8 +59,8 @@ input[type='checkbox'] + label:before {
   margin-right: 10px;
 }
 
-input[type='checkbox']:checked + label:before {
-  content: '\2714';
+input[type="checkbox"].survey-checkbox:checked + label:before {
+  content: "\2714";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   font-size: 1rem;
   font-weight: 600;
@@ -82,7 +82,7 @@ label {
   box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
   height: 2rem;
-  font-family: 'Jua';
+  font-family: "Jua";
 }
 
 .survey-complete:hover {
@@ -92,7 +92,7 @@ label {
   border-color: #ffffff;
   color: #ffffff;
   height: 2rem;
-  font-family: 'Jua';
+  font-family: "Jua";
 
   box-shadow: 0px 8px 10px rgba(110, 116, 134, 0.24);
   border-radius: 8px;
