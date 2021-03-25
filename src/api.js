@@ -14,12 +14,14 @@ export default {
   COURSE_INFO: `https://server.cookingstates.cf:${port}/course`,
   COURSE_DETAIL: `https://server.cookingstates.cf:${port}/course`, // /:id
   ADD_COURSE: `https://server.cookingstates.cf:${port}/course`,
+  COMPLETE_COURSE: `https://server.cookingstates.cf:${port}/course/complete`,
 
   RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe`,
   CUSTOM_RECIPE_INFO: `https://server.cookingstates.cf:${port}/recipe/custom/list`,
   CUSTOM_RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
   RECIPE_DETAIL: `https://server.cookingstates.cf:${port}/recipe`, // /:id
   RECIPE_UPLOAD: `https://server.cookingstates.cf:${port}/recipe/upload`,
+  RECIPE_CHECKED: `https://server.cookingstates.cf:${port}/recipe/:id/checked`,
 
   TOKEN_ACCESS: `https://server.cookingstates.cf:${port}/token/access`,
   TOKEN_REFRESH: `https://server.cookingstates.cf:${port}/token/refresh`,
