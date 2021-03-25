@@ -18,43 +18,103 @@
 }
 
 .course-list-item {
-  flex: 1 1 280px;
+  padding-top: 5rem;
+  flex: 1 0 280px;
   height: 400px;
   background: #ffeedf;
   border-radius: 8px;
   margin: 10px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: center;
 }
 
-.custom-course-list {
+.custom-recipe-list {
   background-color: #24997f;
   height: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.custom-recipe-card {
+  font-family: "RIDIBatang";
+  border-radius: 24px;
+  background-color: #ffefdf;
+  padding: 1rem;
+  margin: 1rem;
+  flex: 1 0 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.custom-section-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.custom-recipe-btn {
+  padding: 0.4rem;
+  width: max-content;
+  background: #146354;
+  color: white;
+  box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
+  border-radius: 8px;
+  margin: 10px;
+  font-family: "Jua";
+  font-size: 20px;
+  margin-top: 4rem;
+}
+
+.custom-wrapper {
+  background-color: #239a7f;
+}
+
+.custom-wrapper h1 {
+  font-family: "Jua";
+  width: max-content;
+  box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
+  padding: 2rem 10rem 2rem 4rem;
+  border-radius: 12px;
+  background-color: #ffbfa0;
+  margin: 2rem;
+}
+
+.custom-recipe-card img {
+  width: 230px;
+  height: 230px;
 }
 
 .course-img {
   width: 160px;
   height: 200px;
-  position: absolute;
-  top: 15%;
-  left: 20%;
   border-radius: 5px;
-  text-align: center;
   transition: 0.8s;
 }
 .course-list-item:hover .course-img {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.7);
+  transform: scale(1.7);
+}
+
+h1#cours-list {
+  font-family: "Jua";
+  width: max-content;
+  box-shadow: 0px 8px 10px rgb(110 116 134 / 24%);
+  padding: 2rem 10rem 2rem 4rem;
+  border-radius: 12px;
+  background-color: #ffbfa0;
+  margin: 2rem 2rem 0 2rem;
+}
+
+.custom-recipe-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .course-contents {
-  width: 250px;
+  padding-top: 1rem;
   height: 80px;
-  position: absolute;
-  bottom: 8%;
-  left: 5%;
   transition: 0.8s;
 }
 

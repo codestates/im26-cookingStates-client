@@ -5,7 +5,7 @@ import "./CSS/CustomRecipe.css";
 import axios from "axios";
 import API from "../api";
 
-function CustomRecipe() {
+function CustomRecipe(props) {
   const userInfo = useSelector((state) => state.userReducer.userInfo);
 
   const [inputs, setInputs] = useState({
@@ -54,10 +54,10 @@ function CustomRecipe() {
               reader.readAsDataURL(file);
 
               reader.onload = function () {
-                let photoFrame = document.createElement("div");
-
-                photoFrame.style = `background : url(${reader.result}); background-size : cover`;
-                photoFrame.className = "photoFrame";
+                let photoFrame = document.createElement("img");
+                photoFrame.classList.add("photoFrame");
+                photoFrame.src = reader.result;
+                photoFrame.alt = "이미지 미리보기";
                 document.getElementById("pictures").appendChild(photoFrame);
                 e.target.value = "";
 
@@ -103,6 +103,7 @@ function CustomRecipe() {
           ></textarea>
         </label>
         <button
+          className="custom-recipe-btn"
           onClick={() => {
             if (inputs.manual && inputs.title && inputs.type) {
               const formData = new FormData();
@@ -132,6 +133,7 @@ function CustomRecipe() {
                     type: "",
                     manual: "",
                   });
+                  props.history.push("/");
                 })
                 .catch((e) => {
                   console.log("error!", e);

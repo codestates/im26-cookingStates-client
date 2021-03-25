@@ -1,7 +1,7 @@
 .menu-list {
   width: 100%;
   padding-top: 30px;
-  height: 100%;
+  height: max-content;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -9,21 +9,19 @@
 }
 
 .menu-card {
-  height: 278px;
   overflow: hidden;
   background: #ffeedf;
   border-radius: 8px;
   justify-content: center;
-  margin: 30px 10px 10px 10px;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
-  flex: 1 1 280px;
+  flex: 1 0 280px;
   align-items: center;
 }
 
 .menu-card:hover .recipe-img img {
-  width: 230px;
-  height: 230px;
+  transform: scale(2);
 }
 
 .recipe-img img {
@@ -34,13 +32,10 @@
 }
 
 .recipe-content {
-  width: 250px;
-  height: 30px;
 }
 
 .recipe-title {
   text-align: center;
-  padding: 20px 10px 10px 10px;
   font-family: "Jua", sans-serif;
   font-size: 17px;
   transition: 0.8s;
