@@ -75,28 +75,25 @@ function Menu(props) {
             <div id="menu-recipe-info">
               ​ <Nutrition recipe={currentRecipe[0]} />
               <div id="menu-ingredient">
-                <div className="menu-ingredient-title">재료</div>​{" "}
+                <div className="menu-ingredient-title">재료</div>
                 <img
                   src={currentRecipe[0].image.small}
                   className="menu-ingredient-img"
                   alt=""
                 />
                 <div className="menu-ingredient-desc">
-                  ​ {currentRecipe[0].ingredient}​{" "}
+                  ​ {currentRecipe[0].ingredient}​
                 </div>
-                ​{" "}
               </div>
-              ​{" "}
             </div>
             <div id="menu-recipe-list">
-              ​ <span className="menu-recipe-list-title">요리 순서</span>​{" "}
+              ​ <span className="menu-recipe-list-title">요리 순서</span>​
               {currentRecipe[0]["manual"].map((step, idx) => (
                 <RecipeComponent key={idx} step={step} />
               ))}
-              ​{" "}
               {passedRecipes.includes(curRecipeId) ? (
                 <div className="menu-checkbox-wrapper">
-                  요리 완성 : ​{" "}
+                  요리 완성 : ​
                   <input
                     id="menu-ckeck"
                     type="checkbox"
