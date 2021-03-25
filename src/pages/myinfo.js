@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import fail from '../Images/icon-valid-check-danger.png';
-import './CSS/myinfo.css';
-import { withRouter, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateUserInfo } from '../actions/user_action';
-import axios from 'axios';
-import API from '../api';
+import React, { useState, useEffect } from "react";
+import fail from "../Images/icon-valid-check-danger.png";
+import "./CSS/myinfo.css";
+import { withRouter, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUserInfo } from "../actions/user_action";
+import axios from "axios";
+import API from "../api";
 
 const PASSWORD_RE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
 
@@ -13,7 +13,7 @@ function Myinfo(props) {
   const UserData = props.location.state.UserData;
   const [userPw, setUpdatePw] = useState(UserData.password);
   const [userPwValid, setUserPwValid] = useState(false);
-  const [userPwChk, setUpdatePwChk] = useState('');
+  const [userPwChk, setUpdatePwChk] = useState("");
   const [pwErr, setPwErr] = useState(false);
   const [userBio, setUpdateBio] = useState(UserData.bio);
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function Myinfo(props) {
   // 수정 완료 버튼을 누를 때 userInfo update
   const handleClick = () => {
     axios.post(
-      'http://localhost:4000/user/update',
+      API.USER_UPDATE,
       {
         email: UserData.email,
         password: userPw,
@@ -34,7 +34,7 @@ function Myinfo(props) {
   };
 
   const onPwUpdateHandler = (e) => {
-    const regex = new RegExp(PASSWORD_RE, 'i');
+    const regex = new RegExp(PASSWORD_RE, "i");
     if (regex.test(e.currentTarget.value)) {
       setUserPwValid(false);
       setUpdatePw(e.currentTarget.value);
@@ -116,26 +116,26 @@ function Myinfo(props) {
           <button
             className="myinfo-update"
             onClick={() => {
-              const inputPw = document.querySelector('#userpw');
-              const inputPwchk = document.querySelector('#userpwchk');
-              const textareaBio = document.querySelector('.bio-textarea');
-              const myinfoUpdateBtn = document.querySelector('.myinfo-update');
+              const inputPw = document.querySelector("#userpw");
+              const inputPwchk = document.querySelector("#userpwchk");
+              const textareaBio = document.querySelector(".bio-textarea");
+              const myinfoUpdateBtn = document.querySelector(".myinfo-update");
 
-              if (inputPw.hasAttribute('readOnly')) {
-                myinfoUpdateBtn.textContent = '프로필 수정완료';
-                inputPw.removeAttribute('readOnly');
-                inputPwchk.removeAttribute('readOnly');
-                textareaBio.removeAttribute('readOnly');
+              if (inputPw.hasAttribute("readOnly")) {
+                myinfoUpdateBtn.textContent = "프로필 수정완료";
+                inputPw.removeAttribute("readOnly");
+                inputPwchk.removeAttribute("readOnly");
+                textareaBio.removeAttribute("readOnly");
               } else {
-                myinfoUpdateBtn.textContent = '프로필 수정하기';
-                inputPw.setAttribute('readOnly', '');
-                inputPwchk.setAttribute('readOnly', '');
-                textareaBio.setAttribute('readOnly', '');
-                inputPw.value = '';
-                inputPwchk.value = '';
-                textareaBio.value = '';
+                myinfoUpdateBtn.textContent = "프로필 수정하기";
+                inputPw.setAttribute("readOnly", "");
+                inputPwchk.setAttribute("readOnly", "");
+                textareaBio.setAttribute("readOnly", "");
+                inputPw.value = "";
+                inputPwchk.value = "";
+                textareaBio.value = "";
                 handleClick();
-                props.history.push('/mykitchen');
+                props.history.push("/mykitchen");
               }
             }}
           >
