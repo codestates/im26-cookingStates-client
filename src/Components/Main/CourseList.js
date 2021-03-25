@@ -5,6 +5,7 @@ import axios from "axios";
 import API from "../../api";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ViewCustomRecipe from "../Course/ViewCustomRecipe";
 
 function CourseList(props) {
   const userInfo = useSelector((state) => state.userReducer.userInfo);
@@ -25,29 +26,25 @@ function CourseList(props) {
 
   return (
     <div>
+      <h1 id="cours-list">기본 코스</h1>
       <div className="course-list">
         {Courses.map((course) => (
           <CourseListItem course={course} key={course.id} />
         ))}
       </div>
       {userInfo && userInfo.data.isPassed && (
-        <div className="custom-course-list">
-          <h1>커스텀 레시피</h1>
-          <Link to="/customRecipe">
-            <button>레시피 등록하기</button>
-          </Link>
-          {CustomRecipes.map((recipe, idx) => {
-            return (
-              <div key={idx}>
-                <div>제목 : {recipe.title}</div>
-                <div>제작자 : {recipe.author}</div>
-                <div>난이도 : {recipe.difficulty}</div>
-                <div>타입 : {recipe.type}</div>
-                <div>메뉴얼 : {recipe.manual}</div>
-                <img alt="" src={recipe.image}></img>
-              </div>
-            );
-          })}
+        <div className="custom-wrapper">
+          <div className="custom-section-header">
+            <h1>커스텀 레시피</h1>
+            <Link to="/customRecipe">
+              <button className="custom-recipe-btn">레시피 등록하기</button>
+            </Link>
+          </div>
+          <div className="custom-recipe-list">
+            {CustomRecipes.map((recipe, idx) => {
+              return <ViewCustomRecipe recipe={recipe} key={idx} />;
+            })}
+          </div>
         </div>
       )}
     </div>
