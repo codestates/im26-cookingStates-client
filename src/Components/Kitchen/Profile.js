@@ -3,13 +3,15 @@ import Profilelogo from "../../Images/logo-1-yellow.png";
 import { Link, withRouter } from "react-router-dom";
 
 function Profile(props) {
-  const { userName } = props.UserData;
+  console.log(props);
+  const userInfo = props.UserData.data;
+  console.log(userInfo);
 
   return (
     <div className="profile">
       <div className="profile-contents">
         <div className="profile-header">
-          <span>{userName}님 프로필</span>
+          <span>{userInfo.userName}님 프로필</span>
         </div>
         <div className="profile-article">
           <div className="profile-logo">
@@ -17,13 +19,13 @@ function Profile(props) {
           </div>
           <div className="profile-article-content">
             <span>
-              {userName}님 <br /> 안녕하세요~!
+              {userInfo.userName}님 <br /> 안녕하세요~!
             </span>
             <button
               onClick={() => {
                 let location = {
                   pathname: "/myinfo",
-                  state: { UserData: props.UserData },
+                  state: { UserData: userInfo },
                 };
                 props.history.push(location);
               }}

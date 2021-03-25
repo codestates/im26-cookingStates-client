@@ -2,8 +2,6 @@ import React from "react";
 import Coursekoimg from "../../Images/course-korean.png";
 
 function RecentMenu(props) {
-  console.log(props.UserData.course);
-
   return (
     <div className="recentmenu">
       <div className="recentmenu-info">
