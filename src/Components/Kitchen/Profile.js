@@ -3,9 +3,7 @@ import Profilelogo from "../../Images/logo-1-yellow.png";
 import { Link, withRouter } from "react-router-dom";
 
 function Profile(props) {
-  console.log(props);
   const userInfo = props.UserData.data;
-  console.log(userInfo);
 
   return (
     <div className="profile">

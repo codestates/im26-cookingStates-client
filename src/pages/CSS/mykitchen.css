@@ -255,14 +255,13 @@
 
 .completecourse-box {
   display: flex;
-  flex-direction: column;
-  width: 80%;
-  justify-content: space-between;
-  height: 50%;
+  flex-direction: row;
+  width: 400px;
+  height: 150px;
 }
 .complete-course-entry {
-  width: 360px;
-  height: 30px;
+  width: 200px;
+  height: 150px;
   display: flex;
   flex-direction: column;
 }
@@ -272,14 +271,11 @@
   width: 180px;
   height: 30px;
   font-size: 1.2rem;
-  flex: 3 1 0;
 }
 
 .complete-course-date {
-  font-size: 1rem;
+  font-size: 1.2rem;
   width: 180px;
   height: 30px;
   right: 10%;
-  line-height: 1.2rem;
-  flex: 1 1 0;
 }
