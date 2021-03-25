@@ -10,7 +10,8 @@ import API from "../api";
 const PASSWORD_RE = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
 
 function Myinfo(props) {
-  const UserData = props.location.state.UserData;
+  const temp = useSelector((state) => state.userReducer.userInfo);
+  const UserData = temp.data;
   const [userPw, setUpdatePw] = useState(UserData.password);
   const [userPwValid, setUserPwValid] = useState(false);
   const [userPwChk, setUpdatePwChk] = useState("");
@@ -19,18 +20,31 @@ function Myinfo(props) {
   const dispatch = useDispatch();
 
   const accessToken = useSelector((state) => state.userReducer.accessToken);
-
+  //API.USER_UPDATE
   // 수정 완료 버튼을 누를 때 userInfo update
-  const handleClick = () => {
-    axios.post(
-      API.USER_UPDATE,
-      {
-        email: UserData.email,
-        password: userPw,
-        bio: userBio,
-      },
-      { withCredentials: true, headers: { authorization: accessToken } }
-    );
+
+  const handleClick = async () => {
+    await axios
+      .post(
+        API.USER_UPDATE,
+        {
+          email: UserData.email,
+          password: userPw,
+          bio: userBio,
+        },
+        {
+          withCredentials: true,
+          headers: {
+            authorization: "Bearer " + accessToken,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("성공");
+      })
+      .catch((e) => {
+        console.log("error!: ", e);
+      });
   };
 
   const onPwUpdateHandler = (e) => {
@@ -95,14 +109,14 @@ function Myinfo(props) {
             )}
           </label>
           <label className="bio">Bio :</label>
-          <textarea
-            className="bio-textarea"
-            onChange={onTextareaUpdateHandler}
-            defaultValue={UserData.bio}
-            readOnly
-          >
-            {UserData.bio}
-          </textarea>
+          {userBio && (
+            <textarea
+              className="bio-textarea"
+              onChange={onTextareaUpdateHandler}
+              defaultValue={userBio}
+              readOnly
+            ></textarea>
+          )}
         </form>
         <div className="myinfo-btn">
           <button
@@ -127,15 +141,23 @@ function Myinfo(props) {
                 inputPwchk.removeAttribute("readOnly");
                 textareaBio.removeAttribute("readOnly");
               } else {
-                myinfoUpdateBtn.textContent = "프로필 수정하기";
-                inputPw.setAttribute("readOnly", "");
-                inputPwchk.setAttribute("readOnly", "");
-                textareaBio.setAttribute("readOnly", "");
-                inputPw.value = "";
-                inputPwchk.value = "";
-                textareaBio.value = "";
-                handleClick();
-                props.history.push("/mykitchen");
+                if (userPw && userPwChk) {
+                  if (pwErr) {
+                    alert("비밀번호가 다릅니다");
+                  } else {
+                    myinfoUpdateBtn.textContent = "프로필 수정하기";
+                    inputPw.setAttribute("readOnly", "");
+                    inputPwchk.setAttribute("readOnly", "");
+                    textareaBio.setAttribute("readOnly", "");
+                    inputPw.value = "";
+                    inputPwchk.value = "";
+                    textareaBio.value = "";
+                    handleClick();
+                    props.history.push("/mykitchen");
+                  }
+                } else {
+                  alert("비밀번호를 입력해주세요");
+                }
               }
             }}
           >

@@ -20,16 +20,18 @@ function RecentMenu(props) {
             <div className="recentmenu-info-header">
               <span>최근에 배운 코스</span>
             </div>
-            <div className="recentmenu-info-article">
-              <div className="recentmenu-info-article-session-content">
-                <span className="recent-course">
-                  {courseInfo[recentCourse - 1].title}
-                </span>
+            {courseInfo && (
+              <div className="recentmenu-info-article">
+                <div className="recentmenu-info-article-session-content">
+                  <span className="recent-course">
+                    {courseInfo[recentCourse - 1].title}
+                  </span>
+                </div>
+                <div className="recentmenu-info-article-session-img">
+                  <img src={courseInfo[recentCourse - 1].image} alt="이미지" />
+                </div>
               </div>
-              <div className="recentmenu-info-article-session-img">
-                <img src={courseInfo[recentCourse - 1].image} alt="이미지" />
-              </div>
-            </div>
+            )}
             <div className="progress-bg-bar">
               <div className="progress-bar" style={{ width: `${percent}` }}>
                 <label>{percent}</label>
