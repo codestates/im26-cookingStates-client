@@ -1,5 +1,6 @@
-import React from 'react';
-import Coursekoimg from '../../Images/course-korean.png';
+import React from "react";
+import Coursekoimg from "../../Images/course-korean.png";
+import API from "../../api"; // api 상대주소
 
 function RecentMenu(props) {
   return (
@@ -17,7 +18,7 @@ function RecentMenu(props) {
           </div>
         </div>
         <div className="progress-bg-bar">
-          <div className="progress-bar" style={{ width: '25%' }}>
+          <div className="progress-bar" style={{ width: "25%" }}>
             <label>25%</label>
           </div>
         </div>
