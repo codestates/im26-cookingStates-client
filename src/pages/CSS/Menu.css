@@ -137,7 +137,7 @@ img[alt="manualImg"] {
   margin: 15px;
 }
 
-.complete-chk {
+/* .complete-chk {
   width: 160px;
   height: 80px;
   position: absolute;
@@ -163,12 +163,11 @@ img[alt="manualImg"] {
 }
 
 .complete-chk input[type="checkbox"] + label:before {
-  /* 가짜 체크박스 */
   content: " ";
   display: inline-block;
-  width: 21px; /* 체크박스의 너비를 지정 */
-  height: 21px; /* 체크박스의 높이를 지정 */
-  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  width: 21px;
+  height: 21px;
+  line-height: 21px;
   margin: -2px 8px 0 0;
   text-align: center;
   vertical-align: middle;
@@ -184,10 +183,8 @@ img[alt="manualImg"] {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
-
-/* 체크박스를 체크했을때 */
 .complete-chk input[type="checkbox"]:checked + label:before {
-  content: "\2714"; /* 체크표시 유니코드 사용 */
+  content: "\2714";
   color: #ffffff;
   text-shadow: 1px 1px #fff;
   background: #393a73;
@@ -196,7 +193,7 @@ img[alt="manualImg"] {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
     inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-}
+} */
 
 @media screen and (max-width: 720px) {
   .menu-container .menu-Nav {

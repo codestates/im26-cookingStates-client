@@ -1,7 +1,9 @@
-import React from 'react';
-import Coursekoimg from '../../Images/course-korean.png';
+import React from "react";
+import Coursekoimg from "../../Images/course-korean.png";
 
 function RecentMenu(props) {
+  console.log(props.UserData.course);
+
   return (
     <div className="recentmenu">
       <div className="recentmenu-info">
@@ -17,7 +19,7 @@ function RecentMenu(props) {
           </div>
         </div>
         <div className="progress-bg-bar">
-          <div className="progress-bar" style={{ width: '25%' }}>
+          <div className="progress-bar" style={{ width: "25%" }}>
             <label>25%</label>
           </div>
         </div>

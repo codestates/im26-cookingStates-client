@@ -59,7 +59,7 @@ function Menu(props) {
             API.COMPLETE_COURSE,
             {
               email: userInfo.data.email,
-              recentCourse: recentCourseId,
+              courseId: recentCourseId,
               isPassed: true,
             },
             {
@@ -72,7 +72,7 @@ function Menu(props) {
             API.COMPLETE_COURSE,
             {
               email: userInfo.data.email,
-              recentCourse: recentCourseId,
+              courseId: recentCourseId,
               isPassed: false,
             },
             {
