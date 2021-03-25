@@ -98,7 +98,7 @@ function Myinfo(props) {
           <textarea
             className="bio-textarea"
             onChange={onTextareaUpdateHandler}
-            defaultvalue={UserData.bio}
+            defaultValue={UserData.bio}
             readOnly
           >
             {UserData.bio}

@@ -29,10 +29,7 @@ function Menu(props) {
     passedRecipes.includes(curRecipeId)
   );
 
-  console.log("USERINFO", userInfo);
-
   useEffect(() => {
-    console.log("@@@@@@@", IsChecked);
     axios
       .post(
         `${API.RECIPE_INFO}/${curRecipeId}/checked`,

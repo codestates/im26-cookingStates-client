@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./CSS/unregister.css";
 import Bye from "../Images/goodbye.png";
 import { withRouter } from "react-router-dom";
