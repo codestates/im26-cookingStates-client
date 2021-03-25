@@ -1,6 +1,5 @@
 import React from "react";
 import Coursekoimg from "../../Images/course-korean.png";
-import API from "../../api"; // api 상대주소
 
 function RecentMenu(props) {
   return (
