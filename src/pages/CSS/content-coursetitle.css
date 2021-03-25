@@ -3,12 +3,12 @@
   padding-top: 30px;
   height: 100%;
   display: flex;
-  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-color: #24997f;
 }
 
 .menu-card {
-  width: 280px;
   height: 278px;
   overflow: hidden;
   background: #ffeedf;
@@ -17,7 +17,7 @@
   margin: 30px 10px 10px 10px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 280px;
   align-items: center;
 }
 
@@ -41,7 +41,7 @@
 .recipe-title {
   text-align: center;
   padding: 20px 10px 10px 10px;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
   font-size: 17px;
   transition: 0.8s;
 }

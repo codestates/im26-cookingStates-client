@@ -12,17 +12,13 @@
   padding-top: 30px;
   height: max-content;
   display: flex;
-  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-color: #24997f;
-}
-
-.custom-course-list {
-  background-color: #24997f;
-  height: max-content;
 }
 
 .course-list-item {
-  width: 280px;
+  flex: 1 1 280px;
   height: 400px;
   background: #ffeedf;
   border-radius: 8px;
@@ -30,7 +26,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  flex: 1;
+}
+
+.custom-course-list {
+  background-color: #24997f;
+  height: max-content;
 }
 
 .course-img {
