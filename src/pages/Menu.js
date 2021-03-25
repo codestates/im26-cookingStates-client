@@ -24,14 +24,13 @@ function Menu(props) {
   ]; //! 위험한 알고리즘...
 
   const dispatch = useDispatch();
-
   const [IsChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     axios // 완료 체크 db 저장
       .post(
         `${API.RECIPE_INFO}/${curRecipeId}/checked`,
-        { isChecked: IsChecked }, //체크박스 상태
+        { isChecked: IsChecked },
         {
           withCredentials: true,
           headers: { authorization: "Bearer " + accessToken },
@@ -42,41 +41,26 @@ function Menu(props) {
           .get(API.USER_INFO, {
             withCredentials: true,
             headers: { authorization: "Bearer " + accessToken },
-          })
-          .then((user) => {
-            dispatch(setUserInfo(user));
           });
       })
-      .then((res) => {
-        if (userInfo.data.course.passedRecipesOfRecentCourse.length === 5) {
-          // body {email: ,    courseId: recentCourseId, isPassed: true }
-          return axios.post(
-            // 코스 모두 수강시 코스 완료 여부 전달
-            API.COMPLETE_COURSE,
-            {
-              email: userInfo.data.email,
-              courseId: recentCourseId,
-              isPassed: true,
-            },
-            {
-              withCredentials: true,
-              headers: { authorization: "Bearer " + accessToken },
-            }
-          );
+      .then((user) => {
+        dispatch(setUserInfo(user));
+        return user.data.course.passedRecipesOfRecentCourse;
+      })
+      .then((passedRecipesOfRecentCourse) => {
+        console.log(passedRecipesOfRecentCourse);
+        let body = {
+          email: userInfo.data.email,
+          courseId: recentCourseId,
+          isPassed: true,
+        };
+        if (passedRecipesOfRecentCourse.length >= 5) {
+          // 코스 모두 수강시 코스 완료 여부 전달
+          return axios.post(API.COMPLETE_COURSE, body);
         } else {
-          return axios.post(
-            // 아닐시 코스 미완료 여부 전달
-            API.COMPLETE_COURSE,
-            {
-              email: userInfo.data.email,
-              courseId: recentCourseId,
-              isPassed: false,
-            },
-            {
-              withCredentials: true,
-              headers: { authorization: "Bearer " + accessToken },
-            }
-          );
+          // 아닐시 코스 미완료 여부 전달
+          body.isPassed = false;
+          return axios.post(API.COMPLETE_COURSE, body);
         }
       });
   }, [IsChecked]);
@@ -85,11 +69,11 @@ function Menu(props) {
     return (
       <>
         <div className="menu-container">
-          <MenuNav />
+          ​ <MenuNav />
           <div className="menu-body">
             <div className="menu-title">{currentRecipe[0].title}</div>
             <div id="menu-recipe-info">
-              <Nutrition recipe={currentRecipe[0]} />
+              ​ <Nutrition recipe={currentRecipe[0]} />
               <div id="menu-ingredient">
                 <div className="menu-ingredient-title">재료</div>
                 <img
@@ -98,19 +82,18 @@ function Menu(props) {
                   alt=""
                 />
                 <div className="menu-ingredient-desc">
-                  {currentRecipe[0].ingredient}
+                  ​ {currentRecipe[0].ingredient}​
                 </div>
               </div>
             </div>
             <div id="menu-recipe-list">
-              <span className="menu-recipe-list-title">요리 순서</span>
+              ​ <span className="menu-recipe-list-title">요리 순서</span>​
               {currentRecipe[0]["manual"].map((step, idx) => (
                 <RecipeComponent key={idx} step={step} />
               ))}
-
               {passedRecipes.includes(curRecipeId) ? (
                 <div className="menu-checkbox-wrapper">
-                  요리 완성 :
+                  요리 완성 : ​
                   <input
                     id="menu-ckeck"
                     type="checkbox"
@@ -133,10 +116,9 @@ function Menu(props) {
                   ></input>
                 </div>
               )}
-
               {/* <div className="complete-chk">
                 <input
-                  type="checkbox"
+                  ype="checkbox"
                   id="complete-chk"
                   className="recipe-chk"
                   checked={IsChecked}
@@ -155,5 +137,4 @@ function Menu(props) {
     return <h1>Loading....</h1>;
   }
 }
-
 export default withRouter(Menu);
