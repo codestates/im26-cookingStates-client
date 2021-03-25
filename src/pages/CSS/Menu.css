@@ -6,6 +6,12 @@
   font-style: normal;
 }
 
+.menu-checkbox-wrapper {
+  padding: 1rem;
+  background-color: burlywood;
+  text-align: right;
+}
+
 .menu-container {
   top: 120px;
   display: flex;
