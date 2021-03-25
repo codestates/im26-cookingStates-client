@@ -37,9 +37,11 @@ function CompleteCourse(props) {
               {completeCourse.map((ele) => {
                 return <div className="complete-course-name">{ele.title}</div>;
               })}
+            </div>
+            <div className="complete-course-entry">
               {completeCourseEndDate.map((ele) => {
                 return (
-                  <span className="complete-course-date">{ele.endDate}</span>
+                  <div className="complete-course-date">{ele.endDate}</div>
                 );
               })}
             </div>
