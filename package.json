@@ -21,7 +21,7 @@
     "web-vitals": "^1.1.1"
   },
   "config": {
-    "BUCKETNAME": "cookingstates.cf"
+    "BUCKETNAME": "cookingstates.site"
   },
   "scripts": {
     "start": "react-scripts start",
