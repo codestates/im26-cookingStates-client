@@ -26,7 +26,9 @@ function Nav(props) {
         }
         dispatch(setUserInfo(userData));
       }
-      fetchUserData();
+      if (accessToken) {
+        fetchUserData();
+      }
     }
   }, [accessToken]);
 
