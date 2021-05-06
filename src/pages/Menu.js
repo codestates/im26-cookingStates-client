@@ -15,7 +15,7 @@ function Menu(props) {
   );
   const accessToken = useSelector((state) => state.userReducer.accessToken);
   const userInfo = useSelector((state) => state.userReducer.userInfo);
-  const passedRecipes = userInfo.data.course.passedRecipes;
+  const passedRecipes = userInfo?.data?.course?.passedRecipes;
   const recentCourseId = currentRecipe[0].courseId;
   const recentCourseDif = currentRecipe[0].difficulty;
   const temp = [1, 2, 3, 4, 5];
@@ -25,7 +25,13 @@ function Menu(props) {
 
   const dispatch = useDispatch();
   const [IsChecked, setIsChecked] = useState(
-    passedRecipes.includes(curRecipeId)
+    (function () {
+      if (passedRecipes) {
+        return passedRecipes.includes(curRecipeId);
+      } else {
+        return false;
+      }
+    })()
   );
 
   useEffect(() => {
@@ -50,7 +56,6 @@ function Menu(props) {
         return user.data.course.passedRecipesOfRecentCourse;
       })
       .then((passedRecipesOfRecentCourse) => {
-        console.log(passedRecipesOfRecentCourse);
         let body = {
           email: userInfo.data.email,
           courseId: recentCourseId,
@@ -93,7 +98,7 @@ function Menu(props) {
               {currentRecipe[0]["manual"].map((step, idx) => (
                 <RecipeComponent key={idx} step={step} />
               ))}
-              {passedRecipes.includes(curRecipeId) ? (
+              {passedRecipes && passedRecipes.includes(curRecipeId) ? (
                 <div className="menu-checkbox-wrapper">
                   요리 완성 : ​
                   <input
@@ -106,30 +111,22 @@ function Menu(props) {
                   ></input>
                 </div>
               ) : (
-                <div className="menu-checkbox-wrapper">
-                  요리 완성 :
-                  <input
-                    id="menu-ckeck"
-                    type="checkbox"
-                    checked={false}
-                    onClick={() => {
-                      setIsChecked(!IsChecked);
-                    }}
-                  ></input>
-                </div>
+                <>
+                  {passedRecipes && (
+                    <div className="menu-checkbox-wrapper">
+                      요리 완성 :
+                      <input
+                        id="menu-ckeck"
+                        type="checkbox"
+                        checked={false}
+                        onClick={() => {
+                          setIsChecked(!IsChecked);
+                        }}
+                      ></input>
+                    </div>
+                  )}
+                </>
               )}
-              {/* <div className="complete-chk">
-                <input
-                  ype="checkbox"
-                  id="complete-chk"
-                  className="recipe-chk"
-                  checked={IsChecked}
-                  onChange={(event) => {
-                    setIsChecked(!IsChecked);
-                  }}
-                />
-                <label htmlFor="complete-chk">요리 완성!</label>
-              </div> */}
             </div>
           </div>
         </div>
